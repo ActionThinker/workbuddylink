@@ -36,7 +36,7 @@
 **版本**: v1.0.0
 
 ### 决策背景
-海角 WorkBuddy 生态业务需要一个独立的前端增长入口站，承接企业合作咨询、渠道合作申请、预约演示与商务线索。复刻 NexFDE.com 已验证的落地路径（纯静态 HTML + GitHub Pages + Actions workflow + GEO/AI 基础设施），快速上线可转化的首页。
+WorkBuddy 生态业务需要一个独立的前端增长入口站，承接企业合作咨询、渠道合作申请、预约演示与商务线索。复刻 NexFDE.com 已验证的落地路径（纯静态 HTML + GitHub Pages + Actions workflow + GEO/AI 基础设施），快速上线可转化的首页。
 
 ### 具体变更
 - 新建 `ActionThinker/workbuddylink` 仓库，纯静态单页站（15 区块）

@@ -1,7 +1,7 @@
 # CLAUDE.md — workbuddylink.com
 
 > **WorkBuddyLink**: WorkBuddy 生态前端增长入口
-> **母品牌**: NexFDE | **业务体系**: 海角
+> **母品牌**: NexFDE
 > **部署**: GitHub Pages（纯静态 HTML，push 即部署）
 
 ## 项目信息

@@ -5,7 +5,7 @@
 
 ## 这个站点是什么
 
-`WorkbuddyLink.com` 是海角旗下 WorkBuddy 生态业务的前端增长入口，承接：
+`WorkbuddyLink.com` 是 WorkBuddy 生态业务的前端增长入口，承接：
 
 - 企业合作咨询（产品咨询 / 培训 / 解决方案 / 运营陪跑）
 - 渠道合作申请
@@ -30,7 +30,7 @@
 
 ```
 site/
-├── index.html            # 主落地页（15 区块，自包含 CSS/JS/JSON-LD）
+├── index.html            # 主落地页（8 模块，自包含 CSS/JS/JSON-LD）
 ├── assets/               # OG 图、微信二维码
 ├── .well-known/ai        # AI 发现端点
 ├── llms.txt              # AI Agent 站点摘要
