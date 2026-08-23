@@ -569,7 +569,7 @@ body{
       </div>
     </div>
     <div class="hero-visual wl-animate" aria-hidden="true">
-      <svg class="hero-network" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="hero-network" viewBox="0 0 400 380" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="lnk" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0" stop-color="#28b894"/><stop offset="1" stop-color="#E8590C"/>
@@ -578,40 +578,56 @@ body{
             <stop offset="0" stop-color="#28b894" stop-opacity=".22"/><stop offset="1" stop-color="#28b894" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <circle cx="200" cy="180" r="150" fill="url(#glow)"/>
-        <!-- links -->
+        <circle cx="200" cy="190" r="150" fill="url(#glow)"/>
+        <!-- links: center → nodes -->
         <g stroke="#28b894" stroke-opacity=".35" stroke-width="1.4">
-          <line x1="200" y1="180" x2="78" y2="84"/><line x1="200" y1="180" x2="322" y2="84"/>
-          <line x1="200" y1="180" x2="78" y2="276"/><line x1="200" y1="180" x2="322" y2="276"/>
+          <line x1="200" y1="190" x2="95" y2="112"/><line x1="200" y1="190" x2="200" y2="82"/><line x1="200" y1="190" x2="305" y2="112"/>
         </g>
-        <g stroke="#E8590C" stroke-opacity=".6" stroke-width="1.8" stroke-dasharray="4 4">
-          <line x1="78" y1="84" x2="322" y2="84"/>
-          <line x1="78" y1="276" x2="322" y2="276"/>
+        <g stroke="#E8590C" stroke-opacity=".35" stroke-width="1.4">
+          <line x1="200" y1="190" x2="95" y2="268"/><line x1="200" y1="190" x2="200" y2="298"/><line x1="200" y1="190" x2="305" y2="268"/>
+        </g>
+        <!-- row links -->
+        <g stroke="#28b894" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="4 4">
+          <line x1="95" y1="112" x2="200" y2="82"/><line x1="200" y1="82" x2="305" y2="112"/>
+        </g>
+        <g stroke="#E8590C" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="4 4">
+          <line x1="95" y1="268" x2="200" y2="298"/><line x1="200" y1="298" x2="305" y2="268"/>
         </g>
         <!-- center hub -->
-        <circle cx="200" cy="180" r="34" fill="#101E26" stroke="#28b894" stroke-width="2"/>
-        <text x="200" y="175" text-anchor="middle" fill="#28b894" font-size="13" font-weight="700" font-family="Inter,sans-serif">WorkBuddyLink</text>
-        <text x="200" y="192" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10" font-family="Inter,sans-serif">企业落地与合作入口</text>
-        <!-- nodes -->
+        <circle cx="200" cy="190" r="54" fill="#101E26" stroke="#28b894" stroke-width="2"/>
+        <text x="200" y="187" text-anchor="middle" fill="#28b894" font-size="12.5" font-weight="700" font-family="Inter,sans-serif">WorkBuddyLink</text>
+        <text x="200" y="205" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10" font-family="Inter,sans-serif">企业落地与合作入口</text>
+        <!-- 企业客户服务（绿色） -->
         <g>
-          <circle cx="78" cy="84" r="26" fill="#0F2E3C" stroke="#28b894" stroke-width="2"/>
-          <text x="78" y="81" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="Inter,sans-serif">认知对齐</text>
-          <text x="78" y="96" text-anchor="middle" fill="#28b894" font-size="9" font-family="Inter,sans-serif">统一预期</text>
+          <circle cx="95" cy="112" r="38" fill="#0F2E3C" stroke="#28b894" stroke-width="2"/>
+          <text x="95" y="110" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Inter,sans-serif">认知对齐</text>
+          <text x="95" y="126" text-anchor="middle" fill="#28b894" font-size="10" font-family="Inter,sans-serif">统一预期</text>
         </g>
         <g>
-          <circle cx="322" cy="84" r="26" fill="#0F2E3C" stroke="#28b894" stroke-width="2"/>
-          <text x="322" y="81" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="Inter,sans-serif">方案落地</text>
-          <text x="322" y="96" text-anchor="middle" fill="#28b894" font-size="9" font-family="Inter,sans-serif">接进业务</text>
+          <circle cx="200" cy="82" r="38" fill="#0F2E3C" stroke="#28b894" stroke-width="2"/>
+          <text x="200" y="80" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Inter,sans-serif">方案落地</text>
+          <text x="200" y="96" text-anchor="middle" fill="#28b894" font-size="10" font-family="Inter,sans-serif">接进业务</text>
         </g>
         <g>
-          <circle cx="78" cy="276" r="26" fill="#0F2E3C" stroke="#E8590C" stroke-width="2"/>
-          <text x="78" y="273" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="Inter,sans-serif">持续陪跑</text>
-          <text x="78" y="288" text-anchor="middle" fill="#E8590C" font-size="9" font-family="Inter,sans-serif">价值不衰减</text>
+          <circle cx="305" cy="112" r="38" fill="#0F2E3C" stroke="#28b894" stroke-width="2"/>
+          <text x="305" y="110" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Inter,sans-serif">产品部署</text>
+          <text x="305" y="126" text-anchor="middle" fill="#28b894" font-size="10" font-family="Inter,sans-serif">技术保障</text>
+        </g>
+        <!-- 合作伙伴协同（橙色） -->
+        <g>
+          <circle cx="95" cy="268" r="38" fill="#0F2E3C" stroke="#E8590C" stroke-width="2"/>
+          <text x="95" y="266" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Inter,sans-serif">持续陪跑</text>
+          <text x="95" y="282" text-anchor="middle" fill="#E8590C" font-size="10" font-family="Inter,sans-serif">价值不衰减</text>
         </g>
         <g>
-          <circle cx="322" cy="276" r="26" fill="#0F2E3C" stroke="#E8590C" stroke-width="2"/>
-          <text x="322" y="273" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="Inter,sans-serif">渠道伙伴</text>
-          <text x="322" y="288" text-anchor="middle" fill="#E8590C" font-size="9" font-family="Inter,sans-serif">联合增长</text>
+          <circle cx="200" cy="298" r="38" fill="#0F2E3C" stroke="#E8590C" stroke-width="2"/>
+          <text x="200" y="296" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Inter,sans-serif">渠道伙伴</text>
+          <text x="200" y="312" text-anchor="middle" fill="#E8590C" font-size="10" font-family="Inter,sans-serif">联合增长</text>
+        </g>
+        <g>
+          <circle cx="305" cy="268" r="38" fill="#0F2E3C" stroke="#E8590C" stroke-width="2"/>
+          <text x="305" y="266" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Inter,sans-serif">方案共创</text>
+          <text x="305" y="282" text-anchor="middle" fill="#E8590C" font-size="8.5" font-family="Inter,sans-serif">行业Know-how</text>
         </g>
       </svg>
     </div>

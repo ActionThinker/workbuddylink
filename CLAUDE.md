@@ -6,7 +6,7 @@
 
 ## 项目信息
 
-- **站点**: workbuddylink.com v1.1.1
+- **站点**: workbuddylink.com v1.1.2
 - **类型**: 单页转化站（企业客户 + 渠道伙伴双受众），纯静态 HTML + CSS + JS
 - **部署**: GitHub Pages（`ActionThinker/workbuddylink`），无构建步骤
 - **设计系统**: 深青墨 `#101E26` + 品牌青绿 `#28b894`（借鉴 WorkBuddy 官方）+ 珊瑚橙 `#E8590C`（区隔强调），Inter 字体，浅青白 `#F6F8F7` 背景
