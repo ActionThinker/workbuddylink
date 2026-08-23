@@ -1,0 +1,28 @@
+{
+  "ai": {
+    "name": "WorkbuddyLink",
+    "url": "https://workbuddylink.com/",
+    "capabilities": [
+      "B2B 增长型入口站",
+      "企业合作咨询入口",
+      "渠道合作申请入口",
+      "WorkBuddy 生态能力与 FDE 交付网络连接"
+    ],
+    "contentEndpoints": [
+      { "path": "/llms.txt", "description": "AI Agent 站点摘要" },
+      { "path": "/llms-full.txt", "description": "完整内容 Markdown 摘要" },
+      { "path": "/sitemap.xml", "description": "站点地图" }
+    ],
+    "aiDisclosure": {
+      "standard": "EU AI Act Article 50",
+      "status": "ai-assisted",
+      "system": "Claude by Anthropic",
+      "operator": "ActionThinker"
+    },
+    "brand": {
+      "parent": "NexFDE",
+      "delivery": "FDE",
+      "contactEmail": "Lu@NexFDE.com"
+    }
+  }
+}
