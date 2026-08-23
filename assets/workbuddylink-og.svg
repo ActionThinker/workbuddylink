@@ -22,8 +22,8 @@
   <circle cx="620" cy="180" r="14" fill="#28b894"/>
   <text x="90" y="80" fill="#28b894" font-size="24" font-family="Inter,Arial" font-weight="700" letter-spacing="4">WORKBUDDY</text>
   <text x="90" y="108" fill="#fff" font-size="18" font-family="Inter,Arial" letter-spacing="6">L I N K</text>
-  <text x="90" y="300" fill="#fff" font-size="56" font-family="Inter,Arial" font-weight="800">连接 Workbuddy 生态能力</text>
-  <text x="90" y="368" fill="#fff" font-size="56" font-family="Inter,Arial" font-weight="800">与 FDE 交付网络</text>
+  <text x="90" y="300" fill="#fff" font-size="56" font-family="Inter,Arial" font-weight="800">把 WorkBuddy 的产品能力</text>
+  <text x="90" y="368" fill="#fff" font-size="56" font-family="Inter,Arial" font-weight="800">变成企业可落地的方案</text>
   <text x="90" y="440" fill="rgba(255,255,255,0.7)" font-size="26" font-family="Inter,Arial">企业落地合作 × 渠道伙伴合作 × 交付支撑</text>
   <rect x="90" y="490" width="200" height="56" rx="28" fill="#E8590C"/>
   <text x="190" y="527" fill="#fff" font-size="20" font-family="Inter,Arial" text-anchor="middle" font-weight="600">预约沟通</text>
