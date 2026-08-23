@@ -19,6 +19,7 @@
 - **同步文件**：meta/og/twitter description、JSON-LD Organization / Service / serviceType / FAQ、可见 FAQ、footer、llms.txt、llms-full.txt、CLAUDE.md GEO B/D
 - **页脚移除品牌体系区块**：不再展示「NexFDE—总品牌 / WorkBuddyLink—前端入口 / FDE—交付网络 / WorkBuddyMesh—规划中」层级，避免对外露出战略意图；llms.txt / llms-full.txt 品牌关系同步收敛为中性表述
 - **页脚关于文案**：客户旅程用「场景验证」取代「销售赋能」，伙伴句不再出现销售赋能，收敛为「帮助渠道伙伴实现联合增长」
+- **联系表单阶段选项**：「转化阶段 · 想推进落地」改为「立项阶段 · 想推进落地」，对齐客户真实立项节奏
 
 ### 设计决策
 - **按客户真实旅程建模**：认知对齐→提效培训→场景评估→采购部署→方案设计→持续陪跑，先讲客户每一步，再谈销售语言
