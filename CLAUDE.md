@@ -6,7 +6,7 @@
 
 ## 项目信息
 
-- **站点**: workbuddylink.com v1.1.2
+- **站点**: workbuddylink.com v1.1.3
 - **类型**: 单页转化站（企业客户 + 渠道伙伴双受众），纯静态 HTML + CSS + JS
 - **部署**: GitHub Pages（`ActionThinker/workbuddylink`），无构建步骤
 - **设计系统**: 深青墨 `#101E26` + 品牌青绿 `#28b894`（借鉴 WorkBuddy 官方）+ 珊瑚橙 `#E8590C`（区隔强调），Inter 字体，浅青白 `#F6F8F7` 背景
@@ -16,7 +16,7 @@
 
 | 路径 | 用途 |
 |:---|:---|
-| `index.html` | 主落地页（自包含 CSS/JS，8 模块：Hero/企业服务/问题/落地/信任/渠道/FAQ/CTA） |
+| `index.html` | 主落地页（自包含 CSS/JS，模块：Hero/关于WorkBuddy/企业服务/问题/落地/信任/渠道/FAQ/CTA） |
 | `assets/` | 静态资源（微信二维码、OG 图片） |
 | `BUILDLOG.md` | 构建日志（每次迭代记录） |
 | `CLAUDE.md` | GEO 规则 + 构建指令（本文件） |
@@ -62,7 +62,7 @@
 页面必须包含 @graph 模式的 JSON-LD:
 - Organization（含 sameAs, logo, contactPoint, parentOrganization）
 - Service（含 offers, provider 引用）
-- FAQPage（至少 8 个 FAQ）
+- FAQPage（至少 9 个 FAQ）
 - Article（含 datePublished, dateModified）
 - BreadcrumbList
 
