@@ -6,8 +6,8 @@
 
 ## 项目信息
 
-- **站点**: workbuddylink.com v1.1.3
-- **类型**: 单页转化站（企业客户 + 渠道伙伴双受众），纯静态 HTML + CSS + JS
+- **站点**: workbuddylink.com v1.2.0
+- **类型**: 首页（企业客户 + 渠道伙伴双受众）+ 培训课程销售落地页，纯静态 HTML + CSS + JS
 - **部署**: GitHub Pages（`ActionThinker/workbuddylink`），无构建步骤
 - **设计系统**: 深青墨 `#101E26` + 品牌青绿 `#28b894`（借鉴 WorkBuddy 官方）+ 珊瑚橙 `#E8590C`（区隔强调），Inter 字体，浅青白 `#F6F8F7` 背景
 - **AI 构建**: Claude (Anthropic) 辅助，FDE-style AI Deployment 方法
@@ -17,6 +17,7 @@
 | 路径 | 用途 |
 |:---|:---|
 | `index.html` | 主落地页（自包含 CSS/JS，模块：Hero/关于WorkBuddy/企业服务/问题/落地/信任/渠道/FAQ/CTA） |
+| `training.html` | 培训课程销售落地页（v1.2.0 新增；课程矩阵四阶+政务专项/适用对象/讲师/交付形式/课后成果/FAQ/联系，Course JSON-LD） |
 | `assets/` | 静态资源（微信二维码、OG 图片） |
 | `BUILDLOG.md` | 构建日志（每次迭代记录） |
 | `CLAUDE.md` | GEO 规则 + 构建指令（本文件） |
@@ -53,10 +54,12 @@
 标题必须包含目标用户会搜索的问题或关键词。
 格式: `[核心问题/关键词] | WorkBuddyLink`
 当前: `WorkBuddy 企业导入、落地与持续运营 | WorkBuddyLink` ✅
+training.html: `WorkBuddy 培训课程：企业 AI 办公提效训练营与政务数字办公 | WorkBuddyLink` ✅
 
 ### B. 页面描述
 描述是 AI 生成答案时的摘要来源，必须包含：做什么 + 为谁做 + 独特价值。
 当前: `基于 WorkBuddy 官方产品能力，结合 FDE 交付支持，帮助企业完成 AI 认知对齐、办公提效培训、业务场景评估、企业版采购与部署实施、定制化方案设计与持续应用陪跑；对合作伙伴提供销售赋能、联合获客、方案支撑与交付承接。` ✅
+training.html: `面向企业管理层、业务团队与政务机构的 WorkBuddy 专项培训：认知导入课、实操提效课、场景落地工作坊、持续陪跑四阶课程，另设政务机构数字办公应用课。资深 WorkBuddy 实践者主讲，已服务多家企业内训与政府机构百人规模党政干部专项培训。` ✅
 
 ### C. 结构化数据（JSON-LD Schema）
 页面必须包含 @graph 模式的 JSON-LD:
