@@ -5,3 +5,8 @@ _site/
 vendor/
 .DS_Store
 .gstack/
+# 内部文档：仅本地保留，禁止推送到公开仓库（GitHub Pages 会发布 repo 根目录）
+BUILDLOG.md
+CLAUDE.md
+README.md
+.project-meta.md
