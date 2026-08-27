@@ -242,12 +242,18 @@ body{
   padding:8px 12px;border-radius:8px;transition:all .2s ease;
 }
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
-.nav-links .wl-btn{padding:9px 18px;font-size:14px;margin-left:8px}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-cta{padding:9px 18px;font-size:14px}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
 .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;border-radius:2px;transition:all .25s ease}
 .nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav.open .nav-toggle span:nth-child(2){opacity:0}
 .nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1024px){
+  .nav-inner{gap:12px}
+  .nav-links a{font-size:13px;padding:8px 8px}
+  .nav-cta{padding:8px 14px;font-size:13px}
+}
 @media(max-width:860px){
   .nav-links{
     position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;
@@ -256,9 +262,11 @@ body{
   }
   .nav.open .nav-links{display:flex}
   .nav-links a{padding:12px;font-size:15px}
-  .nav-links .wl-btn{margin:10px 0 0;justify-content:center}
-  .nav-toggle{display:block}
+  .brand{font-size:15.5px}
+  .nav-cta{padding:8px 12px;font-size:13px;white-space:nowrap}
+  .nav-toggle{display:block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:8px}
 }
+@media(max-width:350px){.brand-text{display:none}}
 
 /* ── Hero ── */
 .hero{
@@ -526,6 +534,28 @@ body{
 .modal-card p{font-size:14px;color:var(--text-muted);margin-bottom:18px}
 .modal-card img{width:200px;height:200px;border-radius:12px;border:1px solid var(--border);margin-bottom:18px}
 .modal-close{margin-top:6px;background:var(--bg-alt);border:none;color:var(--text);padding:10px 26px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer}
+
+/* ── Mobile responsive fixes ── */
+@media(max-width:860px){
+  .form-grid{grid-template-columns:1fr}
+  .form-field{min-width:0}
+  .contact-panel{padding:28px 22px}
+}
+@media(max-width:560px){
+  .wl-container{padding:0 16px}
+  .wl-section{padding:72px 0}
+  .hero{padding:118px 0 64px}
+  .wl-card{padding:22px 18px}
+  .path-col{padding:26px 20px}
+  .wl-converge{padding:26px 22px;gap:16px}
+  .contact-panel{padding:24px 18px}
+  .faq-q{padding:16px;font-size:15px}
+  .faq-a p{padding:0 16px 18px}
+  .hero-ctas .wl-btn{width:100%}
+  .form-actions .wl-btn{width:100%}
+  .hero-meta{gap:14px 22px}
+  .modal-card{padding:26px 20px}
+}
 </style>
 </head>
 <body data-fp="wbl-20260827-9c84bf3d">
@@ -542,7 +572,7 @@ body{
           <path d="M14.5 16h3" stroke="#D8E2DE" stroke-width="1.6"/>
         </svg>
       </span>
-      <span>WorkBuddy<span style="color:var(--teal)">Link</span></span>
+      <span class="brand-text">WorkBuddy<span style="color:var(--teal)">Link</span></span>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">首页</a></li>
@@ -552,11 +582,13 @@ body{
       <li><a href="#partner">合作伙伴</a></li>
       <li><a href="#faq">常见问题</a></li>
       <li><a href="#contact">联系我们</a></li>
-      <li><a class="wl-btn wl-btn-primary" href="#contact">获取落地建议</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-actions">
+      <a class="wl-btn wl-btn-primary nav-cta" href="#contact">获取落地建议</a>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -1089,6 +1121,8 @@ body{
   navLinks.addEventListener('click',function(e){
     if(e.target.closest('a')){nav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}
   });
+  var navCta=document.querySelector('.nav-cta');
+  if(navCta){navCta.addEventListener('click',function(){nav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');});}
 
   /* Scroll reveal */
   var revealEls=document.querySelectorAll('.wl-animate');
