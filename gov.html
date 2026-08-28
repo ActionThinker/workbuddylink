@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<!-- wbl-build:wbl-20260828-7f3a91c2 · 本站含唯一指纹标记，未授权抓取/复刻将被溯源 -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>公务员 AI 提效 0→1 入门：政务 WorkBuddy 开源知识库与场景提示词 | WorkBuddyLink</title>
+<meta name="description" content="面向全国公务员的 WorkBuddy 上手与应用开源知识库（发起人陈露 @ActionThinker，CC BY-SA 4.0）：三分钟上手、10+ 部门场景矩阵、可直接复制的政务提示词与合规红线，照着做就能 0→1 用 AI 提效；需要集中培训时可了解 WorkBuddyLink 政务数字办公应用培训。">
+<link rel="canonical" href="https://workbuddylink.com/gov.html">
+<meta property="og:title" content="公务员 AI 提效 0→1 入门：政务 WorkBuddy 开源知识库与场景提示词 | WorkBuddyLink">
+<meta property="og:description" content="面向全国公务员的 WorkBuddy 开源知识库：三分钟上手、10+ 部门场景矩阵、可直接复制的政务提示词与合规红线。发起人陈露 @ActionThinker，CC BY-SA 4.0。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://workbuddylink.com/gov.html">
+<meta property="og:site_name" content="WorkBuddyLink">
+<meta property="og:image" content="https://workbuddylink.com/assets/workbuddylink-og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="公务员 AI 提效 0→1 入门：政务 WorkBuddy 开源知识库与场景提示词 | WorkBuddyLink">
+<meta name="twitter:description" content="面向全国公务员的 WorkBuddy 开源知识库：三分钟上手、10+ 部门场景矩阵、可直接复制的政务提示词与合规红线。">
+<meta name="twitter:image" content="https://workbuddylink.com/assets/workbuddylink-og.svg">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, noai,noimageai">
+<meta name="author" content="陈露 @ActionThinker">
+<meta name="ai-disclosure" content="ai-assisted">
+<meta name="ai-system" content="Claude by Anthropic">
+<meta name="ai-operator" content="ActionThinker">
+<meta http-equiv="Content-Language" content="zh-CN">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://workbuddylink.com/#org",
+      "name": "WorkBuddyLink",
+      "url": "https://workbuddylink.com/",
+      "description": "基于 WorkBuddy 官方产品能力与 FDE 交付支持，面向企业客户与渠道伙伴的 B2B 落地入口站，提供 WorkBuddy 专项培训、业务场景评估、企业版采购与部署实施、定制化方案设计与持续应用陪跑。",
+      "parentOrganization": { "@id": "https://nexfde.com/#org", "name": "NexFDE" },
+      "sameAs": ["https://nexfde.com"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "Lu@NexFDE.com",
+        "contactType": "sales",
+        "availableLanguage": ["zh-CN"]
+      },
+      "areaServed": "CN"
+    },
+    {
+      "@type": "LearningResource",
+      "@id": "https://workbuddylink.com/gov.html#kb",
+      "name": "政务 WorkBuddy 共学知识库",
+      "description": "面向全国公务员的 WorkBuddy 上手与应用开源知识库：三分钟上手、部门场景矩阵、提示词模板与合规红线，让每位公务员 0→1 用 AI 提效。",
+      "isAccessibleForFree": true,
+      "inLanguage": "zh-CN",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "url": "https://github.com/ActionThinker/gov-workbuddy",
+      "creator": { "@type": "Person", "name": "陈露", "alternateName": "ActionThinker", "url": "https://github.com/ActionThinker" },
+      "audience": { "@type": "EducationalAudience", "educationalRole": "公务员" },
+      "teaches": ["三分钟上手 WorkBuddy", "部门场景矩阵", "政务提示词模板", "政务 AI 合规红线"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://workbuddylink.com/gov.html#service",
+      "name": "政务 AI 提效共学与培训服务",
+      "provider": { "@id": "https://workbuddylink.com/#org" },
+      "serviceType": ["开源知识库", "政务 AI 培训", "0→1 上手辅导"],
+      "offers": [
+        { "@type": "Offer", "name": "开源知识库访问", "price": "0", "priceCurrency": "CNY" },
+        { "@type": "Offer", "name": "政务 AI 培训邀约", "category": "培训" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://workbuddylink.com/gov.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "政务 WorkBuddy 知识库是什么？面向谁？",
+          "acceptedAnswer": { "@type": "Answer", "text": "面向全国公务员的 WorkBuddy 上手与应用开源知识库（发起人陈露 @ActionThinker）：给 AI 小白照着做就能上手，给各部门按职能找到自己的应用场景，给所有人既能用、也能贡献案例，形成裂变。" }
+        },
+        {
+          "@type": "Question",
+          "name": "这个知识库和 WorkBuddyLink 是什么关系？",
+          "acceptedAnswer": { "@type": "Answer", "text": "知识库是公共开源项目，与任何商业实体无绑定；本展示页由 WorkBuddyLink 站点托管展示，并提供政务 AI 培训邀约入口。知识库内容免费开源，培训为可选服务。" }
+        },
+        {
+          "@type": "Question",
+          "name": "公务员用 AI 提效，怎么 0→1 上手？",
+          "acceptedAnswer": { "@type": "Answer", "text": "三步：先读合规红线；再三分钟上手（打开 WorkBuddy → 说人话 → 给材料 → 拿初稿 → 人工核对）；最后找到所在部门的场景卡照着做。提示词公式：角色 + 任务 + 材料 + 格式 + 约束。" }
+        },
+        {
+          "@type": "Question",
+          "name": "政务场景用 AI 有哪些合规红线？",
+          "acceptedAnswer": { "@type": "Answer", "text": "三条绝对红线：涉密材料一律不上传公有云 AI（物理隔离）；先脱敏再使用（去除实名、证件号、联系方式等）；AI 不替代责任（政策表述、数据结论、对外行文必须人工复核留痕）。一句话守则：能公开的，脱敏后用；涉密的，物理隔离；AI 出的，人复核。" }
+        },
+        {
+          "@type": "Question",
+          "name": "我的部门没有对应场景卡怎么办？",
+          "acceptedAnswer": { "@type": "Answer", "text": "先用通用五式提示词跑通常用任务（纪要整理、长文提炼、公文初稿、数据说明、大白话改写）；再按模板提交一张场景卡（Fork 仓库 → 提 Pull Request），帮助全国同行。" }
+        },
+        {
+          "@type": "Question",
+          "name": "知识库里的提示词可以直接复制使用吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。模板按「角色 + 任务 + 材料 + 格式 + 约束」设计，替换【】占位即可；使用前材料先去除实名，AI 产出须人工复核。" }
+        },
+        {
+          "@type": "Question",
+          "name": "知识库的成效数据可信吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "成效为示例数据、可核验，尽量量化；无法量化的会注明。请以你自己的实际使用结果为准。" }
+        },
+        {
+          "@type": "Question",
+          "name": "知识库是免费的吗？可以商用吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "免费开源。内容采用 CC BY-SA 4.0（署名 + 相同方式共享），引用请署名「陈露 @ActionThinker 发起」；Skill / 智能体源码采用 MIT 协议。" }
+        },
+        {
+          "@type": "Question",
+          "name": "知识库怎么持续更新？我能参与共建吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "通过 GitHub PR 投稿（场景卡 / 案例 / 提示词），维护者按「不涉密、可复现、不夸大、格式规范」审核。本展示页每月同步一次，合规红线变更 24 小时内紧急同步。" }
+        },
+        {
+          "@type": "Question",
+          "name": "知识库和政务 AI 培训是什么关系？",
+          "acceptedAnswer": { "@type": "Answer", "text": "互补关系：知识库适合免费自学起步；需要集中培训、现场陪跑时，可了解 WorkBuddyLink 政务数字办公应用培训，由 WorkBuddyLink 生态专家团队交付，已为政府各级部门开展多次百人规模履职提效 AI 专项培训。" }
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://workbuddylink.com/gov.html#article",
+      "headline": "公务员 AI 提效：政务 WorkBuddy 开源知识库 0→1 上手",
+      "datePublished": "2026-08-28",
+      "dateModified": "2026-08-28",
+      "inLanguage": "zh-CN",
+      "author": { "@id": "https://workbuddylink.com/#org" },
+      "publisher": { "@id": "https://workbuddylink.com/#org" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://workbuddylink.com/gov.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://workbuddylink.com/" },
+        { "@type": "ListItem", "position": 2, "name": "政务知识库", "item": "https://workbuddylink.com/gov.html" }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23101E26'/%3E%3Ccircle cx='10' cy='16' r='4.5' fill='%2328b894'/%3E%3Ccircle cx='22' cy='16' r='4.5' fill='%23E8590C'/%3E%3Cpath d='M14.5 16h3' stroke='%23D8E2DE' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101E26;
+  --ink-2:#0A141A;
+  --teal:#28b894;
+  --teal-deep:#1B7F6B;
+  --teal-soft:#E2F4F0;
+  --coral:#E8590C;
+  --coral-deep:#C94D08;
+  --coral-soft:#FDEBE0;
+  --bg:#F6F8F7;
+  --bg-alt:#EDF2F0;
+  --card:#FFFFFF;
+  --text:#1A2B27;
+  --text-muted:#5F6F6A;
+  --border:#D8E2DE;
+  --white:#FFFFFF;
+  --radius:12px;
+  --radius-lg:16px;
+  --shadow:0 8px 24px rgba(16,30,38,.08);
+  --shadow-lg:0 16px 40px rgba(16,30,38,.14);
+  --container:1100px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{
+  font-family:'Inter',system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wl-container{max-width:var(--container);margin:0 auto;padding:0 24px}
+.wl-section{padding:110px 0}
+.wl-section-alt{background:var(--bg-alt)}
+.wl-section-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);
+}
+.wl-section-label::before{content:"";width:24px;height:2px;background:var(--teal);border-radius:2px}
+.wl-title{font-size:clamp(26px,4vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1.3;margin:14px 0 16px;color:var(--ink)}
+.wl-lead{font-size:clamp(16px,2vw,18px);color:var(--text-muted);max-width:720px}
+.wl-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:28px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.wl-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--teal)}
+.wl-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;
+  border:1px solid transparent;cursor:pointer;text-decoration:none;
+  transition:all .2s ease;
+}
+.wl-btn-primary{background:var(--coral);color:#fff}
+.wl-btn-primary:hover{background:var(--coral-deep);transform:translateY(-1px);box-shadow:0 8px 20px rgba(232,89,12,.3)}
+.wl-btn-ghost{border-color:rgba(255,255,255,.35);color:#fff;background:transparent}
+.wl-btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.wl-btn-dark{background:var(--ink);color:#fff}
+.wl-btn-dark:hover{background:var(--teal-deep)}
+.wl-btn-outline{border-color:var(--teal);color:var(--teal-deep);background:transparent}
+.wl-btn-outline:hover{background:var(--teal-soft)}
+
+/* ── Nav ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:64px;
+  background:rgba(16,30,38,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(216,226,222,.14);
+}
+.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:18px;letter-spacing:-.01em}
+.brand-mark{width:30px;height:30px;flex:none}
+.brand-mark svg{width:100%;height:100%}
+.nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+.nav-links a{
+  color:rgba(255,255,255,.82);text-decoration:none;font-size:14px;font-weight:500;
+  padding:8px 12px;border-radius:8px;transition:all .2s ease;
+}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-cta{padding:9px 18px;font-size:14px}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;border-radius:2px;transition:all .25s ease}
+.nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav.open .nav-toggle span:nth-child(2){opacity:0}
+.nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1024px){
+  .nav-inner{gap:12px}
+  .nav-links a{font-size:13px;padding:8px 8px}
+  .nav-cta{padding:8px 14px;font-size:13px}
+}
+@media(max-width:860px){
+  .nav-links{
+    position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;
+    background:var(--ink);padding:12px 20px 20px;gap:2px;border-bottom:1px solid rgba(216,226,222,.14);
+    display:none;
+  }
+  .nav.open .nav-links{display:flex}
+  .nav-links a{padding:12px;font-size:15px}
+  .brand{font-size:15.5px}
+  .nav-cta{padding:8px 12px;font-size:13px;white-space:nowrap}
+  .nav-toggle{display:block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:8px}
+}
+@media(max-width:350px){.brand-text{display:none}}
+
+/* ── Hero ── */
+.hero{
+  position:relative;background:var(--ink);color:#fff;overflow:hidden;
+  padding:160px 0 110px;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(600px 400px at 78% 22%,rgba(40,184,148,.16),transparent 60%),
+    radial-gradient(500px 360px at 8% 88%,rgba(232,89,12,.10),transparent 60%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;inset:auto 0 0 0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(40,184,148,.5),transparent);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(40,184,148,.14);border:1px solid rgba(40,184,148,.35);
+  color:var(--teal);font-size:13px;font-weight:600;padding:7px 14px;border-radius:100px;margin-bottom:22px;
+}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(40,184,148,.25)}
+.hero h1{font-size:clamp(30px,4.6vw,46px);font-weight:800;letter-spacing:-.025em;line-height:1.25;margin-bottom:20px}
+.hero h1 .accent{color:var(--teal)}
+.hero-sub{font-size:clamp(15px,1.8vw,18px);color:rgba(255,255,255,.75);max-width:560px;margin-bottom:20px}
+.hero-note{font-size:14px;color:rgba(255,255,255,.55);max-width:560px;margin-bottom:34px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-meta{
+  display:flex;gap:26px;margin-top:44px;padding-top:26px;
+  border-top:1px solid rgba(216,226,222,.14);flex-wrap:wrap;
+}
+.hero-meta .m-item{display:flex;flex-direction:column;gap:2px}
+.hero-meta .m-num{font-size:22px;font-weight:700;color:#fff}
+.hero-meta .m-label{font-size:12.5px;color:rgba(255,255,255,.55)}
+.hero-visual{position:relative}
+.hero-ladder{width:100%;max-width:430px;margin:0 auto;display:block}
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero{padding:130px 0 80px}
+}
+
+/* ── Generic grids ── */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){.grid-2,.grid-3{grid-template-columns:1fr}}
+@media(max-width:560px){.grid-4{grid-template-columns:1fr}}
+
+/* ── Section intro block ── */
+.wl-intro{margin-bottom:48px}
+.wl-intro.center{text-align:center}
+.wl-intro.center .wl-lead{margin:0 auto}
+
+/* ── Card primitives ── */
+.tier-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--teal-deep);background:var(--teal-soft);padding:5px 11px;border-radius:100px;
+}
+.tier-badge.coral{color:var(--coral);background:var(--coral-soft)}
+.tier-goal{font-size:14px;color:var(--text-muted);margin-bottom:6px}
+.syllabus-list{list-style:none;display:grid;gap:8px;margin-bottom:22px}
+.syllabus-list li{font-size:13.5px;color:var(--text-muted);padding-left:18px;position:relative}
+.syllabus-list li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--teal)}
+.syllabus-list.coral li::before{background:var(--coral)}
+.gov-card{border:1px solid var(--coral);background:linear-gradient(180deg,var(--coral-soft),#fff)}
+.value-card{position:relative;padding:30px}
+.value-card .v-icon{width:48px;height:48px;border-radius:12px;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.value-card .v-icon svg{width:24px;height:24px;stroke:var(--teal-deep)}
+.value-card h3{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.value-card p{font-size:14.5px;color:var(--text-muted)}
+.case-heading{
+  display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--teal-deep);text-transform:uppercase;margin:52px 0 18px;
+}
+.case-heading::after{content:"";flex:1;height:1px;background:var(--border)}
+.aud-card .a-icon{width:46px;height:46px;border-radius:12px;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.aud-card .a-icon svg{width:23px;height:23px;stroke:var(--teal-deep)}
+.aud-card h3{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.aud-card p{font-size:14px;color:var(--text-muted);margin-bottom:10px}
+.aud-card .a-fit{display:inline-block;font-size:11.5px;font-weight:700;color:var(--teal-deep);background:var(--teal-soft);padding:4px 10px;border-radius:100px}
+.trainer-note{
+  margin-top:24px;font-size:13.5px;color:var(--text-muted);background:var(--bg-alt);
+  border-radius:var(--radius);padding:16px 20px;
+}
+
+/* ── Delivery flow (6-step) ── */
+.flow-6{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:40px}
+.flow-6 .fstep{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 18px;position:relative}
+.flow-6 .fstep .fnum{
+  width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-bottom:14px;
+}
+.flow-6 .fstep:nth-child(4) .fnum{background:var(--coral)}
+.flow-6 .fstep h4{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.flow-6 .fstep p{font-size:12.5px;color:var(--text-muted)}
+.flow-6 .fstep .f-link{font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none}
+.flow-6 .fstep .f-link:hover{text-decoration:underline}
+@media(max-width:1024px){.flow-6{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.flow-6{grid-template-columns:1fr}}
+
+/* ── FAQ ── */
+.faq-list{max-width:780px;margin:0 auto;display:grid;gap:12px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:20px 24px;cursor:pointer;font-size:16px;font-weight:600;color:var(--ink);
+  transition:background .2s ease;
+}
+.faq-q:hover{background:var(--bg-alt)}
+.faq-q .faq-ico{flex:none;width:22px;height:22px;position:relative}
+.faq-q .faq-ico::before,.faq-q .faq-ico::after{content:"";position:absolute;background:var(--teal-deep);border-radius:2px;transition:all .25s ease}
+.faq-q .faq-ico::before{width:14px;height:2px;top:10px;left:4px}
+.faq-q .faq-ico::after{width:2px;height:14px;top:4px;left:10px}
+.faq-item.open .faq-ico::after{transform:scaleY(0)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 24px 22px;font-size:15px;color:var(--text-muted)}
+
+/* ── Final CTA ── */
+.final-cta{position:relative;background:var(--ink);color:#fff;overflow:hidden}
+.final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 380px at 50% 0%,rgba(40,184,148,.18),transparent 65%);pointer-events:none}
+.final-cta .wl-container{position:relative;text-align:center}
+.final-cta h2{font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.3;margin-bottom:18px;max-width:760px;margin-left:auto;margin-right:auto}
+.final-cta p{color:rgba(255,255,255,.72);max-width:620px;margin:0 auto 36px;font-size:16px}
+.final-cta .hero-ctas{justify-content:center}
+
+/* ── Footer ── */
+.footer{background:var(--ink-2);color:rgba(255,255,255,.72);font-size:14px}
+.footer-top{padding:64px 0 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.footer-brand .brand{margin-bottom:16px}
+.footer-brand p{font-size:13.5px;max-width:340px;line-height:1.8}
+.footer h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:16px}
+.footer-links{list-style:none;display:grid;gap:10px}
+.footer-links a{color:rgba(255,255,255,.66);text-decoration:none;font-size:14px;transition:color .2s}
+.footer-links a:hover{color:var(--teal)}
+.footer-bottom{border-top:1px solid rgba(216,226,222,.12);padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px}
+.footer-ai{display:flex;align-items:center;gap:8px}
+.footer-ai .badge{
+  background:rgba(40,184,148,.14);border:1px solid rgba(40,184,148,.3);color:var(--teal);
+  font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:.04em;
+}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
+
+/* ── Animations ── */
+.wl-animate{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.wl-animate.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.wl-animate{opacity:1;transform:none;transition:none}}
+
+/* ── Mobile responsive fixes ── */
+@media(max-width:860px){
+  .form-grid{grid-template-columns:1fr}
+  .form-field{min-width:0}
+  .contact-panel{padding:28px 22px}
+}
+@media(max-width:560px){
+  .wl-container{padding:0 16px}
+  .wl-section{padding:72px 0}
+  .hero{padding:118px 0 64px}
+  .wl-card{padding:22px 18px}
+  .path-col{padding:26px 20px}
+  .wl-converge{padding:26px 22px;gap:16px}
+  .contact-panel{padding:24px 18px}
+  .faq-q{padding:16px;font-size:15px}
+  .faq-a p{padding:0 16px 18px}
+  .hero-ctas .wl-btn{width:100%}
+  .form-actions .wl-btn{width:100%}
+  .hero-meta{gap:14px 22px}
+  .modal-card{padding:26px 20px}
+  .trainer-card{padding:28px 20px}
+  .cred-item{padding:20px 18px}
+  .course-cta{flex-direction:column;gap:10px}
+}
+
+/* ── Gov theme overrides（政务蓝独立视觉，仅作用于 body.gov-theme）── */
+body.gov-theme{
+  --ink:#0F2A4D;
+  --ink-2:#0B1D33;
+  --teal:#1d4e89;
+  --teal-deep:#16396B;
+  --teal-soft:#E3EBF5;
+  --bg:#F5F8FC;
+  --bg-alt:#E9EFF7;
+  --border:#C9D6E6;
+}
+body.gov-theme .nav{background:rgba(15,32,58,.82)}
+body.gov-theme .hero::before{
+  background:
+    radial-gradient(600px 400px at 78% 22%,rgba(47,125,196,.22),transparent 60%),
+    radial-gradient(500px 360px at 8% 88%,rgba(15,157,143,.12),transparent 60%);
+}
+body.gov-theme .hero::after{background:linear-gradient(90deg,transparent,rgba(47,125,196,.5),transparent)}
+body.gov-theme .hero-badge{background:rgba(47,125,196,.16);border-color:rgba(47,125,196,.4)}
+body.gov-theme .hero-badge .dot{box-shadow:0 0 0 3px rgba(47,125,196,.28)}
+body.gov-theme .final-cta::before{background:radial-gradient(700px 380px at 50% 0%,rgba(47,125,196,.22),transparent 65%)}
+body.gov-theme .footer-ai .badge{background:rgba(47,125,196,.16);border-color:rgba(47,125,196,.35)}
+body.gov-theme .flow-6 .fstep .fnum{background:var(--teal)}
+body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
+
+/* ── Gov components ── */
+.wl-btn-gov{background:var(--teal);color:#fff}
+.wl-btn-gov:hover{background:var(--teal-deep);transform:translateY(-1px);box-shadow:0 8px 20px rgba(29,78,137,.3)}
+.gov-banner-sec{padding:44px 0;background:var(--bg-alt)}
+.gov-banner{background:#FFF7ED;border:1px solid #F3D2B3;border-left:5px solid #C2703D;border-radius:var(--radius);padding:26px 28px}
+.gov-banner-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:16px;font-weight:700;color:#7C4A1E;margin-bottom:14px}
+.gb-tag{font-size:11px;font-weight:700;color:#C2703D;background:#FDEBD8;border:1px solid #F3D2B3;padding:3px 10px;border-radius:100px;letter-spacing:.06em}
+.gb-list{list-style:none;display:grid;gap:8px;margin-bottom:14px}
+.gb-list li{font-size:14px;color:#6B4A28;padding-left:20px;position:relative}
+.gb-list li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:#C2703D}
+.gb-rule{font-size:14px;color:#7C4A1E;background:#FDEBD8;border-radius:8px;padding:10px 14px;margin-bottom:16px}
+.gov-banner .gov-banner-acked{display:none;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:#7C4A1E}
+.gov-banner.acked .gov-banner-main{display:none}
+.gov-banner.acked .gov-banner-acked{display:flex}
+.gb-expand{font-size:13px;color:#16396B;font-weight:600;text-decoration:underline;cursor:pointer}
+.track-card{display:flex;flex-direction:column}
+.track-card h3{font-size:19px;font-weight:700;color:var(--ink);margin:10px 0 8px}
+.track-self{border-top:4px solid var(--teal)}
+.track-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:20px;align-items:center}
+.gb-link{font-size:13.5px;font-weight:600;color:var(--teal-deep);text-decoration:none}
+.gb-link:hover{text-decoration:underline}
+.prompt-card{padding:24px}
+.pc-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.pc-head h3{font-size:16px;font-weight:700;color:var(--ink)}
+.pc-tag{font-size:11px;font-weight:700;color:var(--teal-deep);background:var(--teal-soft);padding:4px 10px;border-radius:100px}
+.prompt-code{background:var(--ink);color:#E8EEF7;border-radius:10px;padding:16px 18px;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:13px;line-height:1.75;white-space:pre-wrap;word-break:break-word;margin-bottom:14px}
+.prompt-copy{font-size:13px;padding:8px 18px}
+.prompt-copy.copied{background:var(--teal);color:#fff;border-color:var(--teal)}
+.pc-note{font-size:12.5px;color:var(--text-muted);margin-top:18px;text-align:center}
+.dept-mini{padding:20px 22px}
+.dm-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.dm-head h3{font-size:15.5px;font-weight:700;color:var(--ink)}
+.dm-badge{font-size:10.5px;font-weight:700;color:#C2703D;background:#FDEBD8;border:1px solid #F3D2B3;padding:2px 8px;border-radius:100px;white-space:nowrap}
+.dm-tasks{font-size:13px;color:var(--text-muted)}
+.dm-cta{background:var(--teal-soft);border-color:var(--teal);text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;padding:20px 22px}
+.dm-cta h3{font-size:15.5px;font-weight:700;color:var(--ink)}
+.dm-cta p{font-size:13px;color:var(--text-muted)}
+.up-card{display:flex;flex-direction:column}
+.up-card h3{font-size:17px;font-weight:700;color:var(--ink);margin:10px 0 8px}
+.up-card p{font-size:14px;color:var(--text-muted);margin-bottom:8px}
+.up-card .up-cta{margin-top:auto;padding-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+.up-steps{list-style:none;display:grid;gap:7px;margin-bottom:10px}
+.up-steps li{font-size:13.5px;color:var(--text-muted);padding-left:18px;position:relative}
+.up-steps li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.cl-list{list-style:none;display:grid;gap:10px;max-width:780px;margin:0 auto}
+.cl-list li{font-size:14px;color:var(--text-muted);background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;display:flex;gap:12px;flex-wrap:wrap}
+.cl-list li .cl-date{font-weight:700;color:var(--teal-deep);white-space:nowrap}
+.cap-ico{font-size:20px;font-weight:800;color:var(--teal-deep)}
+.gov-bridge{background:var(--ink);padding:26px 0}
+.gov-bridge .wl-container{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+.gov-bridge p{color:rgba(255,255,255,.75);font-size:15px}
+.gov-bridge a{color:var(--coral);font-weight:600;text-decoration:none;font-size:15px}
+.gov-bridge a:hover{text-decoration:underline}
+.kb-sign{font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:-.01em}
+</style>
+</head>
+<body class="gov-theme" data-fp="wbl-20260828-7f3a91c2">
+
+<!-- ───────── Nav ───────── -->
+<nav class="nav" id="nav">
+  <div class="wl-container nav-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="#101E26"/>
+          <circle cx="10" cy="16" r="4.5" fill="#28b894"/>
+          <circle cx="22" cy="16" r="4.5" fill="#E8590C"/>
+          <path d="M14.5 16h3" stroke="#D8E2DE" stroke-width="1.6"/>
+        </svg>
+      </span>
+      <span class="brand-text">WorkBuddy<span style="color:var(--teal)">Link</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">首页</a></li>
+      <li><a href="#guide">0→1 上手</a></li>
+      <li><a href="gov-scenarios.html">场景矩阵</a></li>
+      <li><a href="#prompts">提示词</a></li>
+      <li><a href="#compliance">合规</a></li>
+      <li><a href="#update">更新</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="wl-btn wl-btn-primary nav-cta" href="training.html?tab=gov#contact">政务培训邀约</a>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ───────── Hero ───────── -->
+<section class="hero" id="home">
+  <div class="wl-container hero-inner">
+    <div class="hero-copy wl-animate">
+      <span class="hero-badge"><span class="dot"></span>公共开源 · CC BY-SA 4.0 · 陈露 @ActionThinker 发起</span>
+      <h1>公务员 AI 提效 0→1 入门：<br><span class="accent">WorkBuddy 政务开源知识库</span></h1>
+      <p class="hero-sub">面向全国公务员的 WorkBuddy 上手与应用开源知识库——从三分钟上手、部门场景矩阵、提示词模板到合规红线，照着做就能用；从个人提效到组织提效，再到生态共建。</p>
+      <p class="hero-note">本页为公共开源内容；需要体系化培训时，可了解 WorkBuddyLink 政务数字办公培训。</p>
+      <div class="hero-ctas">
+        <a href="#guide" class="wl-btn wl-btn-gov">开始 0→1 上手</a>
+        <a href="gov-scenarios.html" class="wl-btn wl-btn-ghost">查看部门场景矩阵</a>
+      </div>
+      <div class="hero-meta">
+        <div class="m-item"><span class="m-num">10+</span><span class="m-label">业务部门场景</span></div>
+        <div class="m-item"><span class="m-num">3 张</span><span class="m-label">种子场景卡 · 可照做</span></div>
+        <div class="m-item"><span class="m-num">CC BY-SA 4.0</span><span class="m-label">开源协议 · 自由使用</span></div>
+        <div class="m-item"><span class="m-num" id="ghStars">加载中</span><span class="m-label">GitHub Star · 欢迎 Star</span></div>
+      </div>
+    </div>
+    <div class="hero-visual wl-animate" aria-hidden="true">
+      <svg class="hero-ladder" viewBox="0 0 400 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="govglow" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#2f7dc4" stop-opacity=".22"/><stop offset="1" stop-color="#2f7dc4" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="200" cy="190" r="150" fill="url(#govglow)"/>
+        <rect x="70" y="38" width="260" height="306" rx="14" fill="#0F2E3C" stroke="#2f7dc4" stroke-width="1.6"/>
+        <text x="200" y="70" text-anchor="middle" fill="#fff" font-size="14" font-weight="700" font-family="Inter,sans-serif">政务 WorkBuddy 共学知识库</text>
+        <text x="200" y="88" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="10" font-family="Inter,sans-serif">gov-workbuddy · CC BY-SA 4.0</text>
+        <g>
+          <rect x="88" y="104" width="224" height="40" rx="9" fill="#0F2A4D" stroke="#2f7dc4" stroke-width="1.2"/>
+          <text x="104" y="121" fill="#2f7dc4" font-size="11" font-weight="700" font-family="Inter,sans-serif">①</text>
+          <text x="122" y="129" fill="#fff" font-size="12" font-family="Inter,sans-serif">0→1 上手 · 三分钟会用</text>
+        </g>
+        <g>
+          <rect x="88" y="152" width="224" height="40" rx="9" fill="#0F2A4D" stroke="#2f7dc4" stroke-width="1.2"/>
+          <text x="104" y="169" fill="#2f7dc4" font-size="11" font-weight="700" font-family="Inter,sans-serif">②</text>
+          <text x="122" y="177" fill="#fff" font-size="12" font-family="Inter,sans-serif">部门场景矩阵 × 10+ 部门</text>
+        </g>
+        <g>
+          <rect x="88" y="200" width="224" height="40" rx="9" fill="#0F2A4D" stroke="#2f7dc4" stroke-width="1.2"/>
+          <text x="104" y="217" fill="#2f7dc4" font-size="11" font-weight="700" font-family="Inter,sans-serif">③</text>
+          <text x="122" y="225" fill="#fff" font-size="12" font-family="Inter,sans-serif">提示词模板 · 拿走即用</text>
+        </g>
+        <g>
+          <rect x="88" y="248" width="224" height="40" rx="9" fill="#0F2A4D" stroke="#C2703D" stroke-width="1.2"/>
+          <text x="104" y="265" fill="#C2703D" font-size="11" font-weight="700" font-family="Inter,sans-serif">④</text>
+          <text x="122" y="273" fill="#fff" font-size="12" font-family="Inter,sans-serif">合规红线 · 强制首读</text>
+        </g>
+        <rect x="88" y="300" width="70" height="26" rx="13" fill="rgba(47,125,196,.16)" stroke="#2f7dc4" stroke-width="1.2"/>
+        <text x="123" y="317" text-anchor="middle" fill="#2f7dc4" font-size="10.5" font-family="Inter,sans-serif">办公室</text>
+        <rect x="165" y="300" width="70" height="26" rx="13" fill="rgba(47,125,196,.16)" stroke="#2f7dc4" stroke-width="1.2"/>
+        <text x="200" y="317" text-anchor="middle" fill="#2f7dc4" font-size="10.5" font-family="Inter,sans-serif">招商</text>
+        <rect x="242" y="300" width="70" height="26" rx="13" fill="rgba(47,125,196,.16)" stroke="#2f7dc4" stroke-width="1.2"/>
+        <text x="277" y="317" text-anchor="middle" fill="#2f7dc4" font-size="10.5" font-family="Inter,sans-serif">司法</text>
+        <text x="200" y="330" text-anchor="middle" fill="rgba(255,255,255,.45)" font-size="9.5" font-family="Inter,sans-serif">3 张种子场景卡 · 照做即可</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 合规横幅（强制首读）───────── -->
+<section class="gov-banner-sec" id="compliance">
+  <div class="wl-container">
+    <div class="gov-banner" id="govBanner">
+      <div class="gov-banner-main">
+        <div class="gov-banner-head">政务场景使用 AI 前，请先读这三条红线 <span class="gb-tag">强制首读</span></div>
+        <ol class="gb-list">
+          <li><strong>涉密材料一律不上传</strong>：标注「秘密 / 机密 / 绝密」及内部定为涉密的文件数据，绝不输入任何公有云 AI 工具，物理隔离。</li>
+          <li><strong>先脱敏再使用</strong>：涉及个人隐私、企业商业秘密、案件当事人等敏感信息，使用前去除实名、证件号、联系方式等可直接定位的字段。</li>
+          <li><strong>AI 不替代责任与判断</strong>：AI 生成的政策表述、数据结论、对外行文，必须由具备权限的人员人工复核、确认、留痕。</li>
+        </ol>
+        <p class="gb-rule">一句话守则：<strong>能公开的，脱敏后用；涉密的，物理隔离；AI 出的，人复核。</strong></p>
+        <button class="wl-btn wl-btn-dark" id="govBannerOk" type="button">我已阅读，开始使用</button>
+      </div>
+      <div class="gov-banner-acked">
+        <span>✓ 合规红线已读</span>
+        <strong>能公开的，脱敏后用；涉密的，物理隔离；AI 出的，人复核。</strong>
+        <a href="#compliance" class="gb-expand" id="govBannerExpand">重新查看</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 双轨入口 ───────── -->
+<section class="wl-section" id="tracks">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">两种用法</span>
+      <h2 class="wl-title">免费自学，或邀约集中培训</h2>
+      <p class="wl-lead">知识库面向所有人开放、零门槛。自己照着做，或为单位邀约体系化培训，两条路互不干扰。</p>
+    </div>
+    <div class="grid-2">
+      <div class="wl-card track-card track-self wl-animate">
+        <div><span class="tier-badge">🟢 自学轨 · 免费开源</span></div>
+        <h3>自己照着做：0→1 上手指南</h3>
+        <p class="tier-goal">读合规红线 → 三分钟上手 → 找到你部门的场景 → 复制提示词开用。不要求任何技术背景。</p>
+        <ul class="syllabus-list">
+          <li>3 张种子场景卡：办公室 / 招商 / 司法，照做即可跑通</li>
+          <li>10+ 部门场景矩阵，按部门找用法</li>
+          <li>提示词模板拿走即用，不用懂 prompt 工程</li>
+        </ul>
+        <div class="track-ctas">
+          <a href="#guide" class="wl-btn wl-btn-gov">开始 0→1 上手</a>
+          <a href="gov-scenarios.html" class="wl-btn wl-btn-outline">查看部门场景矩阵</a>
+          <a href="https://github.com/ActionThinker/gov-workbuddy" class="gb-link" target="_blank" rel="noopener">访问 GitHub 仓库 →</a>
+        </div>
+      </div>
+      <div class="wl-card track-card gov-card wl-animate">
+        <div><span class="tier-badge coral">🔵 邀约轨 · 深度交流</span></div>
+        <h3>需要体系化辅导：政务数字办公培训</h3>
+        <p class="tier-goal">知识库适合自学起步；需要为团队做集中培训、现场陪跑时，可了解面向政务机构及事业单位干部的 WorkBuddy 数字办公应用培训。已为政府各级部门开展多次百人规模履职提效 AI 专项培训。</p>
+        <ul class="syllabus-list coral">
+          <li>公文材料起草与改写</li>
+          <li>会议纪要与工作简报生成</li>
+          <li>数据汇总与报表整理</li>
+        </ul>
+        <div class="track-ctas">
+          <a href="training.html?tab=gov#contact" class="wl-btn wl-btn-primary">政务 AI 培训邀约</a>
+        </div>
+      </div>
+    </div>
+    <p class="pc-note">先自学，再按需邀约——知识库与培训互为补充。</p>
+  </div>
+</section>
+
+<!-- ───────── 三阶价值 ───────── -->
+<section class="wl-section wl-section-alt" id="value">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">为什么做这个知识库</span>
+      <h2 class="wl-title">三阶价值：从个人提效到生态共建</h2>
+    </div>
+    <div class="grid-3">
+      <div class="wl-card value-card wl-animate">
+        <span class="tier-badge">L1 · 个人提效</span>
+        <div class="v-icon" aria-hidden="true" style="margin-top:16px"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+        <h3>把重复工作交给 WorkBuddy</h3>
+        <p>单名公务员：把重复性的文书、数据、会议工作交给 WorkBuddy，人均日省 1–2 小时。</p>
+      </div>
+      <div class="wl-card value-card wl-animate">
+        <span class="tier-badge">L2 · 组织提效</span>
+        <div class="v-icon" aria-hidden="true" style="margin-top:16px"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h3>场景标准化，流程复用</h3>
+        <p>处室 / 部门：把好用的场景标准化、流程复用，形成部门级「AI 工作法」。</p>
+      </div>
+      <div class="wl-card value-card wl-animate">
+        <span class="tier-badge">L3 · 生态共建</span>
+        <div class="v-icon" aria-hidden="true" style="margin-top:16px"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div>
+        <h3>全国政务 AI 共学生态</h3>
+        <p>跨地区 / 跨层级：全国案例池共享、Skill / 智能体开源、共学社群与讲师网络。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 0→1 向导 ───────── -->
+<section class="wl-section" id="guide">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">0→1 上手指南</span>
+      <h2 class="wl-title">三分钟上手：公务员零基础用 AI 提效</h2>
+      <p class="wl-lead">WorkBuddy 是一个办公 AI 助手——会写公文纪要、会读文件长文、会做表格图表。它出初稿，你来做主。</p>
+    </div>
+    <div class="flow-6">
+      <div class="fstep wl-animate"><div class="fnum">1</div><h4>打开</h4><p>登录 WorkBuddy 网页版，零安装，有浏览器就行</p></div>
+      <div class="fstep wl-animate"><div class="fnum">2</div><h4>说人话</h4><p>输入任务，如「把这段会议内容整理成纪要，按四栏表格输出」</p></div>
+      <div class="fstep wl-animate"><div class="fnum">3</div><h4>给材料</h4><p>把会议记录粘贴进去，或上传文件</p></div>
+      <div class="fstep wl-animate"><div class="fnum">4</div><h4>拿初稿</h4><p>几秒内得到结构化结果</p></div>
+      <div class="fstep wl-animate"><div class="fnum">5</div><h4>人工核对</h4><p>改错、补漏、确认事实——这一步不能省</p></div>
+      <div class="fstep wl-animate"><div class="fnum">→</div><h4>下一步</h4><p><a class="f-link" href="gov-scenarios.html">找你的部门场景 →</a></p></div>
+    </div>
+    <div class="case-heading wl-animate">核心能力地图</div>
+    <div class="grid-4">
+      <div class="wl-card aud-card wl-animate"><div class="a-icon cap-ico" aria-hidden="true">写</div><h3>写作 / 改稿</h3><p>公文初稿、汇报材料、通知、讲话稿</p><span class="a-fit">难度 ★</span></div>
+      <div class="wl-card aud-card wl-animate"><div class="a-icon cap-ico" aria-hidden="true">读</div><h3>长文提炼</h3><p>把 50 页政策文件读成 1 页要点</p><span class="a-fit">难度 ★</span></div>
+      <div class="wl-card aud-card wl-animate"><div class="a-icon cap-ico" aria-hidden="true">表</div><h3>表格 / 数据</h3><p>报表清洗、透视、异常标注</p><span class="a-fit">难度 ★★</span></div>
+      <div class="wl-card aud-card wl-animate"><div class="a-icon cap-ico" aria-hidden="true">图</div><h3>图表</h3><p>把数据变成柱状图 / 趋势图</p><span class="a-fit">难度 ★★</span></div>
+      <div class="wl-card aud-card wl-animate"><div class="a-icon cap-ico" aria-hidden="true">文</div><h3>文档处理</h3><p>多文档比对、合并、格式统一</p><span class="a-fit">难度 ★★</span></div>
+      <div class="wl-card aud-card wl-animate"><div class="a-icon cap-ico" aria-hidden="true">自</div><h3>自动化</h3><p>定时抓取 / 汇总 / 提醒</p><span class="a-fit">难度 ★★★</span></div>
+      <div class="wl-card aud-card wl-animate"><div class="a-icon cap-ico" aria-hidden="true">库</div><h3>知识库</h3><p>把单位制度建成可问答的知识库</p><span class="a-fit">难度 ★★★</span></div>
+      <div class="wl-card aud-card wl-animate"><div class="a-icon cap-ico" aria-hidden="true">技</div><h3>Skill / 智能体</h3><p>把重复工作做成「一键工具」</p><span class="a-fit">难度 ★★★★</span></div>
+    </div>
+    <p class="trainer-note wl-animate">提示词公式：<strong>好提示词 = 角色 + 任务 + 材料 + 格式 + 约束</strong>。例：「你是一位县政府办文秘，请把以下调研稿改成 800 字政务信息，材料如下……输出三段式、段首小标题；注意用语正式、不编造数据。」</p>
+  </div>
+</section>
+
+<!-- ───────── 提示词快捷复制区 ───────── -->
+<section class="wl-section wl-section-alt" id="prompts">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">提示词模板库</span>
+      <h2 class="wl-title">可直接复制的政务办公提示词</h2>
+      <p class="wl-lead">模板按「角色 + 任务 + 材料 + 格式 + 约束」设计，替换【】占位即可，拿走即用、不用懂 prompt 工程。使用前材料先去除实名。</p>
+    </div>
+    <div class="grid-2">
+      <div class="wl-card prompt-card wl-animate">
+        <div class="pc-head"><h3>纪要整理</h3><span class="pc-tag">通用五式</span></div>
+        <pre class="prompt-code" id="prompt-1">把以下会议内容整理成纪要，按「结论 / 待办 / 责任人 / 时限」四栏用表格输出，语言正式、不遗漏关键数字。</pre>
+        <button class="wl-btn wl-btn-outline prompt-copy" data-target="prompt-1" type="button">一键复制</button>
+      </div>
+      <div class="wl-card prompt-card wl-animate">
+        <div class="pc-head"><h3>长文提炼</h3><span class="pc-tag">通用五式</span></div>
+        <pre class="prompt-code" id="prompt-2">用 1 页纸概括以下文件：①核心内容 ②与本单位相关的条款 ③下一步建议动作。分三点输出，每条不超过 80 字。</pre>
+        <button class="wl-btn wl-btn-outline prompt-copy" data-target="prompt-2" type="button">一键复制</button>
+      </div>
+      <div class="wl-card prompt-card wl-animate">
+        <div class="pc-head"><h3>公文初稿</h3><span class="pc-tag">通用五式</span></div>
+        <pre class="prompt-code" id="prompt-3">以【单位全称】名义起草一份关于【事项】的【通知/函/报告】，包含：背景、具体要求、完成时限。正式公务用语，结构清晰。</pre>
+        <button class="wl-btn wl-btn-outline prompt-copy" data-target="prompt-3" type="button">一键复制</button>
+      </div>
+      <div class="wl-card prompt-card wl-animate">
+        <div class="pc-head"><h3>数据说明</h3><span class="pc-tag">通用五式</span></div>
+        <pre class="prompt-code" id="prompt-4">分析以下表格，指出：①异常项 ②可能原因 ③处置建议。用要点列出，不确定处标明"需核实"。</pre>
+        <button class="wl-btn wl-btn-outline prompt-copy" data-target="prompt-4" type="button">一键复制</button>
+      </div>
+      <div class="wl-card prompt-card wl-animate">
+        <div class="pc-head"><h3>大白话改写</h3><span class="pc-tag">通用五式</span></div>
+        <pre class="prompt-code" id="prompt-5">把以下政策条文改写成办事群众能看懂的说明，约 200 字，不用专业术语，可举例。</pre>
+        <button class="wl-btn wl-btn-outline prompt-copy" data-target="prompt-5" type="button">一键复制</button>
+      </div>
+      <div class="wl-card prompt-card wl-animate">
+        <div class="pc-head"><h3>督办台账</h3><span class="pc-tag">办公室</span></div>
+        <pre class="prompt-code" id="prompt-6">把以下工作部署整理成督办台账表格：事项 / 牵头部门 / 责任人 / 时限 / 当前进度 / 预警等级。进度缺失的标"待更新"。</pre>
+        <button class="wl-btn wl-btn-outline prompt-copy" data-target="prompt-6" type="button">一键复制</button>
+      </div>
+      <div class="wl-card prompt-card wl-animate">
+        <div class="pc-head"><h3>产业研究</h3><span class="pc-tag">招商</span></div>
+        <pre class="prompt-code" id="prompt-7">基于以下信息，梳理【某地】的产业链：上游/中游/下游环节、代表企业、招商缺口与建议。用结构化清单输出。</pre>
+        <button class="wl-btn wl-btn-outline prompt-copy" data-target="prompt-7" type="button">一键复制</button>
+      </div>
+      <div class="wl-card prompt-card wl-animate">
+        <div class="pc-head"><h3>合同审查</h3><span class="pc-tag">司法 / 法制</span></div>
+        <pre class="prompt-code" id="prompt-8">审查以下合同条款，列出：①风险点 ②对应的法律/合规依据 ③修改建议。不确定处标注"建议律师复核"。</pre>
+        <button class="wl-btn wl-btn-outline prompt-copy" data-target="prompt-8" type="button">一键复制</button>
+      </div>
+      <div class="wl-card prompt-card wl-animate">
+        <div class="pc-head"><h3>群众诉求归类</h3><span class="pc-tag">人社 / 民政</span></div>
+        <pre class="prompt-code" id="prompt-9">把以下群众诉求按主题归类（如：社保、就业、救助），每类给出高频问题与统一答复口径。</pre>
+        <button class="wl-btn wl-btn-outline prompt-copy" data-target="prompt-9" type="button">一键复制</button>
+      </div>
+    </div>
+    <p class="pc-note">完整提示词库在 <a href="https://github.com/ActionThinker/gov-workbuddy" target="_blank" rel="noopener" class="gb-link">GitHub 仓库</a> 持续扩充，也欢迎提交你的好提示词。</p>
+  </div>
+</section>
+
+<!-- ───────── 部门场景矩阵预览 ───────── -->
+<section class="wl-section" id="scenarios">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">部门场景矩阵</span>
+      <h2 class="wl-title">10+ 部门的应用场景总览</h2>
+      <p class="wl-lead">每个部门都能找到自己的应用场景。点击下方入口查看完整矩阵与 3 张种子场景卡详情。</p>
+    </div>
+    <div class="grid-3">
+      <div class="wl-card dept-mini wl-animate"><div class="dm-head"><h3>办公室 / 综合协调</h3><span class="dm-badge">种子卡</span></div><p class="dm-tasks">公文起草 · 会议纪要 · 督办台账 · 讲话稿</p></div>
+      <div class="wl-card dept-mini wl-animate"><div class="dm-head"><h3>发改 / 规划</h3></div><p class="dm-tasks">政策研判 · 可研摘要 · 数据填报 · 汇报材料</p></div>
+      <div class="wl-card dept-mini wl-animate"><div class="dm-head"><h3>财政 / 审计</h3></div><p class="dm-tasks">报表分析 · 预算说明 · 审计底稿整理</p></div>
+      <div class="wl-card dept-mini wl-animate"><div class="dm-head"><h3>人社 / 民政</h3></div><p class="dm-tasks">政策问答 · 群众诉求归类 · 办事指南</p></div>
+      <div class="wl-card dept-mini wl-animate"><div class="dm-head"><h3>招商 / 商务</h3><span class="dm-badge">种子卡</span></div><p class="dm-tasks">产业研究 · 企业画像 · 招商文案 · 对接话术</p></div>
+      <div class="wl-card dept-mini wl-animate"><div class="dm-head"><h3>司法 / 法制</h3><span class="dm-badge">种子卡</span></div><p class="dm-tasks">合同审查 · 普法材料 · 执法依据检索</p></div>
+      <div class="wl-card dept-mini wl-animate"><div class="dm-head"><h3>应急管理</h3></div><p class="dm-tasks">预案编写 · 舆情简报 · 值班要情</p></div>
+      <div class="wl-card dept-mini wl-animate"><div class="dm-head"><h3>政务服务 / 大数据</h3></div><p class="dm-tasks">流程优化 · 数据治理 · 办事指南统一</p></div>
+      <div class="wl-card dept-mini wl-animate"><div class="dm-head"><h3>宣传 / 网信</h3></div><p class="dm-tasks">新闻稿 · 政务新媒体 · 舆情研判</p></div>
+      <div class="wl-card dept-mini wl-animate"><div class="dm-head"><h3>纪检 / 巡察</h3></div><p class="dm-tasks">谈话提纲 · 问题清单 · 报告撰写</p></div>
+      <div class="wl-card dm-cta wl-animate">
+        <h3>你的部门还没覆盖？</h3>
+        <p>按模板提交一张场景卡，帮助全国同行。</p>
+        <a href="gov-scenarios.html#submit" class="wl-btn wl-btn-outline" style="padding:10px 20px;font-size:13.5px">查看贡献方式</a>
+      </div>
+    </div>
+    <div class="course-cta wl-animate">
+      <a href="gov-scenarios.html" class="wl-btn wl-btn-gov">查看完整场景矩阵与种子场景卡 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 更新迭代方法 ───────── -->
+<section class="wl-section wl-section-alt" id="update">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">持续生长</span>
+      <h2 class="wl-title">更新迭代：共建投稿与开源协议</h2>
+      <p class="wl-lead">知识库是一个自增长的飞轮：内容吸引使用者 → 使用者产出案例 → 案例反哺内容 → 贡献者成为推广者。</p>
+    </div>
+    <div class="grid-3">
+      <div class="wl-card up-card wl-animate">
+        <span class="tier-badge">共建投稿</span>
+        <h3>人人可贡献</h3>
+        <ul class="up-steps">
+          <li>Fork 仓库 → 新建分支</li>
+          <li>按模板提交场景卡 / 案例 / 提示词</li>
+          <li>提 Pull Request，描述部门 / 场景 / 地区 / 提效数据</li>
+          <li>审核四项：不涉密 · 可复现 · 不夸大 · 格式规范</li>
+        </ul>
+        <div class="up-cta">
+          <a href="https://github.com/ActionThinker/gov-workbuddy/blob/main/CONTRIBUTING.md" class="gb-link" target="_blank" rel="noopener">查看贡献指南 →</a>
+          <a href="https://github.com/ActionThinker/gov-workbuddy/blob/main/cases/template.md" class="gb-link" target="_blank" rel="noopener">场景卡模板 →</a>
+        </div>
+      </div>
+      <div class="wl-card up-card wl-animate">
+        <span class="tier-badge">更新节奏</span>
+        <h3>每月同步，红线即改</h3>
+        <ul class="up-steps">
+          <li>内容变更实时进入 GitHub 仓库（单一事实来源）</li>
+          <li>本展示页每月第一个工作日与仓库同步</li>
+          <li>合规红线变更：24 小时内紧急同步</li>
+          <li>共学协作渠道（乐享知识库）筹备中，上线后另行公告</li>
+        </ul>
+      </div>
+      <div class="wl-card up-card wl-animate">
+        <span class="tier-badge">开源协议</span>
+        <h3>自由使用，注明出处</h3>
+        <ul class="up-steps">
+          <li>内容采用 CC BY-SA 4.0（署名 + 相同方式共享）</li>
+          <li>Skill / 智能体源码采用 MIT</li>
+          <li>引用本库内容请署名「陈露 @ActionThinker 发起」</li>
+          <li>本库为通用方法与实践示例，不构成官方标准或法律意见</li>
+        </ul>
+      </div>
+    </div>
+    <div class="case-heading wl-animate">最近更新（数据更新于 2026-08）</div>
+    <ul class="cl-list wl-animate">
+      <li><span class="cl-date">2026-08-28</span><span>种子发布：3 张种子场景卡上线（办公室 / 招商 / 司法），照做即可跑通</span></li>
+      <li><span class="cl-date">2026-08-28</span><span>部门场景矩阵发布：10+ 业务部门应用场景总览</span></li>
+      <li><span class="cl-date">2026-08-28</span><span>提示词模板库发布：通用五式 + 4 条部门专用提示词</span></li>
+      <li><span class="cl-date">2026-08-28</span><span>0→1 上手指南与合规红线发布（合规强制首读）</span></li>
+      <li><span class="cl-date">2026-08-28</span><span>公开展示页上线：本页 + 部门场景矩阵页</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ───────── FAQ ───────── -->
+<section class="wl-section" id="faq">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">常见问题</span>
+      <h2 class="wl-title">关于政务知识库，你可能想问</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">政务 WorkBuddy 知识库是什么？面向谁？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>面向全国公务员的 WorkBuddy 上手与应用开源知识库（发起人陈露 @ActionThinker）：给 AI 小白照着做就能上手，给各部门按职能找到自己的应用场景，给所有人既能用、也能贡献案例，形成裂变。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">这个知识库和 WorkBuddyLink 是什么关系？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>知识库是公共开源项目，与任何商业实体无绑定；本展示页由 WorkBuddyLink 站点托管展示，并提供政务 AI 培训邀约入口。知识库内容免费开源，培训为可选服务。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">公务员用 AI 提效，怎么 0→1 上手？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>三步：先读合规红线；再三分钟上手（打开 WorkBuddy → 说人话 → 给材料 → 拿初稿 → 人工核对）；最后找到所在部门的场景卡照着做。提示词公式：<strong>角色 + 任务 + 材料 + 格式 + 约束</strong>。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">政务场景用 AI 有哪些合规红线？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>三条绝对红线：涉密材料一律不上传公有云 AI（物理隔离）；先脱敏再使用（去除实名、证件号、联系方式等）；AI 不替代责任（政策表述、数据结论、对外行文必须人工复核留痕）。一句话守则：<strong>能公开的，脱敏后用；涉密的，物理隔离；AI 出的，人复核。</strong></p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">我的部门没有对应场景卡怎么办？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>先用通用五式提示词跑通常用任务（纪要整理、长文提炼、公文初稿、数据说明、大白话改写）；再按模板提交一张场景卡（Fork 仓库 → 提 Pull Request），帮助全国同行。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">知识库里的提示词可以直接复制使用吗？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>可以。模板按「角色 + 任务 + 材料 + 格式 + 约束」设计，替换【】占位即可；使用前材料先去除实名，AI 产出须人工复核。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">知识库的成效数据可信吗？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>成效为示例数据、可核验，尽量量化；无法量化的会注明。请以你自己的实际使用结果为准。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">知识库是免费的吗？可以商用吗？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>免费开源。内容采用 CC BY-SA 4.0（署名 + 相同方式共享），引用请署名「陈露 @ActionThinker 发起」；Skill / 智能体源码采用 MIT 协议。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">知识库怎么持续更新？我能参与共建吗？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>通过 GitHub PR 投稿（场景卡 / 案例 / 提示词），维护者按「不涉密、可复现、不夸大、格式规范」审核。本展示页每月同步一次，合规红线变更 24 小时内紧急同步。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">知识库和政务 AI 培训是什么关系？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>互补关系：知识库适合免费自学起步；需要集中培训、现场陪跑时，可了解 WorkBuddyLink 政务数字办公应用培训，由 WorkBuddyLink 生态专家团队交付，已为政府各级部门开展多次百人规模履职提效 AI 专项培训。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 桥接 ───────── -->
+<div class="gov-bridge">
+  <div class="wl-container">
+    <p>需要集中培训或现场陪跑？</p>
+    <a href="training.html?tab=gov#contact">了解政务 AI 培训邀约 →</a>
+  </div>
+</div>
+
+<!-- ───────── Footer ───────── -->
+<footer class="footer">
+  <div class="wl-container footer-top">
+    <div class="footer-brand">
+      <div class="kb-sign">政务 WorkBuddy 共学知识库</div>
+      <p>面向全国公务员的 WorkBuddy 上手与应用开源知识库。公共开源项目，陈露 @ActionThinker 发起，CC BY-SA 4.0。内容为通用方法与实践示例，不构成官方标准或法律意见。</p>
+    </div>
+    <div>
+      <h4>快速入口</h4>
+      <ul class="footer-links">
+        <li><a href="/">首页</a></li>
+        <li><a href="training.html">培训课程</a></li>
+        <li><a href="gov-scenarios.html">部门场景矩阵</a></li>
+        <li><a href="https://github.com/ActionThinker/gov-workbuddy" target="_blank" rel="noopener">GitHub 仓库</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wl-container footer-bottom">
+    <span>© 2026 政务 WorkBuddy 共学知识库 · 陈露 @ActionThinker 发起</span>
+    <span>本站内容受版权保护，未经授权禁止抓取、复制或用于模型训练</span>
+    <span class="footer-ai"><span class="badge">AI-BUILT</span>本页面由 Claude 辅助构建 · 符合 EU AI Act 透明度披露</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* Nav toggle */
+  var nav=document.getElementById('nav');
+  var navToggle=document.getElementById('navToggle');
+  var navLinks=document.getElementById('navLinks');
+  navToggle.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+  navLinks.addEventListener('click',function(e){
+    if(e.target.closest('a')){nav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}
+  });
+  var navCta=document.querySelector('.nav-cta');
+  if(navCta){navCta.addEventListener('click',function(){nav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');});}
+
+  /* Scroll reveal */
+  var revealEls=document.querySelectorAll('.wl-animate');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});
+    },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el){io.observe(el);});
+  }else{revealEls.forEach(function(el){el.classList.add('visible');});}
+
+  /* FAQ accordion */
+  var faqs=document.querySelectorAll('.faq-item');
+  faqs.forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click',function(){
+      var wasOpen=item.classList.contains('open');
+      faqs.forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null;});
+      if(!wasOpen){
+        item.classList.add('open');
+        var a=item.querySelector('.faq-a');
+        a.style.maxHeight=a.scrollHeight+'px';
+      }
+    });
+  });
+
+  /* 合规横幅：localStorage 记忆（两页共用 key，一次阅读免扰）*/
+  var govBanner=document.getElementById('govBanner');
+  if(govBanner){
+    if(localStorage.getItem('wbl-gov-compliance')==='v1'){govBanner.classList.add('acked');}
+    document.getElementById('govBannerOk').addEventListener('click',function(){
+      localStorage.setItem('wbl-gov-compliance','v1');
+      govBanner.classList.add('acked');
+    });
+    document.getElementById('govBannerExpand').addEventListener('click',function(e){
+      e.preventDefault();
+      govBanner.classList.remove('acked');
+    });
+  }
+
+  /* 提示词一键复制（clipboard API + execCommand 降级）*/
+  var copyBtns=document.querySelectorAll('.prompt-copy');
+  copyBtns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var target=document.getElementById(btn.getAttribute('data-target'));
+      if(!target){return;}
+      var text=target.textContent;
+      function done(){
+        var old=btn.textContent;
+        btn.textContent='已复制 ✓';
+        btn.classList.add('copied');
+        setTimeout(function(){btn.textContent=old;btn.classList.remove('copied');},1600);
+      }
+      function fallback(){
+        var ta=document.createElement('textarea');
+        ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+        document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy');done();}catch(e){}
+        document.body.removeChild(ta);
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        var settled=false;
+        var guard=setTimeout(function(){if(!settled){settled=true;fallback();}},700);
+        navigator.clipboard.writeText(text).then(function(){
+          if(!settled){settled=true;clearTimeout(guard);done();}
+        },function(){
+          if(!settled){settled=true;clearTimeout(guard);fallback();}
+        });
+      }else{fallback();}
+    });
+  });
+
+  /* GitHub 实时数据：Star 数（失败/超时静态降级）*/
+  var starEl=document.getElementById('ghStars');
+  if(starEl){
+    var fallbackStar=function(){starEl.textContent='★ 欢迎 Star';};
+    try{
+      fetch('https://api.github.com/repos/ActionThinker/gov-workbuddy',{signal:AbortSignal.timeout(4000)})
+        .then(function(r){if(!r.ok){throw 0;}return r.json();})
+        .then(function(d){if(d&&typeof d.stargazers_count==='number'){starEl.textContent='★ '+d.stargazers_count;}else{fallbackStar();}})
+        .catch(fallbackStar);
+    }catch(e){fallbackStar();}
+  }
+})();
+</script>
+</body>
+</html>

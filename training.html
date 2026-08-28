@@ -724,6 +724,7 @@ body{
       </ul>
       <span class="gov-case">已交付 · 政府各级部门 · 多次百人规模履职提效 AI 专项培训</span>
       <div class="price-tag"><span class="amt">¥12,800</span><span class="unit">起 / 场</span></div>
+      <a href="gov.html" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:#1d4e89;text-decoration:none">免费政务知识库 → 公务员 AI 提效 0→1 自学入口</a>
     </div>
 
     <p class="price-note">以上为公开参考价区间，最终报价按人数规模与定制内容确认。我们不提供折扣与免费试用，以正式合作保证双方投入对等。</p>
@@ -986,6 +987,7 @@ body{
             <div class="form-field"><label>线索来源</label>
               <select name="source">
                 <option value="">如何了解到我们</option>
+                <option>政务知识库</option>
                 <option>搜索引擎</option>
                 <option>朋友 / 同事推荐</option>
                 <option>公众号 / 朋友圈</option>
@@ -1059,6 +1061,7 @@ body{
       <ul class="footer-links">
         <li><a href="/">首页</a></li>
         <li><a href="#courses">课程矩阵</a></li>
+        <li><a href="gov.html">政务知识库</a></li>
         <li><a href="/#services">企业服务</a></li>
         <li><a href="#contact">联系我们</a></li>
       </ul>
@@ -1168,6 +1171,24 @@ body{
     formOk.classList.remove('show');
     form.style.display='';
   });
+
+  /* Gov tab deep-link: training.html?tab=gov#contact（来自政务知识库页的培训邀约入口）*/
+  var sp=new URLSearchParams(location.search);
+  if(sp.get('tab')==='gov'){
+    var govTab=document.querySelector('.contact-tab[data-tab="gov"]');
+    if(govTab){govTab.click();}
+    var srcSel=document.querySelector('select[name="source"]');
+    if(srcSel){
+      var govOpt=[].slice.call(srcSel.options).filter(function(x){return x.text==='政务知识库';})[0];
+      if(govOpt){govOpt.selected=true;}
+    }
+    if(location.hash==='#contact'){
+      setTimeout(function(){
+        var c=document.getElementById('contact');
+        if(c){c.scrollIntoView();}
+      },0);
+    }
+  }
 
   /* WeChat modal */
   var wxModal=document.getElementById('wxModal');

@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<!-- wbl-build:wbl-20260828-4b8d2e55 · 本站含唯一指纹标记，未授权抓取/复刻将被溯源 -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>政务 AI 应用场景：10+ 部门场景矩阵与种子场景卡 | WorkBuddyLink</title>
+<meta name="description" content="按部门找到政务 AI 应用场景：办公室、发改规划、招商商务、司法法制等 10+ 部门矩阵，含典型任务、WorkBuddy 用法与提效产出；办公室/招商/司法 3 张种子场景卡提供可复现做法、提示词与量化成效，照着做即可。">
+<link rel="canonical" href="https://workbuddylink.com/gov-scenarios.html">
+<meta property="og:title" content="政务 AI 应用场景：10+ 部门场景矩阵与种子场景卡 | WorkBuddyLink">
+<meta property="og:description" content="按部门找到政务 AI 应用场景：办公室、发改规划、招商商务、司法法制等 10+ 部门矩阵，含 3 张种子场景卡的可复现做法与提示词。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://workbuddylink.com/gov-scenarios.html">
+<meta property="og:site_name" content="WorkBuddyLink">
+<meta property="og:image" content="https://workbuddylink.com/assets/workbuddylink-og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="政务 AI 应用场景：10+ 部门场景矩阵与种子场景卡 | WorkBuddyLink">
+<meta name="twitter:description" content="按部门找到政务 AI 应用场景：10+ 部门矩阵 + 3 张种子场景卡的可复现做法与提示词。">
+<meta name="twitter:image" content="https://workbuddylink.com/assets/workbuddylink-og.svg">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, noai,noimageai">
+<meta name="author" content="陈露 @ActionThinker">
+<meta name="ai-disclosure" content="ai-assisted">
+<meta name="ai-system" content="Claude by Anthropic">
+<meta name="ai-operator" content="ActionThinker">
+<meta http-equiv="Content-Language" content="zh-CN">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://workbuddylink.com/#org",
+      "name": "WorkBuddyLink",
+      "url": "https://workbuddylink.com/",
+      "description": "基于 WorkBuddy 官方产品能力与 FDE 交付支持，面向企业客户与渠道伙伴的 B2B 落地入口站，提供 WorkBuddy 专项培训、业务场景评估、企业版采购与部署实施、定制化方案设计与持续应用陪跑。",
+      "parentOrganization": { "@id": "https://nexfde.com/#org", "name": "NexFDE" },
+      "sameAs": ["https://nexfde.com"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "Lu@NexFDE.com",
+        "contactType": "sales",
+        "availableLanguage": ["zh-CN"]
+      },
+      "areaServed": "CN"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://workbuddylink.com/gov-scenarios.html#service",
+      "name": "政务 AI 部门场景矩阵服务",
+      "provider": { "@id": "https://workbuddylink.com/#org" },
+      "serviceType": ["部门场景矩阵", "场景卡", "提示词模板"],
+      "offers": [
+        { "@type": "Offer", "name": "部门场景矩阵浏览", "price": "0", "priceCurrency": "CNY" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://workbuddylink.com/gov-scenarios.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "政务场景矩阵覆盖哪些部门？",
+          "acceptedAnswer": { "@type": "Answer", "text": "办公室/综合协调、发改/规划、财政/审计、人社/民政、招商/商务、司法/法制、应急管理、政务服务/大数据、宣传/网信、纪检/巡察等 10+ 业务部门，持续扩充中。" }
+        },
+        {
+          "@type": "Question",
+          "name": "场景卡是什么？包含哪些字段？",
+          "acceptedAnswer": { "@type": "Answer", "text": "场景卡是「一个部门 + 一个场景 + 一套照做步骤」的最小单元，字段包括：部门、痛点、做法（输入 + 提示词 + 产出）、成效、可复用资产、贡献者与地区。" }
+        },
+        {
+          "@type": "Question",
+          "name": "场景卡怎么用？",
+          "acceptedAnswer": { "@type": "Answer", "text": "找到所在部门 → 打开场景卡 → 复制提示词 → 替换成你的材料 → 拿到初稿后人工核对。使用前先读合规红线。" }
+        },
+        {
+          "@type": "Question",
+          "name": "我的部门还没有场景卡怎么办？",
+          "acceptedAnswer": { "@type": "Answer", "text": "先用通用五式提示词跑通常用任务（纪要整理、长文提炼、公文初稿、数据说明、大白话改写）；再按模板提交一张新场景卡，帮助全国同行。" }
+        },
+        {
+          "@type": "Question",
+          "name": "种子场景卡和其他部门条目有什么区别？",
+          "acceptedAnswer": { "@type": "Answer", "text": "3 张种子卡（办公室/招商/司法）已完整沉淀：含痛点、做法、提示词、量化成效与可复用资产，照做即可；其余部门为矩阵总览条目，场景卡持续征集补充。" }
+        },
+        {
+          "@type": "Question",
+          "name": "场景卡的成效数据是怎么来的？",
+          "acceptedAnswer": { "@type": "Answer", "text": "成效为示例数据、可核验，尽量量化；无法量化的会注明。请以你自己的实际使用结果为准。" }
+        },
+        {
+          "@type": "Question",
+          "name": "用场景卡要注意什么合规要求？",
+          "acceptedAnswer": { "@type": "Answer", "text": "三条红线：涉密材料一律不上传、先脱敏再使用、AI 产出必须人工复核。司法类场景卡内容为辅助底稿，不构成法律意见。" }
+        },
+        {
+          "@type": "Question",
+          "name": "怎么提交一张新场景卡？",
+          "acceptedAnswer": { "@type": "Answer", "text": "Fork 仓库 → 新建分支 → 按 cases/template.md 填写 → 提 Pull Request。审核四项：不涉密、可复现、不夸大、格式规范。" }
+        },
+        {
+          "@type": "Question",
+          "name": "场景矩阵多久更新一次？",
+          "acceptedAnswer": { "@type": "Answer", "text": "GitHub 仓库实时更新；本展示页每月第一个工作日同步，合规红线变更 24 小时内紧急同步。" }
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://workbuddylink.com/gov-scenarios.html#article",
+      "headline": "政务 AI 应用场景：10+ 部门场景矩阵与种子场景卡",
+      "datePublished": "2026-08-28",
+      "dateModified": "2026-08-28",
+      "inLanguage": "zh-CN",
+      "author": { "@id": "https://workbuddylink.com/#org" },
+      "publisher": { "@id": "https://workbuddylink.com/#org" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://workbuddylink.com/gov-scenarios.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://workbuddylink.com/" },
+        { "@type": "ListItem", "position": 2, "name": "政务知识库", "item": "https://workbuddylink.com/gov.html" },
+        { "@type": "ListItem", "position": 3, "name": "部门场景矩阵", "item": "https://workbuddylink.com/gov-scenarios.html" }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23101E26'/%3E%3Ccircle cx='10' cy='16' r='4.5' fill='%2328b894'/%3E%3Ccircle cx='22' cy='16' r='4.5' fill='%23E8590C'/%3E%3Cpath d='M14.5 16h3' stroke='%23D8E2DE' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101E26;
+  --ink-2:#0A141A;
+  --teal:#28b894;
+  --teal-deep:#1B7F6B;
+  --teal-soft:#E2F4F0;
+  --coral:#E8590C;
+  --coral-deep:#C94D08;
+  --coral-soft:#FDEBE0;
+  --bg:#F6F8F7;
+  --bg-alt:#EDF2F0;
+  --card:#FFFFFF;
+  --text:#1A2B27;
+  --text-muted:#5F6F6A;
+  --border:#D8E2DE;
+  --white:#FFFFFF;
+  --radius:12px;
+  --radius-lg:16px;
+  --shadow:0 8px 24px rgba(16,30,38,.08);
+  --shadow-lg:0 16px 40px rgba(16,30,38,.14);
+  --container:1100px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{
+  font-family:'Inter',system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wl-container{max-width:var(--container);margin:0 auto;padding:0 24px}
+.wl-section{padding:110px 0}
+.wl-section-alt{background:var(--bg-alt)}
+.wl-section-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);
+}
+.wl-section-label::before{content:"";width:24px;height:2px;background:var(--teal);border-radius:2px}
+.wl-title{font-size:clamp(26px,4vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1.3;margin:14px 0 16px;color:var(--ink)}
+.wl-lead{font-size:clamp(16px,2vw,18px);color:var(--text-muted);max-width:720px}
+.wl-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:28px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.wl-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--teal)}
+.wl-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;
+  border:1px solid transparent;cursor:pointer;text-decoration:none;
+  transition:all .2s ease;
+}
+.wl-btn-primary{background:var(--coral);color:#fff}
+.wl-btn-primary:hover{background:var(--coral-deep);transform:translateY(-1px);box-shadow:0 8px 20px rgba(232,89,12,.3)}
+.wl-btn-ghost{border-color:rgba(255,255,255,.35);color:#fff;background:transparent}
+.wl-btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.wl-btn-dark{background:var(--ink);color:#fff}
+.wl-btn-dark:hover{background:var(--teal-deep)}
+.wl-btn-outline{border-color:var(--teal);color:var(--teal-deep);background:transparent}
+.wl-btn-outline:hover{background:var(--teal-soft)}
+
+/* ── Nav ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:64px;
+  background:rgba(16,30,38,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(216,226,222,.14);
+}
+.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:18px;letter-spacing:-.01em}
+.brand-mark{width:30px;height:30px;flex:none}
+.brand-mark svg{width:100%;height:100%}
+.nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+.nav-links a{
+  color:rgba(255,255,255,.82);text-decoration:none;font-size:14px;font-weight:500;
+  padding:8px 12px;border-radius:8px;transition:all .2s ease;
+}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-cta{padding:9px 18px;font-size:14px}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;border-radius:2px;transition:all .25s ease}
+.nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav.open .nav-toggle span:nth-child(2){opacity:0}
+.nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1024px){
+  .nav-inner{gap:12px}
+  .nav-links a{font-size:13px;padding:8px 8px}
+  .nav-cta{padding:8px 14px;font-size:13px}
+}
+@media(max-width:860px){
+  .nav-links{
+    position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;
+    background:var(--ink);padding:12px 20px 20px;gap:2px;border-bottom:1px solid rgba(216,226,222,.14);
+    display:none;
+  }
+  .nav.open .nav-links{display:flex}
+  .nav-links a{padding:12px;font-size:15px}
+  .brand{font-size:15.5px}
+  .nav-cta{padding:8px 12px;font-size:13px;white-space:nowrap}
+  .nav-toggle{display:block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:8px}
+}
+@media(max-width:350px){.brand-text{display:none}}
+
+/* ── Hero ── */
+.hero{
+  position:relative;background:var(--ink);color:#fff;overflow:hidden;
+  padding:160px 0 110px;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(600px 400px at 78% 22%,rgba(40,184,148,.16),transparent 60%),
+    radial-gradient(500px 360px at 8% 88%,rgba(232,89,12,.10),transparent 60%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;inset:auto 0 0 0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(40,184,148,.5),transparent);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(40,184,148,.14);border:1px solid rgba(40,184,148,.35);
+  color:var(--teal);font-size:13px;font-weight:600;padding:7px 14px;border-radius:100px;margin-bottom:22px;
+}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(40,184,148,.25)}
+.hero h1{font-size:clamp(30px,4.6vw,46px);font-weight:800;letter-spacing:-.025em;line-height:1.25;margin-bottom:20px}
+.hero h1 .accent{color:var(--teal)}
+.hero-sub{font-size:clamp(15px,1.8vw,18px);color:rgba(255,255,255,.75);max-width:560px;margin-bottom:34px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-sm{padding:150px 0 78px}
+.hero-center{grid-template-columns:1fr;text-align:center}
+.hero-center .hero-copy{max-width:780px;margin:0 auto}
+.hero-center .hero-sub{margin:0 auto 34px}
+.hero-center .hero-ctas{justify-content:center}
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero{padding:130px 0 80px}
+}
+
+/* ── Generic grids ── */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){.grid-2,.grid-3{grid-template-columns:1fr}}
+@media(max-width:560px){.grid-4{grid-template-columns:1fr}}
+
+/* ── Section intro block ── */
+.wl-intro{margin-bottom:48px}
+.wl-intro.center{text-align:center}
+.wl-intro.center .wl-lead{margin:0 auto}
+
+/* ── Card primitives ── */
+.tier-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--teal-deep);background:var(--teal-soft);padding:5px 11px;border-radius:100px;
+}
+.tier-badge.coral{color:var(--coral);background:var(--coral-soft)}
+.case-heading{
+  display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--teal-deep);text-transform:uppercase;margin:52px 0 18px;
+}
+.case-heading::after{content:"";flex:1;height:1px;background:var(--border)}
+.prompt-code{background:var(--ink);color:#E8EEF7;border-radius:10px;padding:16px 18px;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:13px;line-height:1.75;white-space:pre-wrap;word-break:break-word;margin-bottom:8px}
+.trainer-note{
+  margin-top:24px;font-size:13.5px;color:var(--text-muted);background:var(--bg-alt);
+  border-radius:var(--radius);padding:16px 20px;
+}
+
+/* ── FAQ ── */
+.faq-list{max-width:780px;margin:0 auto;display:grid;gap:12px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:20px 24px;cursor:pointer;font-size:16px;font-weight:600;color:var(--ink);
+  transition:background .2s ease;
+}
+.faq-q:hover{background:var(--bg-alt)}
+.faq-q .faq-ico{flex:none;width:22px;height:22px;position:relative}
+.faq-q .faq-ico::before,.faq-q .faq-ico::after{content:"";position:absolute;background:var(--teal-deep);border-radius:2px;transition:all .25s ease}
+.faq-q .faq-ico::before{width:14px;height:2px;top:10px;left:4px}
+.faq-q .faq-ico::after{width:2px;height:14px;top:4px;left:10px}
+.faq-item.open .faq-ico::after{transform:scaleY(0)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 24px 22px;font-size:15px;color:var(--text-muted)}
+
+/* ── Final CTA ── */
+.final-cta{position:relative;background:var(--ink);color:#fff;overflow:hidden}
+.final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 380px at 50% 0%,rgba(40,184,148,.18),transparent 65%);pointer-events:none}
+.final-cta .wl-container{position:relative;text-align:center}
+.final-cta h2{font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.3;margin-bottom:18px;max-width:760px;margin-left:auto;margin-right:auto}
+.final-cta p{color:rgba(255,255,255,.72);max-width:620px;margin:0 auto 36px;font-size:16px}
+.final-cta .hero-ctas{justify-content:center}
+
+/* ── Footer ── */
+.footer{background:var(--ink-2);color:rgba(255,255,255,.72);font-size:14px}
+.footer-top{padding:64px 0 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.footer-brand .brand{margin-bottom:16px}
+.footer-brand p{font-size:13.5px;max-width:340px;line-height:1.8}
+.footer h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:16px}
+.footer-links{list-style:none;display:grid;gap:10px}
+.footer-links a{color:rgba(255,255,255,.66);text-decoration:none;font-size:14px;transition:color .2s}
+.footer-links a:hover{color:var(--teal)}
+.footer-bottom{border-top:1px solid rgba(216,226,222,.12);padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px}
+.footer-ai{display:flex;align-items:center;gap:8px}
+.footer-ai .badge{
+  background:rgba(40,184,148,.14);border:1px solid rgba(40,184,148,.3);color:var(--teal);
+  font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:.04em;
+}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
+
+/* ── Animations ── */
+.wl-animate{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.wl-animate.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.wl-animate{opacity:1;transform:none;transition:none}}
+
+/* ── Mobile responsive fixes ── */
+@media(max-width:560px){
+  .wl-container{padding:0 16px}
+  .wl-section{padding:72px 0}
+  .hero{padding:118px 0 64px}
+  .wl-card{padding:22px 18px}
+  .faq-q{padding:16px;font-size:15px}
+  .faq-a p{padding:0 16px 18px}
+  .hero-ctas .wl-btn{width:100%}
+}
+
+/* ── Gov theme overrides（政务蓝独立视觉，仅作用于 body.gov-theme）── */
+body.gov-theme{
+  --ink:#0F2A4D;
+  --ink-2:#0B1D33;
+  --teal:#1d4e89;
+  --teal-deep:#16396B;
+  --teal-soft:#E3EBF5;
+  --bg:#F5F8FC;
+  --bg-alt:#E9EFF7;
+  --border:#C9D6E6;
+}
+body.gov-theme .nav{background:rgba(15,32,58,.82)}
+body.gov-theme .hero::before{
+  background:
+    radial-gradient(600px 400px at 78% 22%,rgba(47,125,196,.22),transparent 60%),
+    radial-gradient(500px 360px at 8% 88%,rgba(15,157,143,.12),transparent 60%);
+}
+body.gov-theme .hero::after{background:linear-gradient(90deg,transparent,rgba(47,125,196,.5),transparent)}
+body.gov-theme .hero-badge{background:rgba(47,125,196,.16);border-color:rgba(47,125,196,.4)}
+body.gov-theme .hero-badge .dot{box-shadow:0 0 0 3px rgba(47,125,196,.28)}
+body.gov-theme .final-cta::before{background:radial-gradient(700px 380px at 50% 0%,rgba(47,125,196,.22),transparent 65%)}
+body.gov-theme .footer-ai .badge{background:rgba(47,125,196,.16);border-color:rgba(47,125,196,.35)}
+
+/* ── Gov components ── */
+.wl-btn-gov{background:var(--teal);color:#fff}
+.wl-btn-gov:hover{background:var(--teal-deep);transform:translateY(-1px);box-shadow:0 8px 20px rgba(29,78,137,.3)}
+.gov-banner-sec{padding:44px 0;background:var(--bg-alt)}
+.gov-banner{background:#FFF7ED;border:1px solid #F3D2B3;border-left:5px solid #C2703D;border-radius:var(--radius);padding:26px 28px}
+.gov-banner-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:16px;font-weight:700;color:#7C4A1E;margin-bottom:14px}
+.gb-tag{font-size:11px;font-weight:700;color:#C2703D;background:#FDEBD8;border:1px solid #F3D2B3;padding:3px 10px;border-radius:100px;letter-spacing:.06em}
+.gb-list{list-style:none;display:grid;gap:8px;margin-bottom:14px}
+.gb-list li{font-size:14px;color:#6B4A28;padding-left:20px;position:relative}
+.gb-list li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:#C2703D}
+.gb-rule{font-size:14px;color:#7C4A1E;background:#FDEBD8;border-radius:8px;padding:10px 14px;margin-bottom:16px}
+.gov-banner .gov-banner-acked{display:none;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:#7C4A1E}
+.gov-banner.acked .gov-banner-main{display:none}
+.gov-banner.acked .gov-banner-acked{display:flex}
+.gb-expand{font-size:13px;color:#16396B;font-weight:600;text-decoration:underline;cursor:pointer}
+.gb-link{font-size:13.5px;font-weight:600;color:var(--teal-deep);text-decoration:none}
+.gb-link:hover{text-decoration:underline}
+
+/* ── 筛选器与部门卡 ── */
+.filter-bar{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 26px;margin-bottom:22px;display:grid;grid-template-columns:1.2fr 1fr 1.5fr auto;gap:14px;align-items:end}
+.fb-field{display:flex;flex-direction:column;gap:7px}
+.fb-field label{font-size:12.5px;font-weight:700;color:var(--ink)}
+.fb-field select,.fb-field input{font-family:inherit;font-size:14.5px;color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:11px 13px;outline:none;transition:all .2s ease}
+.fb-field select:focus,.fb-field input:focus{border-color:var(--teal);background:#fff;box-shadow:0 0 0 3px rgba(29,78,137,.12)}
+.fb-reset{background:var(--bg-alt);border:1px solid var(--border);color:var(--text);padding:11px 18px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+.fb-reset:hover{border-color:var(--teal);color:var(--teal-deep)}
+.filter-count{font-size:13.5px;color:var(--text-muted);margin-bottom:14px}
+.dept-card{padding:24px}
+.dept-card.hidden{display:none}
+.dc-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.dc-head h3{font-size:17px;font-weight:700;color:var(--ink)}
+.dc-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dc-diff{font-size:11.5px;font-weight:700;color:var(--teal-deep);background:var(--teal-soft);padding:3px 10px;border-radius:100px;white-space:nowrap}
+.dc-pending{font-size:11px;font-weight:700;color:var(--text-muted);background:var(--bg-alt);padding:3px 10px;border-radius:100px;white-space:nowrap}
+.dc-row{font-size:13.5px;color:var(--text-muted);margin-bottom:6px}
+.dc-row strong{color:var(--ink);font-weight:600}
+.dc-link{display:inline-block;font-size:13px;font-weight:600;color:var(--teal-deep);text-decoration:none;margin-top:6px}
+.dc-link:hover{text-decoration:underline}
+.filter-empty{display:none;text-align:center;padding:40px 20px;background:var(--card);border:1px dashed var(--border);border-radius:var(--radius);margin-bottom:20px}
+.filter-empty p{font-size:14.5px;color:var(--text-muted)}
+
+/* ── 种子场景卡详情 ── */
+.seed-card{padding:34px}
+.seed-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.seed-head h3{font-size:21px;font-weight:700;color:var(--ink)}
+.seed-sub{font-size:13px;color:var(--text-muted);margin-bottom:22px}
+.seed-sec{margin-bottom:20px}
+.seed-sec h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.seed-sec h4::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--teal)}
+.seed-sec .pain-list{list-style:none;display:grid;gap:7px}
+.seed-sec .pain-list li{font-size:14px;color:var(--text-muted);padding-left:16px;position:relative}
+.seed-sec .pain-list li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--coral)}
+.seed-sec .seed-io{font-size:14px;color:var(--text-muted);margin-bottom:8px}
+.seed-sec .seed-io strong{color:var(--ink)}
+.seed-sec details{background:var(--bg);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.seed-sec details summary{padding:13px 16px;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.seed-sec details summary::-webkit-details-marker{display:none}
+.seed-sec details summary::after{content:"+";font-size:16px;color:var(--teal-deep);font-weight:700}
+.seed-sec details[open] summary::after{content:"−"}
+.seed-sec details .seed-dbody{padding:2px 16px 14px;font-size:13.5px;color:var(--text-muted)}
+.seed-sec .gain-list{list-style:none;display:grid;gap:7px}
+.seed-sec .gain-list li{font-size:14px;color:var(--text-muted);padding-left:16px;position:relative}
+.seed-sec .gain-list li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--teal)}
+.seed-comply{font-size:13px;color:#7C4A1E;background:#FFF7ED;border:1px solid #F3D2B3;border-radius:10px;padding:12px 16px;margin-top:8px}
+.seed-contrib{font-size:12.5px;color:var(--text-muted);margin-top:14px}
+.gov-bridge{background:var(--ink);padding:26px 0}
+.gov-bridge .wl-container{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+.gov-bridge p{color:rgba(255,255,255,.75);font-size:15px}
+.gov-bridge a{color:var(--coral);font-weight:600;text-decoration:none;font-size:15px}
+.gov-bridge a:hover{text-decoration:underline}
+.kb-sign{font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:-.01em}
+@media(max-width:860px){.filter-bar{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="gov-theme" data-fp="wbl-20260828-4b8d2e55">
+
+<!-- ───────── Nav ───────── -->
+<nav class="nav" id="nav">
+  <div class="wl-container nav-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="#101E26"/>
+          <circle cx="10" cy="16" r="4.5" fill="#28b894"/>
+          <circle cx="22" cy="16" r="4.5" fill="#E8590C"/>
+          <path d="M14.5 16h3" stroke="#D8E2DE" stroke-width="1.6"/>
+        </svg>
+      </span>
+      <span class="brand-text">WorkBuddy<span style="color:var(--teal)">Link</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="gov.html">知识库首页</a></li>
+      <li><a href="#matrix">场景矩阵</a></li>
+      <li><a href="#seeds">种子场景卡</a></li>
+      <li><a href="#submit">提交新卡</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="wl-btn wl-btn-primary nav-cta" href="training.html?tab=gov#contact">政务培训邀约</a>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ───────── Hero（精简版）───────── -->
+<section class="hero hero-sm" id="home">
+  <div class="wl-container hero-inner hero-center">
+    <div class="hero-copy wl-animate">
+      <span class="hero-badge"><span class="dot"></span>部门场景矩阵 · 10+ 业务部门 · 公共开源</span>
+      <h1>政务 AI 应用场景：<span class="accent">10+ 部门场景矩阵与种子场景卡</span></h1>
+      <p class="hero-sub">找到你的部门 → 打开场景卡 → 复制提示词 → 人工核对。3 张种子场景卡（办公室 / 招商 / 司法）提供可复现做法、提示词与量化成效，照做即可。</p>
+      <div class="hero-ctas">
+        <a href="#matrix" class="wl-btn wl-btn-gov">开始筛选场景</a>
+        <a href="gov.html" class="wl-btn wl-btn-ghost">返回知识库首页</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 合规横幅（强制首读，与知识库首页共用记忆）───────── -->
+<section class="gov-banner-sec" id="compliance">
+  <div class="wl-container">
+    <div class="gov-banner" id="govBanner">
+      <div class="gov-banner-main">
+        <div class="gov-banner-head">使用场景卡之前，请先读这三条红线 <span class="gb-tag">强制首读</span></div>
+        <ol class="gb-list">
+          <li><strong>涉密材料一律不上传</strong>：标注「秘密 / 机密 / 绝密」及内部定为涉密的文件数据，绝不输入任何公有云 AI 工具，物理隔离。</li>
+          <li><strong>先脱敏再使用</strong>：涉及个人隐私、企业商业秘密、案件当事人等敏感信息，使用前去除实名、证件号、联系方式等可直接定位的字段。</li>
+          <li><strong>AI 不替代责任与判断</strong>：AI 生成的政策表述、数据结论、对外行文，必须由具备权限的人员人工复核、确认、留痕。</li>
+        </ol>
+        <p class="gb-rule">一句话守则：<strong>能公开的，脱敏后用；涉密的，物理隔离；AI 出的，人复核。</strong></p>
+        <button class="wl-btn wl-btn-dark" id="govBannerOk" type="button">我已阅读，开始使用</button>
+      </div>
+      <div class="gov-banner-acked">
+        <span>✓ 合规红线已读</span>
+        <strong>能公开的，脱敏后用；涉密的，物理隔离；AI 出的，人复核。</strong>
+        <a href="#compliance" class="gb-expand" id="govBannerExpand">重新查看</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 部门场景矩阵 + 筛选器 ───────── -->
+<section class="wl-section" id="matrix">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">部门场景矩阵</span>
+      <h2 class="wl-title">按部门、难度与关键词筛选你的应用场景</h2>
+      <p class="wl-lead">10 个业务部门的总览条目；其中 3 个部门（办公室 / 招商 / 司法）已有完整种子场景卡，可下钻查看可复现做法。</p>
+    </div>
+    <div class="filter-bar wl-animate">
+      <div class="fb-field">
+        <label for="fDep">业务部门</label>
+        <select id="fDep">
+          <option value="">全部部门</option>
+          <option>办公室 / 综合协调</option>
+          <option>发改 / 规划</option>
+          <option>财政 / 审计</option>
+          <option>人社 / 民政</option>
+          <option>招商 / 商务</option>
+          <option>司法 / 法制</option>
+          <option>应急管理</option>
+          <option>政务服务 / 大数据</option>
+          <option>宣传 / 网信</option>
+          <option>纪检 / 巡察</option>
+        </select>
+      </div>
+      <div class="fb-field">
+        <label for="fDiff">难度</label>
+        <select id="fDiff">
+          <option value="">全部难度</option>
+          <option value="1">★ 入门</option>
+          <option value="2">★★ 进阶</option>
+          <option value="3">★★★ 专业</option>
+        </select>
+      </div>
+      <div class="fb-field">
+        <label for="fKw">关键词（痛点 / 任务）</label>
+        <input type="text" id="fKw" placeholder="例：纪要、招商、审查">
+      </div>
+      <button class="fb-reset" id="fReset" type="button">重置</button>
+    </div>
+    <p class="filter-count" id="filterCount">当前显示 10 / 10 个部门</p>
+    <div class="grid-2">
+      <article class="wl-card dept-card wl-animate" data-dep="办公室 / 综合协调" data-diff="1" data-tags="公文 纪要 督办 讲话稿 会议 通知 办公室">
+        <div class="dc-head"><h3>办公室 / 综合协调</h3><span class="dc-meta"><span class="dc-diff">难度 ★</span></span></div>
+        <p class="dc-row"><strong>典型任务：</strong>公文起草、会议纪要、督办台账、领导讲话稿</p>
+        <p class="dc-row"><strong>WorkBuddy 用法：</strong>上传素材→生成初稿；会议整理纪要；督办清单成表</p>
+        <p class="dc-row"><strong>提效产出：</strong>初稿时间↓70%，纪要即时出</p>
+        <a class="dc-link" href="#seed-office">查看完整场景卡详情 →</a>
+      </article>
+      <article class="wl-card dept-card wl-animate" data-dep="发改 / 规划" data-diff="2" data-tags="政策 可研 数据填报 汇报 规划 长文 图表 发改">
+        <div class="dc-head"><h3>发改 / 规划</h3><span class="dc-meta"><span class="dc-diff">难度 ★★</span><span class="dc-pending">场景卡待征集</span></span></div>
+        <p class="dc-row"><strong>典型任务：</strong>政策研判、可研摘要、数据填报、汇报材料</p>
+        <p class="dc-row"><strong>WorkBuddy 用法：</strong>长文提炼要点；政策对比；图表；报告结构化</p>
+        <p class="dc-row"><strong>提效产出：</strong>研读+撰写效率↑数倍</p>
+        <a class="dc-link" href="#seed-office">参考办公室卡延伸场景 →</a>
+      </article>
+      <article class="wl-card dept-card wl-animate" data-dep="财政 / 审计" data-diff="3" data-tags="报表 预算 审计 底稿 表格 财政">
+        <div class="dc-head"><h3>财政 / 审计</h3><span class="dc-meta"><span class="dc-diff">难度 ★★★</span><span class="dc-pending">场景卡待征集</span></span></div>
+        <p class="dc-row"><strong>典型任务：</strong>报表分析、预算说明、审计底稿整理</p>
+        <p class="dc-row"><strong>WorkBuddy 用法：</strong>表格清洗与透视；异常标注；说明文稿生成</p>
+        <p class="dc-row"><strong>提效产出：</strong>报表处理↓人工量</p>
+      </article>
+      <article class="wl-card dept-card wl-animate" data-dep="人社 / 民政" data-diff="1" data-tags="政策问答 诉求 归类 办事指南 民政 社保 就业 救助 人社">
+        <div class="dc-head"><h3>人社 / 民政</h3><span class="dc-meta"><span class="dc-diff">难度 ★</span><span class="dc-pending">场景卡待征集</span></span></div>
+        <p class="dc-row"><strong>典型任务：</strong>政策问答、群众诉求归类、办事指南</p>
+        <p class="dc-row"><strong>WorkBuddy 用法：</strong>诉求分类打标；FAQ 知识库；指南改大白话</p>
+        <p class="dc-row"><strong>提效产出：</strong>答复标准化、群众易懂</p>
+      </article>
+      <article class="wl-card dept-card wl-animate" data-dep="招商 / 商务" data-diff="2" data-tags="产业 企业 画像 招商 文案 话术 产业链 尽调 商务 园区">
+        <div class="dc-head"><h3>招商 / 商务</h3><span class="dc-meta"><span class="dc-diff">难度 ★★</span></span></div>
+        <p class="dc-row"><strong>典型任务：</strong>产业研究、企业画像、招商文案、对接话术</p>
+        <p class="dc-row"><strong>WorkBuddy 用法：</strong>产业链梳理；企业尽调摘要；定制推介材料</p>
+        <p class="dc-row"><strong>提效产出：</strong>单项目调研周期↓</p>
+        <a class="dc-link" href="#seed-investment">查看完整场景卡详情 →</a>
+      </article>
+      <article class="wl-card dept-card wl-animate" data-dep="司法 / 法制" data-diff="2" data-tags="合同 审查 普法 执法 依据 条款 法制 司法">
+        <div class="dc-head"><h3>司法 / 法制</h3><span class="dc-meta"><span class="dc-diff">难度 ★★</span></span></div>
+        <p class="dc-row"><strong>典型任务：</strong>合同/协议审查、普法材料、执法依据检索</p>
+        <p class="dc-row"><strong>WorkBuddy 用法：</strong>条款比对；风险标注；普法图文生成</p>
+        <p class="dc-row"><strong>提效产出：</strong>审查效率↑、风险可见</p>
+        <a class="dc-link" href="#seed-justice">查看完整场景卡详情 →</a>
+      </article>
+      <article class="wl-card dept-card wl-animate" data-dep="应急管理" data-diff="2" data-tags="预案 舆情 简报 值班 要情 应急">
+        <div class="dc-head"><h3>应急管理</h3><span class="dc-meta"><span class="dc-diff">难度 ★★</span><span class="dc-pending">场景卡待征集</span></span></div>
+        <p class="dc-row"><strong>典型任务：</strong>预案编写、舆情简报、值班要情</p>
+        <p class="dc-row"><strong>WorkBuddy 用法：</strong>预案模板生成；舆情摘要；要情快报</p>
+        <p class="dc-row"><strong>提效产出：</strong>响应材料分钟级产出</p>
+      </article>
+      <article class="wl-card dept-card wl-animate" data-dep="政务服务 / 大数据" data-diff="3" data-tags="流程 数据 治理 办事指南 政务服务 大数据">
+        <div class="dc-head"><h3>政务服务 / 大数据</h3><span class="dc-meta"><span class="dc-diff">难度 ★★★</span><span class="dc-pending">场景卡待征集</span></span></div>
+        <p class="dc-row"><strong>典型任务：</strong>流程优化、数据治理、办事指南统一</p>
+        <p class="dc-row"><strong>WorkBuddy 用法：</strong>流程梳理图；数据质量检查；多源整合报告</p>
+        <p class="dc-row"><strong>提效产出：</strong>治理闭环加速</p>
+      </article>
+      <article class="wl-card dept-card wl-animate" data-dep="宣传 / 网信" data-diff="2" data-tags="新闻稿 新媒体 舆情 研判 宣传 网信">
+        <div class="dc-head"><h3>宣传 / 网信</h3><span class="dc-meta"><span class="dc-diff">难度 ★★</span><span class="dc-pending">场景卡待征集</span></span></div>
+        <p class="dc-row"><strong>典型任务：</strong>新闻稿、政务新媒体、舆情研判</p>
+        <p class="dc-row"><strong>WorkBuddy 用法：</strong>多版本文稿；选题建议；舆情摘要图</p>
+        <p class="dc-row"><strong>提效产出：</strong>内容产能↑</p>
+      </article>
+      <article class="wl-card dept-card wl-animate" data-dep="纪检 / 巡察" data-diff="2" data-tags="谈话 提纲 问题清单 报告 纪检 巡察 证据">
+        <div class="dc-head"><h3>纪检 / 巡察</h3><span class="dc-meta"><span class="dc-diff">难度 ★★</span><span class="dc-pending">场景卡待征集</span></span></div>
+        <p class="dc-row"><strong>典型任务：</strong>谈话提纲、问题清单、报告撰写</p>
+        <p class="dc-row"><strong>WorkBuddy 用法：</strong>提纲生成；证据归类；报告结构化</p>
+        <p class="dc-row"><strong>提效产出：</strong>文书工作量↓</p>
+      </article>
+    </div>
+    <div class="filter-empty" id="filterEmpty">
+      <p>没有匹配的场景。欢迎按模板提交一张新场景卡，帮助全国同行 →</p>
+      <p style="margin-top:10px"><a href="#submit" class="gb-link">查看提交方式</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 种子场景卡详情 ───────── -->
+<section class="wl-section wl-section-alt" id="seeds">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">种子场景卡</span>
+      <h2 class="wl-title">3 张种子场景卡：照做即可</h2>
+      <p class="wl-lead">每张卡 = 一个部门 + 一个场景 + 一套照做步骤（输入 / 提示词 / 产出）+ 量化成效。使用前先读合规红线。</p>
+    </div>
+
+    <!-- 种子卡 1：办公室 -->
+    <article class="wl-card seed-card wl-animate" id="seed-office" style="margin-bottom:24px">
+      <div class="seed-head">
+        <h3>办公室 / 综合协调 · 会议纪要与公文</h3>
+        <span class="tier-badge">种子场景卡</span>
+        <span class="dc-diff">难度 ★</span>
+      </div>
+      <p class="seed-sub">部门：办公室 / 综合协调 ｜ 类型：公文与会议 ｜ 使用前请阅读合规红线。</p>
+      <div class="seed-sec">
+        <h4>痛点</h4>
+        <ul class="pain-list">
+          <li>会议纪要靠人工听写，1 小时会要半天才整理完，还容易漏。</li>
+          <li>通知、函、汇报材料每次从头写，格式不统一、耗时长。</li>
+          <li>督办事项散在微信/Excel，进度难跟踪。</li>
+        </ul>
+      </div>
+      <div class="seed-sec">
+        <h4>任务 A：会议纪要做表（照做）</h4>
+        <p class="seed-io"><strong>输入：</strong>会议录音转写文本（脱敏后）或手写要点。</p>
+        <pre class="prompt-code">把以下会议内容整理成纪要，按「结论 / 待办 / 责任人 / 时限」四栏用表格输出，
+语言正式、不遗漏关键数字；无法确认处标"待核实"。</pre>
+        <p class="seed-io"><strong>产出：</strong>结构化纪要表格，5 分钟内成稿，人工补正即可印发。</p>
+        <details>
+          <summary>任务 B：通知初稿</summary>
+          <div class="seed-dbody">
+            <p class="seed-io"><strong>提示词：</strong></p>
+            <pre class="prompt-code">以【单位全称】名义起草一份关于【事项】的通知，含：背景、具体要求、完成时限、报送方式。
+正式公务用语，分条列项。</pre>
+            <p class="seed-io"><strong>产出：</strong>通知初稿，人工核改后下发。</p>
+          </div>
+        </details>
+        <details>
+          <summary>任务 C：督办台账</summary>
+          <div class="seed-dbody">
+            <p class="seed-io"><strong>提示词：</strong></p>
+            <pre class="prompt-code">把以下工作部署整理成督办台账表格：事项 / 牵头部门 / 责任人 / 时限 / 当前进度 / 预警等级。
+进度缺失的标"待更新"。</pre>
+            <p class="seed-io"><strong>产出：</strong>可导入 Excel 的督办表。</p>
+          </div>
+        </details>
+      </div>
+      <div class="seed-sec">
+        <h4>成效（示例，可核验）</h4>
+        <ul class="gain-list">
+          <li>纪要整理：约 70% 时间节省。</li>
+          <li>常规通知：初稿从 30 分钟降至 5 分钟。</li>
+          <li>督办：从散落沟通转为一张可跟踪表。</li>
+        </ul>
+      </div>
+      <div class="seed-sec">
+        <h4>可复用资产</h4>
+        <p class="seed-io">提示词：<a class="gb-link" href="gov.html#prompts">提示词模板库 · 纪要/督办</a>；模板：可保存为本单位「纪要四栏模板」「通知模板」。</p>
+      </div>
+      <p class="seed-contrib">发起：陈露 @ActionThinker（示例脱敏，地区：某区）</p>
+      <p class="seed-comply">延伸场景 · 发改 / 规划：同上能力可迁移——把 50 页政策文件用「长文提炼」提示词浓缩为 1 页要点；把可研报告改为汇报口径；把多项指标做成图表。结构一致，替换材料即可。</p>
+    </article>
+
+    <!-- 种子卡 2：招商 -->
+    <article class="wl-card seed-card wl-animate" id="seed-investment" style="margin-bottom:24px">
+      <div class="seed-head">
+        <h3>招商 / 商务 · 产业研究与对接</h3>
+        <span class="tier-badge">种子场景卡</span>
+        <span class="dc-diff">难度 ★★</span>
+      </div>
+      <p class="seed-sub">部门：招商局 / 商务局 / 园区 ｜ 类型：产业研究与对接 ｜ 企业信息须脱敏、以公开资料为准。</p>
+      <div class="seed-sec">
+        <h4>痛点</h4>
+        <ul class="pain-list">
+          <li>一次招商调研要翻几十个网页，整理产业链、企业、政策，周期长。</li>
+          <li>对接不同企业，推介材料每次重写，难个性化。</li>
+          <li>谈判/拜访前难快速形成「这家企业是谁、要什么」的画像。</li>
+        </ul>
+      </div>
+      <div class="seed-sec">
+        <h4>任务 A：产业链梳理（照做）</h4>
+        <p class="seed-io"><strong>输入：</strong>目标产业名称（如：动力电池）、本地区位/资源（脱敏描述）。</p>
+        <pre class="prompt-code">基于公开信息，梳理【某产业】在【某地区】的产业链：上游/中游/下游环节、代表环节、
+招商缺口与补链建议。用结构化清单输出，标注"需核实"项。</pre>
+        <p class="seed-io"><strong>产出：</strong>产业链地图草稿，作为招商图谱基础。</p>
+        <details>
+          <summary>任务 B：企业画像</summary>
+          <div class="seed-dbody">
+            <p class="seed-io"><strong>输入：</strong>目标企业公开信息（官网、年报摘要、公开新闻）。</p>
+            <p class="seed-io"><strong>提示词：</strong></p>
+            <pre class="prompt-code">根据以下公开资料，生成该企业画像：主营业务 / 核心竞争力 / 可能的扩产或布局需求 /
+与我方招商方向的契合点 / 对接建议。不确定的标"需核实"，不编造数据。</pre>
+            <p class="seed-io"><strong>产出：</strong>拜访前 1 页纸画像，提升对接针对性。</p>
+          </div>
+        </details>
+        <details>
+          <summary>任务 C：定制化推介材料</summary>
+          <div class="seed-dbody">
+            <p class="seed-io"><strong>提示词：</strong></p>
+            <pre class="prompt-code">为【某产业】目标企业起草一页推介：我方区位优势、政策礼包、要素成本、配套。
+正式且有说服力，结尾给下一步行动建议。</pre>
+            <p class="seed-io"><strong>产出：</strong>可复用的推介初稿，按企业微调即可。</p>
+          </div>
+        </details>
+      </div>
+      <div class="seed-sec">
+        <h4>成效（示例，可核验）</h4>
+        <ul class="gain-list">
+          <li>单项目调研周期：从数天压缩至半天级（初稿+人工核实）。</li>
+          <li>推介材料：从重复撰写变为「模板+微调」。</li>
+        </ul>
+      </div>
+      <div class="seed-sec">
+        <h4>可复用资产</h4>
+        <p class="seed-io">提示词：<a class="gb-link" href="gov.html#prompts">提示词模板库 · 产业研究</a>；模板：产业链梳理模板、企业画像模板、推介材料模板。</p>
+      </div>
+      <p class="seed-contrib">发起：陈露 @ActionThinker（示例脱敏，地区：某地）</p>
+      <p class="seed-comply">注意：企业数据须以公开渠道为准，AI 生成仅作草稿，关键事实人工核实后使用。</p>
+    </article>
+
+    <!-- 种子卡 3：司法 -->
+    <article class="wl-card seed-card wl-animate" id="seed-justice" style="margin-bottom:24px">
+      <div class="seed-head">
+        <h3>司法 / 法制 · 审查与普法</h3>
+        <span class="tier-badge">种子场景卡</span>
+        <span class="dc-diff">难度 ★★</span>
+      </div>
+      <p class="seed-sub">部门：司法局 / 法制科 / 执法部门 ｜ 类型：审查与普法 ｜ 涉及具体法律意见须由持证人员复核。</p>
+      <div class="seed-sec">
+        <h4>痛点</h4>
+        <ul class="pain-list">
+          <li>合同/协议条款多，人工逐条审，易漏风险点。</li>
+          <li>普法材料专业术语多，群众看不懂。</li>
+          <li>执法依据分散，检索费时。</li>
+        </ul>
+      </div>
+      <div class="seed-sec">
+        <h4>任务 A：合同条款风险审查（照做）</h4>
+        <p class="seed-io"><strong>输入：</strong>合同文本（脱敏，去当事人实名）。</p>
+        <pre class="prompt-code">审查以下合同条款，列出：①风险点 ②对应的法律/合规依据（注明常见法规，如《民法典》相关编章）③修改建议。
+不确定处标注"建议律师复核"，不编造条文。</pre>
+        <p class="seed-io"><strong>产出：</strong>风险清单 + 修改建议，作为人工复核底稿。</p>
+        <details>
+          <summary>任务 B：普法图文</summary>
+          <div class="seed-dbody">
+            <p class="seed-io"><strong>提示词：</strong></p>
+            <pre class="prompt-code">把以下法律要点改写成群众易懂的普法短文，约 300 字，配 3 个生活化例子，不用生僻术语。</pre>
+            <p class="seed-io"><strong>产出：</strong>可发公众号/社区的普法稿。</p>
+          </div>
+        </details>
+        <details>
+          <summary>任务 C：执法依据检索摘要</summary>
+          <div class="seed-dbody">
+            <p class="seed-io"><strong>提示词：</strong></p>
+            <pre class="prompt-code">针对【某执法场景】，梳理适用的法律依据要点、程序要求、常见注意事项。列要点，注明"以最新法规为准"。</pre>
+            <p class="seed-io"><strong>产出：</strong>执法参考卡（草稿，须核对现行有效法规）。</p>
+          </div>
+        </details>
+      </div>
+      <div class="seed-sec">
+        <h4>成效（示例，可核验）</h4>
+        <ul class="gain-list">
+          <li>审查：风险点初筛效率提升，人工聚焦关键条款。</li>
+          <li>普法：材料可读性显著提升，群众反馈改善。</li>
+        </ul>
+      </div>
+      <div class="seed-sec">
+        <h4>可复用资产</h4>
+        <p class="seed-io">提示词：<a class="gb-link" href="gov.html#prompts">提示词模板库 · 合同审查</a>；模板：合同审查清单、普法短文模板。</p>
+      </div>
+      <p class="seed-contrib">发起：陈露 @ActionThinker（示例脱敏，地区：某地）</p>
+      <p class="seed-comply">重要：AI 审查为辅助底稿，不构成法律意见；正式法律意见须由具备资质人员出具并留痕。</p>
+    </article>
+
+    <p class="trainer-note wl-animate">其他部门（发改 / 财政审计 / 人社民政 / 应急 / 政务服务大数据 / 宣传网信 / 纪检巡察）场景卡持续征集：按上方结构提交一张卡，帮助全国同行。贡献路径见下方。</p>
+  </div>
+</section>
+
+<!-- ───────── 提交新场景卡 ───────── -->
+<section class="wl-section final-cta" id="submit">
+  <div class="wl-container wl-animate">
+    <h2>你的部门还没覆盖？来提交一张场景卡</h2>
+    <p>Fork 仓库 → 新建分支 → 按模板填写部门/痛点/做法/成效 → 提 Pull Request。维护者按「不涉密、可复现、不夸大、格式规范」四项审核，通过后收录进矩阵。</p>
+    <div class="hero-ctas">
+      <a href="https://github.com/ActionThinker/gov-workbuddy" class="wl-btn wl-btn-gov" target="_blank" rel="noopener">Fork 仓库提交 PR</a>
+      <a href="training.html?tab=gov#contact" class="wl-btn wl-btn-primary">政务 AI 培训邀约</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── FAQ ───────── -->
+<section class="wl-section" id="faq">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">常见问题</span>
+      <h2 class="wl-title">关于场景矩阵，你可能想问</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">政务场景矩阵覆盖哪些部门？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>办公室/综合协调、发改/规划、财政/审计、人社/民政、招商/商务、司法/法制、应急管理、政务服务/大数据、宣传/网信、纪检/巡察等 10+ 业务部门，持续扩充中。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">场景卡是什么？包含哪些字段？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>场景卡是「一个部门 + 一个场景 + 一套照做步骤」的最小单元，字段包括：部门、痛点、做法（输入 + 提示词 + 产出）、成效、可复用资产、贡献者与地区。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">场景卡怎么用？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>找到所在部门 → 打开场景卡 → 复制提示词 → 替换成你的材料 → 拿到初稿后人工核对。使用前先读合规红线。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">我的部门还没有场景卡怎么办？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>先用通用五式提示词跑通常用任务（纪要整理、长文提炼、公文初稿、数据说明、大白话改写）；再按模板提交一张新场景卡，帮助全国同行。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">种子场景卡和其他部门条目有什么区别？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>3 张种子卡（办公室/招商/司法）已完整沉淀：含痛点、做法、提示词、量化成效与可复用资产，照做即可；其余部门为矩阵总览条目，场景卡持续征集补充。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">场景卡的成效数据是怎么来的？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>成效为示例数据、可核验，尽量量化；无法量化的会注明。请以你自己的实际使用结果为准。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">用场景卡要注意什么合规要求？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>三条红线：涉密材料一律不上传、先脱敏再使用、AI 产出必须人工复核。司法类场景卡内容为辅助底稿，不构成法律意见。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">怎么提交一张新场景卡？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>Fork 仓库 → 新建分支 → 按 cases/template.md 填写 → 提 Pull Request。审核四项：不涉密、可复现、不夸大、格式规范。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">场景矩阵多久更新一次？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>GitHub 仓库实时更新；本展示页每月第一个工作日同步，合规红线变更 24 小时内紧急同步。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 桥接 ───────── -->
+<div class="gov-bridge">
+  <div class="wl-container">
+    <p>需要集中培训或现场陪跑？</p>
+    <a href="training.html?tab=gov#contact">了解政务 AI 培训邀约 →</a>
+  </div>
+</div>
+
+<!-- ───────── Footer ───────── -->
+<footer class="footer">
+  <div class="wl-container footer-top">
+    <div class="footer-brand">
+      <div class="kb-sign">政务 WorkBuddy 共学知识库</div>
+      <p>面向全国公务员的 WorkBuddy 上手与应用开源知识库。公共开源项目，陈露 @ActionThinker 发起，CC BY-SA 4.0。内容为通用方法与实践示例，不构成官方标准或法律意见。</p>
+    </div>
+    <div>
+      <h4>快速入口</h4>
+      <ul class="footer-links">
+        <li><a href="/">首页</a></li>
+        <li><a href="gov.html">知识库首页</a></li>
+        <li><a href="training.html">培训课程</a></li>
+        <li><a href="https://github.com/ActionThinker/gov-workbuddy" target="_blank" rel="noopener">GitHub 仓库</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wl-container footer-bottom">
+    <span>© 2026 政务 WorkBuddy 共学知识库 · 陈露 @ActionThinker 发起</span>
+    <span>本站内容受版权保护，未经授权禁止抓取、复制或用于模型训练</span>
+    <span class="footer-ai"><span class="badge">AI-BUILT</span>本页面由 Claude 辅助构建 · 符合 EU AI Act 透明度披露</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* Nav toggle */
+  var nav=document.getElementById('nav');
+  var navToggle=document.getElementById('navToggle');
+  var navLinks=document.getElementById('navLinks');
+  navToggle.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+  navLinks.addEventListener('click',function(e){
+    if(e.target.closest('a')){nav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}
+  });
+  var navCta=document.querySelector('.nav-cta');
+  if(navCta){navCta.addEventListener('click',function(){nav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');});}
+
+  /* Scroll reveal */
+  var revealEls=document.querySelectorAll('.wl-animate');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});
+    },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el){io.observe(el);});
+  }else{revealEls.forEach(function(el){el.classList.add('visible');});}
+
+  /* FAQ accordion */
+  var faqs=document.querySelectorAll('.faq-item');
+  faqs.forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click',function(){
+      var wasOpen=item.classList.contains('open');
+      faqs.forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null;});
+      if(!wasOpen){
+        item.classList.add('open');
+        var a=item.querySelector('.faq-a');
+        a.style.maxHeight=a.scrollHeight+'px';
+      }
+    });
+  });
+
+  /* 合规横幅：localStorage 记忆（两页共用 key，一次阅读免扰）*/
+  var govBanner=document.getElementById('govBanner');
+  if(govBanner){
+    if(localStorage.getItem('wbl-gov-compliance')==='v1'){govBanner.classList.add('acked');}
+    document.getElementById('govBannerOk').addEventListener('click',function(){
+      localStorage.setItem('wbl-gov-compliance','v1');
+      govBanner.classList.add('acked');
+    });
+    document.getElementById('govBannerExpand').addEventListener('click',function(e){
+      e.preventDefault();
+      govBanner.classList.remove('acked');
+    });
+  }
+
+  /* 场景矩阵筛选（部门 / 难度 / 关键词，AND 组合）*/
+  var fDep=document.getElementById('fDep');
+  var fDiff=document.getElementById('fDiff');
+  var fKw=document.getElementById('fKw');
+  var fReset=document.getElementById('fReset');
+  var cards=[].slice.call(document.querySelectorAll('.dept-card'));
+  var countEl=document.getElementById('filterCount');
+  var emptyEl=document.getElementById('filterEmpty');
+  function applyFilter(){
+    var dep=fDep.value, diff=fDiff.value, kw=(fKw.value||'').trim().toLowerCase();
+    var n=0;
+    cards.forEach(function(c){
+      var ok=true;
+      if(dep&&c.getAttribute('data-dep')!==dep){ok=false;}
+      if(diff&&c.getAttribute('data-diff')!==diff){ok=false;}
+      if(kw){
+        var hay=((c.getAttribute('data-tags')||'')+' '+(c.textContent||'')).toLowerCase();
+        if(hay.indexOf(kw)===-1){ok=false;}
+      }
+      c.classList.toggle('hidden',!ok);
+      if(ok){n++;}
+    });
+    countEl.textContent='当前显示 '+n+' / '+cards.length+' 个部门';
+    emptyEl.style.display=n===0?'block':'none';
+  }
+  fDep.addEventListener('change',applyFilter);
+  fDiff.addEventListener('change',applyFilter);
+  fKw.addEventListener('input',applyFilter);
+  fReset.addEventListener('click',function(){
+    fDep.value='';fDiff.value='';fKw.value='';applyFilter();
+  });
+})();
+</script>
+</body>
+</html>
