@@ -363,13 +363,19 @@ body.gov-theme{
   --ink:#0F2A4D;
   --ink-2:#0B1D33;
   --teal:#1d4e89;
-  --teal-deep:#16396B;
+  --teal-deep:#1E5AA8;
   --teal-soft:#E3EBF5;
   --bg:#F5F8FC;
   --bg-alt:#E9EFF7;
   --border:#C9D6E6;
 }
 body.gov-theme .nav{background:rgba(15,32,58,.82)}
+/* 深色背景上的蓝字换亮蓝，保证可读性 */
+body.gov-theme .hero h1 .accent{color:#8FC3F0}
+body.gov-theme .hero-badge{color:#B8DCF8}
+body.gov-theme .hero-badge .dot{background:#8FC3F0;box-shadow:0 0 0 3px rgba(140,195,240,.25)}
+body.gov-theme .footer-ai .badge{color:#B8DCF8}
+body.gov-theme .footer-links a:hover{color:#8FC3F0}
 body.gov-theme .hero::before{
   background:
     radial-gradient(600px 400px at 78% 22%,rgba(47,125,196,.22),transparent 60%),
@@ -395,7 +401,7 @@ body.gov-theme .footer-ai .badge{background:rgba(47,125,196,.16);border-color:rg
 .gov-banner .gov-banner-acked{display:none;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:#7C4A1E}
 .gov-banner.acked .gov-banner-main{display:none}
 .gov-banner.acked .gov-banner-acked{display:flex}
-.gb-expand{font-size:13px;color:#16396B;font-weight:600;text-decoration:underline;cursor:pointer}
+.gb-expand{font-size:13px;color:var(--teal-deep);font-weight:600;text-decoration:underline;cursor:pointer}
 .gb-link{font-size:13.5px;font-weight:600;color:var(--teal-deep);text-decoration:none}
 .gb-link:hover{text-decoration:underline}
 
@@ -469,7 +475,7 @@ body.gov-theme .footer-ai .badge{background:rgba(47,125,196,.16);border-color:rg
           <path d="M14.5 16h3" stroke="#D8E2DE" stroke-width="1.6"/>
         </svg>
       </span>
-      <span class="brand-text">WorkBuddy<span style="color:var(--teal)">Link</span></span>
+      <span class="brand-text">WorkBuddy<span style="color:#8FC3F0">Link</span></span>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="gov.html">知识库首页</a></li>
