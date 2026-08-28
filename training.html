@@ -481,6 +481,10 @@ body{
   margin-top:22px;font-size:13px;color:var(--text-muted);background:var(--bg-alt);
   border-radius:10px;padding:14px 16px;
 }
+.gov-kb-hint{display:none;margin-bottom:28px;background:var(--teal-soft);border:1px solid rgba(40,184,148,.3);border-radius:10px;padding:12px 16px;font-size:12.5px;color:var(--text-muted);line-height:1.7}
+.gov-kb-hint.show{display:block}
+.gov-kb-hint a{color:var(--teal-deep);font-weight:600;text-decoration:none}
+.gov-kb-hint a:hover{text-decoration:underline}
 @media(max-width:860px){.contact-wrap{grid-template-columns:1fr}}
 
 /* ── Final CTA ── */
@@ -950,6 +954,9 @@ body{
           <button class="contact-tab active" data-tab="ent" role="tab">企业培训</button>
           <button class="contact-tab" data-tab="gov" role="tab">政务培训</button>
         </div>
+        <div class="gov-kb-hint" id="govKbHint">
+          除了集中培训，我们面向全国公务员维护一个 <a href="gov.html">免费开源政务知识库</a>——三分钟上手、10+ 部门场景矩阵、可复制提示词模板，长期免费开放。让每一位公务员把时间留给服务群众。
+        </div>
         <form id="contactForm" data-form="ent" novalidate>
           <div class="form-grid">
             <div class="form-field"><label>称呼 / 姓名 <span class="req">*</span></label>
@@ -1126,6 +1133,10 @@ body{
   /* Contact tabs */
   var tabs=document.querySelectorAll('.contact-tab');
   var form=document.getElementById('contactForm');
+  var kbHint=document.getElementById('govKbHint');
+  function syncKbHint(){
+    if(kbHint){kbHint.classList.toggle('show',form.getAttribute('data-form')==='gov'&&form.style.display!=='none');}
+  }
   tabs.forEach(function(tab){
     tab.addEventListener('click',function(){
       tabs.forEach(function(t){t.classList.remove('active');});
@@ -1136,6 +1147,7 @@ body{
       fields.forEach(function(f){f.value='';});
       document.getElementById('formOk').classList.remove('show');
       form.style.display='';
+      syncKbHint();
     });
   });
 
@@ -1163,6 +1175,7 @@ body{
     ].join('\n');
     var href='mailto:Lu@NexFDE.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
     form.style.display='none';
+    syncKbHint();
     formOk.classList.add('show');
     var win=window.open(href,'_self');
     if(!win){location.href=href;}
@@ -1170,6 +1183,7 @@ body{
   formAgain.addEventListener('click',function(){
     formOk.classList.remove('show');
     form.style.display='';
+    syncKbHint();
   });
 
   /* Gov tab deep-link: training.html?tab=gov#contact（来自政务知识库页的培训邀约入口）*/
