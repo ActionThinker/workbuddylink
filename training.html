@@ -1145,6 +1145,12 @@ body{
       form.setAttribute('data-form',t);
       var fields=form.querySelectorAll('input,select,textarea');
       fields.forEach(function(f){f.value='';});
+      var msgField=form.querySelector('textarea[name="message"]');
+      if(msgField){
+        msgField.setAttribute('placeholder',t==='gov'
+          ? '例：想让办公室学会用 WorkBuddy 写通知、做惠企政策材料整理、企业运行数据分析……'
+          : '例：想让市场部学会用 WorkBuddy 写文案、做数据分析和汇报材料……');
+      }
       document.getElementById('formOk').classList.remove('show');
       form.style.display='';
       syncKbHint();
