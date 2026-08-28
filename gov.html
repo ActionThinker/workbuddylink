@@ -510,6 +510,19 @@ body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
 .gov-bridge a{color:var(--coral);font-weight:600;text-decoration:none;font-size:15px}
 .gov-bridge a:hover{text-decoration:underline}
 .kb-sign{font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:-.01em}
+.gh-act{color:#8FC3F0;text-decoration:none;font-size:12.5px;font-weight:600;margin-right:12px;white-space:nowrap}
+.gh-act:hover{text-decoration:underline}
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(10,20,26,.6);backdrop-filter:blur(4px)}
+.modal.show{display:flex}
+.modal-card{background:#fff;border-radius:var(--radius-lg);padding:32px;text-align:center;max-width:340px;width:90%;max-height:92vh;overflow-y:auto}
+.modal-card h3{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.modal-card p{font-size:14px;color:var(--text-muted);margin-bottom:14px}
+.modal-close{margin-top:6px;background:var(--bg-alt);border:none;color:var(--text);padding:10px 26px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer}
+.share-card{max-width:380px}
+.share-card .poster-wrap{margin:16px auto;max-width:300px}
+.share-card canvas{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+.share-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.share-actions .wl-btn{font-size:13.5px;padding:10px 18px}
 </style>
 </head>
 <body class="gov-theme" data-fp="wbl-20260828-7f3a91c2">
@@ -557,12 +570,19 @@ body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
       <div class="hero-ctas">
         <a href="#guide" class="wl-btn wl-btn-gov">开始 0→1 上手</a>
         <a href="gov-scenarios.html" class="wl-btn wl-btn-ghost">查看部门场景矩阵</a>
+        <button class="wl-btn wl-btn-ghost" id="shareBtn" type="button">生成分享海报</button>
       </div>
       <div class="hero-meta">
         <div class="m-item"><span class="m-num">10+</span><span class="m-label">业务部门场景</span></div>
         <div class="m-item"><span class="m-num">3 张</span><span class="m-label">种子场景卡 · 可照做</span></div>
         <div class="m-item"><span class="m-num">CC BY-SA 4.0</span><span class="m-label">开源协议 · 自由使用</span></div>
-        <div class="m-item"><span class="m-num" id="ghStars">加载中</span><span class="m-label">GitHub Star · 欢迎 Star</span></div>
+        <div class="m-item">
+          <span class="m-num" id="ghStars">加载中</span>
+          <span class="m-label">
+            <a class="gh-act" href="https://github.com/ActionThinker/gov-workbuddy/stargazers" target="_blank" rel="noopener">★ Star 收藏</a>
+            <a class="gh-act" href="https://github.com/ActionThinker/gov-workbuddy/fork" target="_blank" rel="noopener">Fork 共建</a>
+          </span>
+        </div>
       </div>
     </div>
     <div class="hero-visual wl-animate" aria-hidden="true">
@@ -939,6 +959,22 @@ body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
   </div>
 </div>
 
+<!-- ───────── 分享海报 Modal ───────── -->
+<div class="modal" id="shareModal" role="dialog" aria-modal="true" aria-label="分享海报">
+  <div class="modal-card share-card">
+    <h3>分享知识库海报</h3>
+    <p>下载海报发到微信群 / 朋友圈，带一位同事一起上手。</p>
+    <div class="poster-wrap">
+      <canvas id="posterCanvas" width="750" height="1120"></canvas>
+    </div>
+    <div class="share-actions">
+      <button class="wl-btn wl-btn-gov" id="dlPoster" type="button">下载海报</button>
+      <button class="wl-btn wl-btn-outline" id="cpLink" type="button">复制链接</button>
+    </div>
+    <button class="modal-close" id="shareClose">关闭</button>
+  </div>
+</div>
+
 <!-- ───────── Footer ───────── -->
 <footer class="footer">
   <div class="wl-container footer-top">
@@ -963,6 +999,7 @@ body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
   </div>
 </footer>
 
+<script src="assets/qrcode.js"></script>
 <script>
 (function(){
   /* Nav toggle */
@@ -1058,6 +1095,92 @@ body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
         .then(function(d){if(d&&typeof d.stargazers_count==='number'){starEl.textContent='★ '+d.stargazers_count;}else{fallbackStar();}})
         .catch(fallbackStar);
     }catch(e){fallbackStar();}
+  }
+
+  /* 分享海报：canvas 绘制 + 二维码（qrcode-generator，MIT，本地自托管）*/
+  var shareBtn=document.getElementById('shareBtn');
+  var shareModal=document.getElementById('shareModal');
+  var posterCanvas=document.getElementById('posterCanvas');
+  var pageUrl='https://workbuddylink.com/gov.html';
+  if(shareBtn&&shareModal&&posterCanvas&&typeof qrcode==='function'){
+    function drawPoster(){
+      var c=posterCanvas,ctx=c.getContext('2d');
+      var W=c.width,H=c.height;
+      var bg=ctx.createLinearGradient(0,0,0,H);
+      bg.addColorStop(0,'#0F2A4D');bg.addColorStop(.65,'#1d4e89');bg.addColorStop(1,'#2f7dc4');
+      ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+      ctx.textAlign='center';
+      ctx.fillStyle='#FFFFFF';ctx.font='bold 58px "PingFang SC","Microsoft YaHei",sans-serif';
+      ctx.fillText('政务 WorkBuddy 共学知识库',375,150);
+      ctx.fillStyle='#8FC3F0';ctx.font='bold 42px "PingFang SC","Microsoft YaHei",sans-serif';
+      ctx.fillText('公务员 AI 提效 0→1 入门',375,225);
+      ctx.fillStyle='rgba(255,255,255,.78)';ctx.font='28px "PingFang SC","Microsoft YaHei",sans-serif';
+      ctx.fillText('三分钟上手 · 10+ 部门场景 · 提示词拿走即用',375,290);
+      ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='22px "PingFang SC","Microsoft YaHei",sans-serif';
+      ctx.fillText('合规红线 · 案例池 · 共建投稿 · 长期免费',375,340);
+      /* 白色二维码卡 */
+      ctx.fillStyle='#FFFFFF';
+      ctx.beginPath();
+      if(ctx.roundRect){ctx.roundRect(125,395,500,500,24);}
+      else{ctx.rect(125,395,500,500);}
+      ctx.fill();
+      var qr=qrcode(0,'M');
+      qr.addData(pageUrl);qr.make();
+      var count=qr.getModuleCount();
+      var cell=Math.floor(400/count);
+      var qx=175+(400-cell*count)/2;
+      var qy=445+(400-cell*count)/2;
+      ctx.fillStyle='#0F2A4D';
+      for(var r=0;r<count;r++){
+        for(var cc=0;cc<count;cc++){
+          if(qr.isDark(r,cc)){ctx.fillRect(qx+cc*cell,qy+r*cell,cell,cell);}
+        }
+      }
+      ctx.fillStyle='#0F2A4D';ctx.font='bold 26px "PingFang SC","Microsoft YaHei",sans-serif';
+      ctx.fillText('扫码进入 · 免费自学',375,975);
+      ctx.fillStyle='#B8DCF8';ctx.font='bold 30px "PingFang SC","Microsoft YaHei",sans-serif';
+      ctx.fillText('陈露 @ActionThinker 发起 · CC BY-SA 4.0',375,1030);
+      ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='22px "PingFang SC","Microsoft YaHei",sans-serif';
+      ctx.fillText('带一位同事一起上手，让 AI 成为政务办公的日常',375,1075);
+    }
+    shareBtn.addEventListener('click',function(){
+      drawPoster();
+      shareModal.classList.add('show');
+    });
+    document.getElementById('shareClose').addEventListener('click',function(){shareModal.classList.remove('show');});
+    shareModal.addEventListener('click',function(e){if(e.target===shareModal){shareModal.classList.remove('show');}});
+    document.getElementById('dlPoster').addEventListener('click',function(){
+      var a=document.createElement('a');
+      a.download='政务WorkBuddy知识库海报.png';
+      a.href=posterCanvas.toDataURL('image/png');
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+    });
+    document.getElementById('cpLink').addEventListener('click',function(){
+      var btn=this;
+      function done(){
+        var old=btn.textContent;
+        btn.textContent='已复制链接 ✓';
+        setTimeout(function(){btn.textContent=old;},1600);
+      }
+      function fallback(){
+        var ta=document.createElement('textarea');
+        ta.value=pageUrl;ta.style.position='fixed';ta.style.opacity='0';
+        document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy');done();}catch(e){}
+        document.body.removeChild(ta);
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        var settled=false;
+        var guard=setTimeout(function(){if(!settled){settled=true;fallback();}},700);
+        navigator.clipboard.writeText(pageUrl).then(function(){
+          if(!settled){settled=true;clearTimeout(guard);done();}
+        },function(){
+          if(!settled){settled=true;clearTimeout(guard);fallback();}
+        });
+      }else{fallback();}
+    });
+  }else if(shareBtn){
+    shareBtn.style.display='none';
   }
 })();
 </script>
