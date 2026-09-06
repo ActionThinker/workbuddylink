@@ -1,6 +1,69 @@
 {
-  "updatedAt": "2026-09-06",
+  "updatedAt": "2026-09-07",
   "events": [
+    {
+      "slug": "2026-09-wuxi-huishan",
+      "title": "拥抱AI时代 淬炼数字本领丨惠山经开区「HUI·AI课堂」开讲",
+      "date": "2026-09",
+      "location": "无锡 · 惠山经开区",
+      "scale": "200 余人",
+      "status": "delivered",
+      "reportUrl": "https://mp.weixin.qq.com/s/gbS40qFdSUPd9UldjgPxxQ",
+      "reportSource": "惠山经济技术开发区微信公众号",
+      "photos": [
+        "assets/training/2026-09-wuxi-huishan/web/photo-01.webp",
+        "assets/training/2026-09-wuxi-huishan/web/photo-02.webp",
+        "assets/training/2026-09-wuxi-huishan/web/photo-03.webp"
+      ],
+      "note": "「HUI·AI课堂」人工智能素养提升活动，为两百余名干部量身定制 AI 技能「开学第一课」"
+    },
+    {
+      "slug": "2026-08-wuxi-shuofang",
+      "title": "空港经开区（硕放街道）专题培训解锁WorkBuddy政企应用新路径",
+      "date": "2026-08",
+      "location": "无锡 · 硕放街道",
+      "scale": "500 余人",
+      "status": "delivered",
+      "reportUrl": "https://mp.weixin.qq.com/s/zdr4BUrqvu5nEAAyWr32BA",
+      "reportSource": "空港硕放微信公众号",
+      "photos": [
+        "assets/training/2026-08-wuxi-shuofang/web/photo-01.webp",
+        "assets/training/2026-08-wuxi-shuofang/web/photo-02.webp",
+        "assets/training/2026-08-wuxi-shuofang/web/photo-03.webp"
+      ],
+      "note": "党工委及人大工委领导、各职能机构主要负责人、各条线及社区（筹建组）干部、传帮带学员与企业代表参加"
+    },
+    {
+      "slug": "2026-08-wuxi-liangxi",
+      "title": "无锡梁溪区科技工信数据司法系统 AI 履职提效",
+      "date": "2026-08",
+      "location": "无锡 · 梁溪区",
+      "scale": "100 余人",
+      "status": "delivered",
+      "reportUrl": "https://mp.weixin.qq.com/s/Wtduv-4P6sIi7Pklo5yBlw",
+      "reportSource": "梁溪区科技局微信公众号",
+      "photos": [
+        "assets/training/2026-08-wuxi-liangxi/web/photo-01.webp",
+        "assets/training/2026-08-wuxi-liangxi/web/photo-02.webp"
+      ],
+      "note": "工信、科技、数据、司法四大系统干部「善用AI工具·增强履职本领」专题培训"
+    },
+    {
+      "slug": "2026-08-wuxi-yangshan",
+      "title": "AI赋能基层治理丨度假区（阳山镇）开展WorkBuddy实操技能培训",
+      "date": "2026-08",
+      "location": "无锡 · 阳山度假区",
+      "scale": "",
+      "status": "delivered",
+      "reportUrl": "https://mp.weixin.qq.com/s/d9GYflRFZOy39gYJrxKshQ",
+      "reportSource": "阳山旅游度假区微信公众号",
+      "photos": [
+        "assets/training/2026-08-wuxi-yangshan/web/photo-01.webp",
+        "assets/training/2026-08-wuxi-yangshan/web/photo-02.webp",
+        "assets/training/2026-08-wuxi-yangshan/web/photo-03.webp"
+      ],
+      "note": "全体党政领导、各村（社区）书记、机关中层以上干部参加培训"
+    },
     {
       "slug": "2026-10-wuxi-houqiao",
       "title": "锡山区某街道 AI 履职提效培训",
