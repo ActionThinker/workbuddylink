@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WorkBuddy 培训课程：企业 AI 办公提效训练营与政务数字办公 | WorkBuddyLink</title>
-<meta name="description" content="面向企业管理层、业务团队与政务机构的 WorkBuddy 专项培训：认知导入课、实操提效课、场景落地工作坊、持续陪跑四阶课程，另设政务机构数字办公应用课。WorkBuddy 生态专家团队主讲，已服务多家企业专项内训与政府各级部门多次百人规模履职提效 AI 专项培训。线下内训为主，可结合课前诊断与课后陪跑。">
+<meta name="description" content="面向企业管理层、业务团队与政务机构的 WorkBuddy 专项培训：认知导入课、实操提效课、场景落地工作坊、持续陪跑四阶课程，另设政务机构数字办公应用课。WorkBuddy 生态专家团队主讲，已服务多家企业专项内训与政府各级部门多次百人规模履职提效 AI 专项培训。线下内训为主，可结合课前诊断与课后陪跑。含政务培训现场实录与客户官方公开报道溯源。">
 <link rel="canonical" href="https://workbuddylink.com/training.html">
 <meta property="og:title" content="WorkBuddy 培训课程：企业 AI 办公提效训练营与政务数字办公 | WorkBuddyLink">
 <meta property="og:description" content="让团队真正会用 WorkBuddy：从认知到落地的四阶实战培训。认知导入课、实操提效课、场景落地工作坊、持续陪跑，另设政务机构数字办公专项。WorkBuddy 生态专家团队主讲。">
@@ -550,6 +550,45 @@ body{
   .cred-item{padding:20px 18px}
   .course-cta{flex-direction:column;gap:10px}
 }
+
+/* ── On-site training gallery（培训现场实录）── */
+.ev-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.ev-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.ev-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;cursor:zoom-in;transition:opacity .2s ease}
+.ev-photos img:hover{opacity:.88}
+.ev-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.ev-chip{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--teal-deep);background:var(--teal-soft);padding:4px 10px;border-radius:100px}
+.ev-chip-next{color:var(--coral-deep);background:var(--coral-soft)}
+.ev-body h3{font-size:17px;font-weight:700;color:var(--ink);line-height:1.45}
+.ev-meta{font-size:12.5px;color:var(--text-muted);font-weight:600}
+.ev-note{font-size:13.5px;color:var(--text-muted)}
+.ev-report{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding:10px 16px;border-radius:9px;border:1px solid var(--teal);color:var(--teal-deep);font-size:13px;font-weight:600;text-decoration:none;transition:all .2s ease;align-self:flex-start}
+.ev-report:hover{background:var(--teal-soft)}
+.ev-src{font-size:11.5px;font-weight:500;color:var(--text-muted)}
+.ev-report-cta{border-color:var(--coral);color:var(--coral-deep)}
+.ev-report-cta:hover{background:var(--coral-soft)}
+.ev-upcoming{border-style:dashed}
+.ev-fallback{padding:22px;text-align:center;color:var(--text-muted);font-size:14px;border:1px dashed var(--border);border-radius:var(--radius)}
+.ev-fallback a{color:var(--teal-deep);font-weight:600}
+@media(max-width:860px){.ev-photos{grid-template-columns:repeat(2,1fr)}}
+
+/* ── Lightbox（培训现场照片）── */
+.lb{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;background:rgba(10,20,26,.88)}
+.lb.show{display:flex}
+.lb-stage{max-width:min(1100px,92vw)}
+.lb-img{display:block;max-width:100%;max-height:82vh;margin:0 auto;object-fit:contain;border-radius:8px}
+.lb-close{position:absolute;top:20px;right:24px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.lb-close:hover{background:rgba(255,255,255,.22)}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease}
+.lb-prev{left:18px}
+.lb-next{right:18px}
+.lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,.22)}
+.lb-cap{position:absolute;bottom:24px;left:0;right:0;text-align:center;color:rgba(255,255,255,.85);font-size:13.5px}
+@media(max-width:560px){
+  .lb-prev{left:6px}.lb-next{right:6px}
+  .lb-prev,.lb-next{width:40px;height:40px;font-size:22px}
+  .lb-close{top:14px;right:14px}
+}
 </style>
 </head>
 <body data-fp="wbl-20260827-9c84bf3d">
@@ -886,14 +925,27 @@ body{
         <span class="case-tag">政务专项</span>
         <div class="case-who">政府各级部门 ｜ 党政办干部</div>
         <h3>多次百人规模履职提效 AI 专项培训</h3>
-        <p>面向政府各级部门开展多次百人规模履职提效 AI 专项培训，覆盖公文材料起草、会议纪要与简报、信息整理等场景，授课节奏贴合政务工作。</p>
+        <p>面向政府各级部门开展多次百人规模履职提效 AI 专项培训，覆盖公文材料起草、会议纪要与简报、信息整理等场景，授课节奏贴合政务工作。<a href="#onsite" style="color:var(--teal-deep);font-weight:600;text-decoration:none">近年场次实录与现场照片见下 ↓</a></p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ───────── 培训现场实录 ───────── -->
+<section class="wl-section wl-section-alt" id="onsite">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">现场实录</span>
+      <h2 class="wl-title">政务培训现场：从阳山到空港，持续开展中</h2>
+      <p class="wl-lead">WorkBuddy 政务数字办公培训已走进无锡度假区（阳山镇）、梁溪区科技工信数据司法系统、空港开发区（硕放街道）、惠山经开区功能区等多个党政机关，多次百人规模、现场实操。以下场次信息与照片均来自客户官方公开报道，均可点击溯源。</p>
+    </div>
+    <div class="ev-grid grid-3" id="evList"></div>
+    <div class="ev-fallback" id="evFallback" hidden>往期现场实录整理中，更多场次信息欢迎<a href="#contact">联系我们</a>了解。</div>
+  </div>
+</section>
+
 <!-- ───────── FAQ ───────── -->
-<section class="wl-section wl-section-alt" id="faq">
+<section class="wl-section" id="faq">
   <div class="wl-container">
     <div class="wl-intro center wl-animate">
       <span class="wl-section-label">常见问题</span>
@@ -941,7 +993,7 @@ body{
 </section>
 
 <!-- ───────── 联系 ───────── -->
-<section class="wl-section" id="contact">
+<section class="wl-section wl-section-alt" id="contact">
   <div class="wl-container">
     <div class="wl-intro center wl-animate">
       <span class="wl-section-label">联系我们</span>
@@ -1215,6 +1267,125 @@ body{
   document.getElementById('wxBtn').addEventListener('click',function(){wxModal.classList.add('show');});
   document.getElementById('wxClose').addEventListener('click',function(){wxModal.classList.remove('show');});
   wxModal.addEventListener('click',function(e){if(e.target===wxModal){wxModal.classList.remove('show');}});
+
+  /* ── 培训现场实录：fetch JSON 渲染 + lightbox ── */
+  var evList=document.getElementById('evList');
+  var evFallback=document.getElementById('evFallback');
+  var lb=null,lbImgs=[],lbIdx=0;
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+
+  function buildCard(ev){
+    if(ev.status==='delivered'){
+      var photos=ev.photos||[];
+      var thumbs=photos.slice(0,3).map(function(p,i){
+        return '<img src="'+esc(p)+'" alt="'+esc(ev.title)+'培训现场照片'+(i+1)+'" loading="lazy" decoding="async" data-idx="'+i+'">';
+      }).join('');
+      var report=ev.reportUrl
+        ? '<a class="ev-report" href="'+esc(ev.reportUrl)+'" target="_blank" rel="noopener noreferrer">查看官方报道 ↗<span class="ev-src">'+esc(ev.reportSource||'官方公开报道')+'</span></a>'
+        : '';
+      return '<article class="wl-card ev-card wl-animate">'
+        +'<div class="ev-photos">'+thumbs+'</div>'
+        +'<div class="ev-body">'
+        +'<span class="ev-chip">已交付</span>'
+        +'<h3>'+esc(ev.title)+'</h3>'
+        +'<p class="ev-meta">'+esc(ev.date)+' ｜ '+esc(ev.location)+(ev.scale?' ｜ '+esc(ev.scale):'')+'</p>'
+        +(ev.note?'<p class="ev-note">'+esc(ev.note)+'</p>':'')
+        +report
+        +'</div></article>';
+    }
+    return '<article class="wl-card ev-card ev-upcoming wl-animate">'
+      +'<div class="ev-body">'
+      +'<span class="ev-chip ev-chip-next">即将开展</span>'
+      +'<h3>'+esc(ev.title)+'</h3>'
+      +'<p class="ev-meta">'+esc(ev.date)+' ｜ '+esc(ev.location)+(ev.scale?' ｜ '+esc(ev.scale):'')+'</p>'
+      +(ev.note?'<p class="ev-note">'+esc(ev.note)+'</p>':'')
+      +'<a class="ev-report ev-report-cta" href="#contact">预约同款培训</a>'
+      +'</div></article>';
+  }
+
+  function renderEvents(events){
+    var sorted=events.slice().sort(function(a,b){
+      if(a.status!==b.status){return a.status==='upcoming'?1:-1;}
+      return String(b.date).localeCompare(String(a.date));
+    });
+    evList.innerHTML=sorted.map(buildCard).join('');
+    var cards=evList.querySelectorAll('.ev-card');
+    sorted.forEach(function(ev,i){cards[i]._ev=ev;});
+    if('IntersectionObserver' in window){
+      var io2=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io2.unobserve(en.target);}});
+      },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+      cards.forEach(function(el){io2.observe(el);});
+    }else{cards.forEach(function(el){el.classList.add('visible');});}
+    evList.addEventListener('click',function(e){
+      var img=e.target.closest('.ev-photos img');
+      if(!img)return;
+      var card=img.closest('.ev-card');
+      if(card&&card._ev){openLightbox(card._ev,parseInt(img.getAttribute('data-idx'),10)||0);}
+    });
+  }
+
+  function openLightbox(ev,idx){
+    if(!lb){
+      lb=document.createElement('div');
+      lb.className='lb';
+      lb.setAttribute('role','dialog');
+      lb.setAttribute('aria-modal','true');
+      lb.innerHTML='<button class="lb-close" aria-label="关闭">×</button>'
+        +'<button class="lb-prev" aria-label="上一张">‹</button>'
+        +'<div class="lb-stage"><img class="lb-img" alt=""></div>'
+        +'<button class="lb-next" aria-label="下一张">›</button>'
+        +'<div class="lb-cap"></div>';
+      document.body.appendChild(lb);
+      lb.addEventListener('click',function(e){
+        if(e.target===lb||e.target.classList.contains('lb-close')){closeLightbox();}
+      });
+      lb.querySelector('.lb-prev').addEventListener('click',function(){showLb((lbIdx-1+lbImgs.length)%lbImgs.length);});
+      lb.querySelector('.lb-next').addEventListener('click',function(){showLb((lbIdx+1)%lbImgs.length);});
+    }
+    lbImgs=(ev.photos||[]).slice();
+    lbIdx=idx;
+    lb.setAttribute('aria-label',ev.title+'培训现场照片');
+    lb.classList.add('show');
+    document.body.style.overflow='hidden';
+    document.addEventListener('keydown',lbKey);
+    showLb(lbIdx);
+  }
+  function closeLightbox(){
+    if(!lb)return;
+    lb.classList.remove('show');
+    document.body.style.overflow='';
+    document.removeEventListener('keydown',lbKey);
+  }
+  function lbKey(e){
+    if(e.key==='Escape'){closeLightbox();}
+    if(e.key==='ArrowLeft'){showLb((lbIdx-1+lbImgs.length)%lbImgs.length);}
+    if(e.key==='ArrowRight'){showLb((lbIdx+1)%lbImgs.length);}
+  }
+  function showLb(i){
+    lbIdx=i;
+    var img=lb.querySelector('.lb-img');
+    var capEl=lb.querySelector('.lb-cap');
+    capEl.textContent='';
+    img.onload=function(){capEl.textContent=(i+1)+' / '+lbImgs.length;};
+    img.src=lbImgs[i];
+    img.alt=lb.getAttribute('aria-label')+' '+(i+1);
+    [ (i+1)%lbImgs.length, (i-1+lbImgs.length)%lbImgs.length ].forEach(function(j){
+      var pre=new Image();pre.src=lbImgs[j];
+    });
+  }
+
+  fetch('data/training-events.json',{cache:'no-store'}).then(function(r){
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    return r.json();
+  }).then(function(data){
+    renderEvents(data.events||[]);
+  }).catch(function(err){
+    console.warn('培训现场实录加载失败：',err);
+    if(evFallback){evFallback.hidden=false;}
+    if(evList){evList.style.display='none';}
+  });
 })();
 </script>
 </body>
