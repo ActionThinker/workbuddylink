@@ -3,6 +3,8 @@
   "events": [
     {
       "slug": "2026-09-wuxi-huishan",
+      "type": "gov",
+      "tag": "惠山经开区 · HUI·AI课堂",
       "title": "拥抱AI时代 淬炼数字本领丨惠山经开区「HUI·AI课堂」开讲",
       "date": "2026-09",
       "location": "无锡 · 惠山经开区",
@@ -19,6 +21,8 @@
     },
     {
       "slug": "2026-08-wuxi-shuofang",
+      "type": "gov",
+      "tag": "硕放街道 · 政企应用专题",
       "title": "空港经开区（硕放街道）专题培训解锁WorkBuddy政企应用新路径",
       "date": "2026-08",
       "location": "无锡 · 硕放街道",
@@ -35,6 +39,8 @@
     },
     {
       "slug": "2026-08-wuxi-liangxi",
+      "type": "gov",
+      "tag": "梁溪区 · 履职提效",
       "title": "无锡梁溪区科技工信数据司法系统 AI 履职提效",
       "date": "2026-08",
       "location": "无锡 · 梁溪区",
@@ -50,6 +56,8 @@
     },
     {
       "slug": "2026-08-wuxi-yangshan",
+      "type": "gov",
+      "tag": "阳山度假区 · 基层治理",
       "title": "AI赋能基层治理丨度假区（阳山镇）开展WorkBuddy实操技能培训",
       "date": "2026-08",
       "location": "无锡 · 阳山度假区",
@@ -66,6 +74,8 @@
     },
     {
       "slug": "2026-10-wuxi-houqiao",
+      "type": "gov",
+      "tag": "锡山区某街道 · 履职提效",
       "title": "锡山区某街道 AI 履职提效培训",
       "date": "2026-10",
       "location": "无锡 · 某街道",
