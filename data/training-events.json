@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07",
+  "updatedAt": "2026-09-08",
   "events": [
     {
       "slug": "2026-09-wuxi-huishan",
@@ -71,6 +71,99 @@
         "assets/training/2026-08-wuxi-yangshan/web/photo-03.webp"
       ],
       "note": "全体党政领导、各村（社区）书记、机关中层以上干部参加培训"
+    },
+    {
+      "slug": "2026-09-ent-finance-agent",
+      "type": "enterprise",
+      "tag": "金融服务 · 智能体搭建",
+      "title": "某头部城市商业银行 · 销冠智能体助手搭建",
+      "industry": "金融服务",
+      "date": "2026-09",
+      "location": "",
+      "scale": "20 人",
+      "status": "delivered",
+      "reportUrl": "",
+      "reportSource": "",
+      "photos": [
+        "assets/training/2026-09-ent-finance-agent/web/photo-01.webp",
+        "assets/training/2026-09-ent-finance-agent/web/photo-02.webp",
+        "assets/training/2026-09-ent-finance-agent/web/photo-03.webp"
+      ],
+      "note": "销冠经验知识资产化，AI 智能体搭建"
+    },
+    {
+      "slug": "2026-08-ent-finance-expert",
+      "type": "enterprise",
+      "tag": "金融服务 · 专家经验萃取",
+      "title": "某头部城市商业银行 · 销冠经验AI知识资产化",
+      "industry": "金融服务",
+      "date": "2026-08",
+      "location": "",
+      "scale": "20 人",
+      "status": "delivered",
+      "reportUrl": "",
+      "reportSource": "",
+      "photos": [
+        "assets/training/2026-08-ent-finance-expert/web/photo-01.webp",
+        "assets/training/2026-08-ent-finance-expert/web/photo-02.webp"
+      ],
+      "note": "专家经验萃取，销冠经验沉淀"
+    },
+    {
+      "slug": "2026-05-ent-construction",
+      "type": "enterprise",
+      "tag": "建筑集团 · 智能体搭建",
+      "title": "某建筑集团央企 · AI智能体搭建工作坊",
+      "industry": "建筑集团",
+      "date": "2026-05",
+      "location": "",
+      "scale": "60 人",
+      "status": "delivered",
+      "reportUrl": "",
+      "reportSource": "",
+      "photos": [
+        "assets/training/2026-05-ent-construction/web/photo-01.webp",
+        "assets/training/2026-05-ent-construction/web/photo-02.webp",
+        "assets/training/2026-05-ent-construction/web/photo-03.webp"
+      ],
+      "note": "AI 智能体搭建工作坊"
+    },
+    {
+      "slug": "2026-05-ent-finance-office",
+      "type": "enterprise",
+      "tag": "金融服务 · AI+办公",
+      "title": "某城市商业银行 · AI+办公实操提效课",
+      "industry": "金融服务",
+      "date": "2026-05",
+      "location": "",
+      "scale": "100 人",
+      "status": "delivered",
+      "reportUrl": "",
+      "reportSource": "",
+      "photos": [
+        "assets/training/2026-05-ent-finance-office/web/photo-01.webp",
+        "assets/training/2026-05-ent-finance-office/web/photo-02.webp",
+        "assets/training/2026-05-ent-finance-office/web/photo-03.webp"
+      ],
+      "note": "AI 办公提效，岗位 AI 应用"
+    },
+    {
+      "slug": "2026-01-ent-consumer-electronics",
+      "type": "enterprise",
+      "tag": "消费电子 · AI+办公",
+      "title": "某500强消费电子头部品牌 · AI+办公实操提效课",
+      "industry": "消费电子",
+      "date": "2026-01",
+      "location": "",
+      "scale": "20 人",
+      "status": "delivered",
+      "reportUrl": "",
+      "reportSource": "",
+      "photos": [
+        "assets/training/2026-01-ent-consumer-electronics/web/photo-01.webp",
+        "assets/training/2026-01-ent-consumer-electronics/web/photo-02.webp"
+      ],
+      "note": "AI 办公提效，岗位 AI 应用"
     },
     {
       "slug": "2026-10-wuxi-houqiao",
