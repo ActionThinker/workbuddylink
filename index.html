@@ -920,7 +920,7 @@ body{
           <div><h3>渠道合作路径</h3><p class="path-sub">从申请加入，到联合增长</p></div>
         </div>
         <ol class="path-steps">
-          <li><span class="path-num">1</span><div class="path-step"><h4>申请加入</h4><p>提交你的客户资源或行业场景。</p></div></li>
+          <li><span class="path-num">1</span><div class="path-step"><h4>申请加入</h4><p>提交你的资源画像——客户网络、行业经验或区域资源。</p></div></li>
           <li><span class="path-num">2</span><div class="path-step"><h4>资格沟通</h4><p>确认合作类型与适配方向，明确双方投入。</p></div></li>
           <li><span class="path-num">3</span><div class="path-step"><h4>培训与试点</h4><p>获取销售方法与交付 SOP，完成试点验证。</p></div></li>
           <li><span class="path-num">4</span><div class="path-step"><h4>联合增长</h4><p>复制已验证路径，联合放大增长。</p></div></li>
@@ -928,7 +928,7 @@ body{
       </div>
     </div>
     <div style="text-align:center;margin-top:44px">
-      <a href="#contact" class="wl-btn wl-btn-primary">申请成为合作伙伴</a>
+      <a href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnPkEBpcNFmYzLFybVCKB4dd" class="wl-btn wl-btn-primary" target="_blank" rel="noopener">申请成为合作伙伴</a>
     </div>
   </div>
 </section>
@@ -1036,6 +1036,12 @@ body{
             <span class="form-note">我们会在 1 个工作日内回复。首次沟通以判断场景与合作方式为主，不会强行推进成交。</span>
           </div>
         </form>
+        <div class="partner-panel" id="partnerPanel" hidden>
+          <h3 style="font-size:19px;font-weight:700;color:var(--ink);margin-bottom:12px">渠道伙伴申请：先说说你手上的资源</h3>
+          <p style="margin-bottom:10px;color:var(--ink)">AI 办公的蓝海刚刚打开，WorkBuddy 生态正在起步。如果你手上有客户、有行业经验、有区域资源——我们想和你一起，把这些变成共同的生意。</p>
+          <p style="margin-bottom:22px;color:rgba(16,30,38,.62)">花 3 分钟提交你的资源画像，方便我们快速找到合适的合作切入点。提交后我们会尽快联系你。</p>
+          <a href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnPkEBpcNFmYzLFybVCKB4dd" class="wl-btn wl-btn-primary" target="_blank" rel="noopener">填写伙伴资源画像（飞书表单）</a>
+        </div>
         <div class="form-ok" id="formOk" role="status">
           <div class="ok-icon">✓</div>
           <h3>已收到你的合作申请</h3>
@@ -1168,12 +1174,19 @@ body{
       tabs.forEach(function(t){t.classList.remove('active');});
       tab.classList.add('active');
       var t=tab.getAttribute('data-tab');
-      form.setAttribute('data-form',t);
-      /* reset fields for switch */
-      var fields=form.querySelectorAll('input,select,textarea');
-      fields.forEach(function(f){f.value='';});
-      document.getElementById('formOk').classList.remove('show');
-      form.style.display='';
+      var panel=document.getElementById('partnerPanel');
+      if(t==='chn'){
+        form.style.display='none';
+        if(panel){panel.hidden=false;}
+      } else {
+        form.setAttribute('data-form',t);
+        /* reset fields for switch */
+        var fields=form.querySelectorAll('input,select,textarea');
+        fields.forEach(function(f){f.value='';});
+        document.getElementById('formOk').classList.remove('show');
+        form.style.display='';
+        if(panel){panel.hidden=true;}
+      }
     });
   });
 
@@ -1207,6 +1220,10 @@ body{
   formAgain.addEventListener('click',function(){
     formOk.classList.remove('show');
     form.style.display='';
+    document.getElementById('partnerPanel').hidden=true;
+    tabs.forEach(function(t){t.classList.remove('active');});
+    document.querySelector('.contact-tab[data-tab="ent"]').classList.add('active');
+    form.setAttribute('data-form','ent');
   });
 
   /* WeChat modal */
