@@ -135,6 +135,22 @@
             "@type": "Answer",
             "text": "通过下方表单提交你的阶段与需求，我们会在 1 个工作日内回复。首次沟通以判断你的场景适合怎么落地为主，先明确启动方式与合作类型，不会强行推进成交。One PC, One Buddy——从第一个坐席开始，把能力用起来。"
           }
+        },
+        {
+          "@type": "Question",
+          "name": "WorkBuddy 服务商怎么选？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "看三件事：官方、代理与服务商的区别是否说得清；是否提供 7 维评估框架（落地经验/交付 SOP/行业 Know-how/持续陪跑/合规边界/响应机制/生态关系）与可核对的证据；是否敢于让你小步启动验证。完整评估框架见选型指南页「WorkBuddy 服务商怎么选」。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "WorkBuddy 企业版和个人版有什么区别？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "分水岭在组织级能力：个人版面向个人日常办公，企业版提供权限与管控、企业级数据合规（已通过信通院认证）、管理后台与服务支持；专有云面向强合规行业 100 席起（不等同于本地私有化）。SaaS 企业版 1 席起，先买 1 月/1 季、先开 1 坐席即可启动。对照明细见选型指南页。"
+          }
         }
       ]
     },
@@ -143,7 +159,7 @@
       "@id": "https://workbuddylink.com/#article",
       "headline": "把 WorkBuddy 的产品能力，变成企业真正可落地的业务方案",
       "datePublished": "2026-08-23",
-      "dateModified": "2026-08-23",
+      "dateModified": "2026-10-13",
       "inLanguage": "zh-CN",
       "author": { "@id": "https://workbuddylink.com/#org" },
       "publisher": { "@id": "https://workbuddylink.com/#org" }
@@ -250,8 +266,8 @@ body{
 .nav.open .nav-toggle span:nth-child(2){opacity:0}
 .nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media(max-width:1024px){
-  .nav-inner{gap:12px}
-  .nav-links a{font-size:13px;padding:8px 8px}
+  .nav-inner{gap:10px}
+  .nav-links a{font-size:13px;padding:8px 6px}
   .nav-cta{padding:8px 14px;font-size:13px}
 }
 @media(max-width:860px){
@@ -506,7 +522,7 @@ body{
 
 /* ── Footer ── */
 .footer{background:var(--ink-2);color:rgba(255,255,255,.72);font-size:14px}
-.footer-top{padding:64px 0 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.footer-top{padding:64px 0 40px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1.1fr;gap:36px}
 .footer-brand .brand{margin-bottom:16px}
 .footer-brand p{font-size:13.5px;max-width:340px;line-height:1.8}
 .footer h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:16px}
@@ -526,6 +542,38 @@ body{
 .wl-animate{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .wl-animate.visible{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.wl-animate{opacity:1;transform:none;transition:none}}
+
+/* ── 选型指南 guide cards ── */
+.guide-card{display:flex;flex-direction:column;text-decoration:none;color:var(--text);min-height:230px}
+.guide-card .g-num{font-size:13px;font-weight:800;letter-spacing:.06em;color:var(--teal-deep);margin-bottom:14px}
+.guide-card h3{font-size:17.5px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.45}
+.guide-card p{font-size:13.5px;color:var(--text-muted);margin-bottom:18px;flex:1}
+.guide-card .g-more{font-size:13.5px;font-weight:600;color:var(--teal-deep)}
+.guide-card:hover .g-more{color:var(--coral)}
+.guide-personas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.gp-item{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px}
+.gp-item h4{font-size:14.5px;font-weight:700;color:var(--teal-deep);margin-bottom:6px}
+.gp-item p{font-size:13.5px;color:var(--text-muted);line-height:1.7}
+@media(max-width:860px){.guide-personas{grid-template-columns:1fr}}
+
+/* ── 岗位结合点 role cards ── */
+.role-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.role-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease}
+.role-card.open{border-color:var(--teal);box-shadow:var(--shadow)}
+.role-head{width:100%;display:flex;align-items:center;gap:12px;background:none;border:none;cursor:pointer;padding:18px 20px;text-align:left;font-family:inherit}
+.role-head .r-role{flex:none;font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--teal-deep);background:var(--teal-soft);padding:5px 11px;border-radius:100px}
+.role-head .r-hook{flex:1;font-size:14px;font-weight:600;color:var(--ink);line-height:1.55}
+.role-head .r-ico{flex:none;width:20px;height:20px;position:relative}
+.role-head .r-ico::before,.role-head .r-ico::after{content:"";position:absolute;background:var(--teal-deep);border-radius:2px;transition:all .25s ease}
+.role-head .r-ico::before{width:12px;height:2px;top:9px;left:4px}
+.role-head .r-ico::after{width:2px;height:12px;top:4px;left:9px}
+.role-card.open .r-ico::after{transform:scaleY(0)}
+.role-body{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 20px}
+.role-body p{font-size:13.5px;color:var(--text-muted);line-height:1.7;margin-bottom:10px}
+.role-body .r-out{font-size:13px;color:var(--text)}
+.role-body .role-cta{margin:2px 0 20px;padding:9px 16px;font-size:13px}
+.roles-note{margin-top:26px;text-align:center;font-size:13.5px;color:var(--text-muted);max-width:680px;margin-left:auto;margin-right:auto}
+@media(max-width:860px){.role-grid{grid-template-columns:1fr}}
 
 /* ── WeChat modal ── */
 .modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(10,20,26,.6);backdrop-filter:blur(4px)}
@@ -579,6 +627,7 @@ body{
       <li><a href="#home">首页</a></li>
       <li><a href="#services">企业服务</a></li>
       <li><a href="training.html">培训课程</a></li>
+      <li><a href="#guides">选型指南</a></li>
       <li><a href="#method">落地方式</a></li>
       <li><a href="#partner">合作伙伴</a></li>
       <li><a href="#faq">常见问题</a></li>
@@ -599,8 +648,8 @@ body{
     <div class="hero-copy wl-animate">
       <span class="hero-badge"><span class="dot"></span>基于 WorkBuddy 官方产品 · FDE 交付支持</span>
       <h1>把 <span class="accent">WorkBuddy</span> 的产品能力，<br>变成企业真正可落地的业务方案。</h1>
-      <p class="hero-sub">基于 WorkBuddy 官方产品能力，结合 FDE 交付支持，帮助企业完成 AI 认知对齐、办公提效培训、业务场景评估、企业版采购与部署实施、定制化方案设计与持续应用陪跑；对合作伙伴提供销售赋能、联合获客、方案支撑与交付承接。</p>
-      <p class="hero-note">适用于正在评估导入、推进试点或需要持续运营支持的企业团队。</p>
+      <p class="hero-sub">基于 WorkBuddy 官方产品能力，结合 FDE 交付支持，帮助企业完成 AI 认知对齐、办公提效培训、业务场景评估、企业版采购与部署实施、定制化方案设计与持续应用陪跑；对合作伙伴提供销售赋能、联合获客、方案支撑与交付承接。本站同时是<strong>企业选型决策的参考入口</strong>：<a href="#guides" style="color:var(--teal);text-decoration:none;font-weight:600">服务商怎么选、版本怎么定、一年预算怎么算</a>——不偏不编，帮你做出明智选择。</p>
+      <p class="hero-note">适用于正在评估导入、推进试点或需要持续运营支持的企业团队；也适合准备选型的 AI 负责人、企业决策者与人力资源负责人。</p>
       <div class="hero-ctas">
         <a href="#services" class="wl-btn wl-btn-primary">企业客户：获取落地建议</a>
         <a href="#partner" class="wl-btn wl-btn-ghost">合作伙伴：申请合作沟通</a>
@@ -768,6 +817,57 @@ body{
   </div>
 </section>
 
+<!-- ───────── 选型指南 ───────── -->
+<section class="wl-section" id="guides">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">选型指南</span>
+      <h2 class="wl-title">准备采购 WorkBuddy？先把这四个决策问题想清楚</h2>
+      <p class="wl-lead">我们把企业选型中最真实的四个决策问题整理成公开参考：不偏不编，帮你做出明智选择，而不是替你做决定。</p>
+    </div>
+    <div class="grid-4">
+      <a class="wl-card guide-card wl-animate" href="choose-workbuddy-provider.html">
+        <div class="g-num">01</div>
+        <h3>WorkBuddy 服务商怎么选</h3>
+        <p>官方、代理、服务商的区别；7 维评估框架与交付能力验证法；避坑信号清单。</p>
+        <span class="g-more">阅读服务商评估框架 →</span>
+      </a>
+      <a class="wl-card guide-card wl-animate" href="workbuddy-enterprise-vs-personal.html">
+        <div class="g-num">02</div>
+        <h3>企业版和个人版有什么区别</h3>
+        <p>三档版本对照；企业版多解决的 5 个问题；按团队规模的选型清单与升级路径。</p>
+        <span class="g-more">阅读版本对照 →</span>
+      </a>
+      <a class="wl-card guide-card wl-animate" href="enterprise-ai-budget.html">
+        <div class="g-num">03</div>
+        <h3>企业落地 AI 一年要花多少钱</h3>
+        <p>预算 5 块构成；三档情景测算；12 个月滚动预算表；隐性成本清单。</p>
+        <span class="g-more">阅读预算框架 →</span>
+      </a>
+      <a class="wl-card guide-card wl-animate" href="ai-office-selection.html">
+        <div class="g-num">04</div>
+        <h3>AI 办公产品选型怎么对比</h3>
+        <p>从「比参数」转向「比维度」：8 维评估框架、维度打分法与 2 周 POC 清单。</p>
+        <span class="g-more">阅读选型对比框架 →</span>
+      </a>
+    </div>
+    <div class="guide-personas wl-animate">
+      <div class="gp-item">
+        <h4>企业决策者</h4>
+        <p>对齐认知、把握导入时机——先算清账、看准场景，再决定投入节奏。</p>
+      </div>
+      <div class="gp-item">
+        <h4>AI 负责人</h4>
+        <p>跨行业陪跑、少走弯路——场景评估、试点验证与持续运营有人接得住。</p>
+      </div>
+      <div class="gp-item">
+        <h4>人力资源负责人</h4>
+        <p>找到 AI 人才培养路径，帮老板盘点核心人才资产——懂 AI 又懂业务的，成为价值共同体。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ───────── 推进落地 ───────── -->
 <section class="wl-section" id="method">
   <div class="wl-container">
@@ -866,6 +966,140 @@ body{
         <p>伙伴负责获客与客户经营，FDE 网络承接交付，共同完成首个客户落地并沉淀方法。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ───────── 岗位结合点 ───────── -->
+<section class="wl-section" id="roles">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">岗位结合点</span>
+      <h2 class="wl-title">结合你的岗位，看 WorkBuddy 能接住什么</h2>
+      <p class="wl-lead">十个岗位的真实痛点与 WorkBuddy 的接法。点开你的岗位，看看它能不能接住你手头的活——完整场景清单在沟通后提供。</p>
+    </div>
+    <div class="role-grid">
+      <div class="role-card wl-animate">
+        <button class="role-head" type="button" aria-expanded="false">
+          <span class="r-role">HR</span>
+          <span class="r-hook">合同躺在档案柜里没人翻，直到离职员工申请仲裁才发现有 3 份早过了期</span>
+          <span class="r-ico"></span>
+        </button>
+        <div class="role-body">
+          <p>纸柜一摞合同、三个版本的 Excel 台账，谁也说不清哪个是真的。WorkBuddy 重建台账，标出到期、无固定期限临界与漏签。</p>
+          <p class="r-out"><strong>核心产出：</strong>劳动合同台账与到期预警表</p>
+          <a class="wl-btn wl-btn-outline role-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取 HR 岗位场景清单</a>
+        </div>
+      </div>
+      <div class="role-card wl-animate">
+        <button class="role-head" type="button" aria-expanded="false">
+          <span class="r-role">产品</span>
+          <span class="r-hook">需求变更「谁批的」永远说不清，口头变更从没成功过</span>
+          <span class="r-ico"></span>
+        </button>
+        <div class="role-body">
+          <p>客户群、电梯口、研发自优化……变更散落四处，没有一次进过台账。WorkBuddy 逐次登记、原话引用、状态可查。</p>
+          <p class="r-out"><strong>核心产出：</strong>需求变更台账</p>
+          <a class="wl-btn wl-btn-outline role-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取产品岗位场景清单</a>
+        </div>
+      </div>
+      <div class="role-card wl-animate">
+        <button class="role-head" type="button" aria-expanded="false">
+          <span class="r-role">供应链采购</span>
+          <span class="r-hook">产线等料停了半小时，才知道三张订单已逾期一周</span>
+          <span class="r-ico"></span>
+        </button>
+        <div class="role-body">
+          <p>23 张在途订单全在脑子里和微信记录里。WorkBuddy 出每日风险三单，需要老板出面的单独列。</p>
+          <p class="r-out"><strong>核心产出：</strong>逾期订单风险日报</p>
+          <a class="wl-btn wl-btn-outline role-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取采购岗位场景清单</a>
+        </div>
+      </div>
+      <div class="role-card wl-animate">
+        <button class="role-head" type="button" aria-expanded="false">
+          <span class="r-role">市场</span>
+          <span class="r-hook">留资表单里躺着同行询价、学生调研和乱填的手机号</span>
+          <span class="r-ico"></span>
+        </button>
+        <div class="role-body">
+          <p>214 条线索原样甩给销售，就是三面背锅的开场。WorkBuddy 逐条清洗分级，给出剔除理由与建议话术。</p>
+          <p class="r-out"><strong>核心产出：</strong>留资线索清洗分级表</p>
+          <a class="wl-btn wl-btn-outline role-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取市场岗位场景清单</a>
+        </div>
+      </div>
+      <div class="role-card wl-animate">
+        <button class="role-head" type="button" aria-expanded="false">
+          <span class="r-role">法务</span>
+          <span class="r-hook">企业法务发不了律师函，「认真了」这句话卡在函怎么写上</span>
+          <span class="r-ico"></span>
+        </button>
+        <div class="role-body">
+          <p>欠款时效剩 30 天，催款函写得对不对直接决定对方回不回、时效断没断。WorkBuddy 出四要素草稿与回执联。</p>
+          <p class="r-out"><strong>核心产出：</strong>催款函草稿</p>
+          <a class="wl-btn wl-btn-outline role-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取法务岗位场景清单</a>
+        </div>
+      </div>
+      <div class="role-card wl-animate">
+        <button class="role-head" type="button" aria-expanded="false">
+          <span class="r-role">行政</span>
+          <span class="r-hook">考勤制度去年改了，用车制度引用的还是已作废条款</span>
+          <span class="r-ico"></span>
+        </button>
+        <div class="role-body">
+          <p>制度文件攒了多年、互相打架，内审前才发现。WorkBuddy 逐条排查冲突与失效引用，带文件名与条号。</p>
+          <p class="r-out"><strong>核心产出：</strong>制度冲突与失效引用排查报告</p>
+          <a class="wl-btn wl-btn-outline role-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取行政岗位场景清单</a>
+        </div>
+      </div>
+      <div class="role-card wl-animate">
+        <button class="role-head" type="button" aria-expanded="false">
+          <span class="r-role">财务</span>
+          <span class="r-hook">制度要求每月做、实际从没做过，未达账项里藏着窟窿</span>
+          <span class="r-ico"></span>
+        </button>
+        <div class="role-body">
+          <p>三家银行对账单格式各异、摘要模糊。WorkBuddy 逐笔勾对生成调节表，编制人审核人签章栏齐全。</p>
+          <p class="r-out"><strong>核心产出：</strong>银行余额调节表</p>
+          <a class="wl-btn wl-btn-outline role-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取财务岗位场景清单</a>
+        </div>
+      </div>
+      <div class="role-card wl-animate">
+        <button class="role-head" type="button" aria-expanded="false">
+          <span class="r-role">运营</span>
+          <span class="r-hook">日报 GMV 漂漂亮亮，老板娘问「钱呢」——口径之间隔着水分</span>
+          <span class="r-ico"></span>
+        </button>
+        <div class="role-body">
+          <p>三个平台三个口径，老板娘只认到账。WorkBuddy 统一双口径、异常标红、三句话结论。</p>
+          <p class="r-out"><strong>核心产出：</strong>多平台经营日报（口径统一版）</p>
+          <a class="wl-btn wl-btn-outline role-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取运营岗位场景清单</a>
+        </div>
+      </div>
+      <div class="role-card wl-animate">
+        <button class="role-head" type="button" aria-expanded="false">
+          <span class="r-role">销售售前</span>
+          <span class="r-hook">资质证书散落三个抽屉四个人电脑，招标前才发现过期 22 天</span>
+          <span class="r-ico"></span>
+        </button>
+        <div class="role-body">
+          <p>公告要求 ISO 双证加安全许可证，翻出来发现已过期。WorkBuddy 建六栏台账，预警分级、原件位置可查。</p>
+          <p class="r-out"><strong>核心产出：</strong>资质证书台账与到期预警表</p>
+          <a class="wl-btn wl-btn-outline role-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取售前岗位场景清单</a>
+        </div>
+      </div>
+      <div class="role-card wl-animate">
+        <button class="role-head" type="button" aria-expanded="false">
+          <span class="r-role">销售</span>
+          <span class="r-hook">一百多页招标文件里星号散落七个章节，漏掉一条直接废标</span>
+          <span class="r-ico"></span>
+        </button>
+        <div class="role-body">
+          <p>人工核对废标项靠眼力，漏一条废一单。WorkBuddy 提取全部实质性条款，逐项核对响应、每条带出处页码。</p>
+          <p class="r-out"><strong>核心产出：</strong>实质性条款响应表 + 废标风险清单</p>
+          <a class="wl-btn wl-btn-outline role-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取销售岗位场景清单</a>
+        </div>
+      </div>
+    </div>
+    <p class="roles-note wl-animate">以上为场景钩子。完整的岗位场景清单（含触发场景、WorkBuddy 边界与可直接复制的提示词）在留资沟通后提供——先用钩子判断它接不接得住你手头的活。</p>
   </div>
 </section>
 
@@ -1088,6 +1322,15 @@ body{
       <p>把 WorkBuddy 的产品能力，变成企业真正可落地的业务方案。基于官方产品与 FDE 交付支持，帮助企业完成 AI 认知对齐、场景验证、部署实施与持续陪跑，也帮助渠道伙伴实现联合增长。</p>
     </div>
     <div>
+      <h4>选型指南</h4>
+      <ul class="footer-links">
+        <li><a href="choose-workbuddy-provider.html">WorkBuddy 服务商怎么选</a></li>
+        <li><a href="workbuddy-enterprise-vs-personal.html">企业版和个人版有什么区别</a></li>
+        <li><a href="enterprise-ai-budget.html">企业落地 AI 一年成本预算</a></li>
+        <li><a href="ai-office-selection.html">AI 办公产品选型对比框架</a></li>
+      </ul>
+    </div>
+    <div>
       <h4>快速入口</h4>
       <ul class="footer-links">
         <li><a href="#services">企业服务</a></li>
@@ -1156,6 +1399,21 @@ body{
         item.classList.add('open');
         var a=item.querySelector('.faq-a');
         a.style.maxHeight=a.scrollHeight+'px';
+      }
+    });
+  });
+
+  /* Role cards accordion */
+  var roleCards=document.querySelectorAll('.role-card');
+  roleCards.forEach(function(card){
+    card.querySelector('.role-head').addEventListener('click',function(){
+      var wasOpen=card.classList.contains('open');
+      roleCards.forEach(function(c){c.classList.remove('open');c.querySelector('.role-body').style.maxHeight=null;c.querySelector('.role-head').setAttribute('aria-expanded','false');});
+      if(!wasOpen){
+        card.classList.add('open');
+        card.querySelector('.role-head').setAttribute('aria-expanded','true');
+        var b=card.querySelector('.role-body');
+        b.style.maxHeight=b.scrollHeight+'px';
       }
     });
   });
