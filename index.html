@@ -556,6 +556,23 @@ body{
 .gp-item p{font-size:13.5px;color:var(--text-muted);line-height:1.7}
 @media(max-width:860px){.guide-personas{grid-template-columns:1fr}}
 
+/* ── 行业场景启发 industry cards ── */
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ind-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;transition:border-color .2s ease,box-shadow .2s ease}
+.ind-card:hover{border-color:var(--teal);box-shadow:var(--shadow)}
+.ind-card h3{font-size:16.5px;font-weight:700;color:var(--ink);margin-bottom:12px}
+.ind-card ul{list-style:none;display:grid;gap:9px;margin-bottom:16px;flex:1}
+.ind-card ul li{font-size:13.5px;color:var(--text-muted);line-height:1.6;padding-left:16px;position:relative}
+.ind-card ul li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:2px;background:var(--teal)}
+.ind-cta{font-size:13.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;display:inline-flex}
+.ind-cta:hover{color:var(--coral)}
+.ind-card-cta{background:linear-gradient(180deg,var(--teal-soft),#fff);border-color:rgba(40,184,148,.4);justify-content:center}
+.ind-card-cta h3{color:var(--teal-deep)}
+.ind-card-cta p{font-size:13.5px;color:var(--text-muted);line-height:1.7;margin-bottom:16px;flex:1}
+.ind-card-cta .wl-btn{padding:11px 20px;font-size:14px}
+@media(max-width:1024px){.ind-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.ind-grid{grid-template-columns:1fr}}
+
 /* ── 岗位结合点 role cards ── */
 .role-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .role-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease}
@@ -1100,6 +1117,124 @@ body{
       </div>
     </div>
     <p class="roles-note wl-animate">以上为场景钩子。完整的岗位场景清单（含触发场景、WorkBuddy 边界与可直接复制的提示词）在留资沟通后提供——先用钩子判断它接不接得住你手头的活。</p>
+  </div>
+</section>
+
+<!-- ───────── 行业场景启发 ───────── -->
+<section class="wl-section wl-section-alt" id="industries">
+  <div class="wl-container">
+    <div class="wl-intro center wl-animate">
+      <span class="wl-section-label">行业场景启发</span>
+      <h2 class="wl-title">看看你的行业：这些场景，是不是也在你公司发生</h2>
+      <p class="wl-lead">十一个行业的场景钩子，来自真实业务现场。如果你在某个钩子里看到了自己公司的影子——说明你的场景值得认真梳理一遍。很多企业买工具之前，从没系统梳理过「哪些工作最值得 AI 接住」；梳理清楚之后你会发现：需要的不是一个工具，而是一套场景解决方案与 AI 落地路线图。</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card wl-animate">
+        <h3>制造与工业</h3>
+        <ul>
+          <li>接单评审：跨 4 个系统切 1-2 小时，才敢回销售能不能接</li>
+          <li>插单调整：分部门通知口径不一，通知改了工单没改</li>
+          <li>开工条件：跨 5 部门问 2-3 小时，「带病开工」成常态</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取制造行业场景清单 →</a>
+      </div>
+      <div class="ind-card wl-animate">
+        <h3>信息技术与互联网</h3>
+        <ul>
+          <li>客户半夜问「机器怎么了」，值班的人一个人扛</li>
+          <li>GPU 利用率不足 30%，算力卖不掉没人盘点</li>
+          <li>月报口径每次都要现翻合同，还常出错</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取互联网行业场景清单 →</a>
+      </div>
+      <div class="ind-card wl-animate">
+        <h3>数字内容与创意</h3>
+        <ul>
+          <li>广告极限词、版权风险，交付前合规靠肌肉记忆</li>
+          <li>同一版本事实散在策划/数值/公告/话术五处</li>
+          <li>选题到分发的事实核查，跨源又赶时效</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取创意行业场景清单 →</a>
+      </div>
+      <div class="ind-card wl-animate">
+        <h3>消费与零售</h3>
+        <ul>
+          <li>巡店表填了没人回看，一线拿不到结论</li>
+          <li>生鲜损耗说不清、鲜度没台账</li>
+          <li>ERP 显示库存 1000 件、实物 700 件是常态</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取零售行业场景清单 →</a>
+      </div>
+      <div class="ind-card wl-animate">
+        <h3>金融</h3>
+        <ul>
+          <li>贷前调查报告要从五个地方取数</li>
+          <li>批复条件逐项核查，实质凭证要齐</li>
+          <li>贷后检查流于形式，异常看不出来</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取金融行业场景清单 →</a>
+      </div>
+      <div class="ind-card wl-animate">
+        <h3>医疗与健康</h3>
+        <ul>
+          <li>柜台开放式对话，推荐边界与留痕不清</li>
+          <li>供货方资质过没过期、批号剩几个月没人答</li>
+          <li>病案首页与医保清单两套原则，靠复制粘贴</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取医疗行业场景清单 →</a>
+      </div>
+      <div class="ind-card wl-animate">
+        <h3>教育与科研</h3>
+        <ul>
+          <li>课程达成度报告躺在课程负责人硬盘里</li>
+          <li>评教数据年年收、无人归纳</li>
+          <li>学员档案分散五处，人一走全流失</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取教育行业场景清单 →</a>
+      </div>
+      <div class="ind-card wl-animate">
+        <h3>能源与公用事业</h3>
+        <ul>
+          <li>交接班记录写在本子上，靠人传、难闭环</li>
+          <li>隐患整改压在个人手里，追不动</li>
+          <li>电费占成本近六成，多数中心从没逐月核过账</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取能源行业场景清单 →</a>
+      </div>
+      <div class="ind-card wl-animate">
+        <h3>交通物流与出行</h3>
+        <ul>
+          <li>一票货五类单据，错了到港才变滞期费</li>
+          <li>网点不知道总部这笔罚款该不该认</li>
+          <li>报关的人不知道仓库实际发了多少件</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取交通物流行业场景清单 →</a>
+      </div>
+      <div class="ind-card wl-animate">
+        <h3>政务与公共事业</h3>
+        <ul>
+          <li>窗口「专科变全科」，材料预审全靠人</li>
+          <li>政策文件问答口径各窗口不统一</li>
+          <li>12345 承办口径沉淀在历史工单与承办人脑子里</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取政务行业场景清单 →</a>
+      </div>
+      <div class="ind-card wl-animate">
+        <h3>建筑 · 文旅 · 农业</h3>
+        <ul>
+          <li>农事记录三套载体各写一遍，彼此对不上</li>
+          <li>检测报告和合格证躺在另一个监管平台</li>
+          <li>补贴申报材料总在申报时凑不齐</li>
+        </ul>
+        <a class="ind-cta" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">获取建筑文旅农业场景清单 →</a>
+      </div>
+      <div class="ind-card ind-card-cta wl-animate">
+        <h3>没找到你的行业？</h3>
+        <p>留下你的行业与正在头疼的业务场景，我们帮你把「哪些工作最值得 AI 接住」梳理成一份场景优先级与落地路线图——先梳理，再决定买什么。</p>
+        <a class="wl-btn wl-btn-primary" href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnoqahsoNybEMbgF8sbM54Dc" target="_blank" rel="noopener">梳理我的场景</a>
+      </div>
+    </div>
+    <p class="roles-note wl-animate">以上为行业场景钩子。每个行业的完整场景清单（含 WorkBuddy 边界、企业版适配点与落地路径）在留资沟通后提供——先用钩子对照你的业务，看哪些场景和你正在头疼的问题对得上。</p>
   </div>
 </section>
 
