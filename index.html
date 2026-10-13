@@ -550,11 +550,13 @@ body{
 .guide-card p{font-size:13.5px;color:var(--text-muted);margin-bottom:18px;flex:1}
 .guide-card .g-more{font-size:13.5px;font-weight:600;color:var(--teal-deep)}
 .guide-card:hover .g-more{color:var(--coral)}
-.guide-personas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
-.gp-item{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px}
+.personas-lead{text-align:center;font-size:14px;font-weight:600;color:var(--teal-deep);margin-top:34px}
+.guide-personas{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:16px}
+.gp-item{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:18px 16px}
 .gp-item h4{font-size:14.5px;font-weight:700;color:var(--teal-deep);margin-bottom:6px}
-.gp-item p{font-size:13.5px;color:var(--text-muted);line-height:1.7}
-@media(max-width:860px){.guide-personas{grid-template-columns:1fr}}
+.gp-item p{font-size:13px;color:var(--text-muted);line-height:1.65}
+@media(max-width:1024px){.guide-personas{grid-template-columns:repeat(2,1fr)}.gp-item:last-child{grid-column:1/-1}}
+@media(max-width:640px){.guide-personas{grid-template-columns:1fr}.gp-item:last-child{grid-column:auto}}
 
 /* ── 行业场景启发 industry cards ── */
 .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -868,18 +870,27 @@ body{
         <span class="g-more">阅读选型对比框架 →</span>
       </a>
     </div>
+    <p class="personas-lead wl-animate">无论你正处在哪个角色，都能从这里找到自己的入口。</p>
     <div class="guide-personas wl-animate">
       <div class="gp-item">
         <h4>企业决策者</h4>
-        <p>对齐认知、把握导入时机——先算清账、看准场景，再决定投入节奏。</p>
+        <p>对齐 AI 认知，把握导入时机——投入多少、解决什么、怎么衡量，先有一本清晰的账。</p>
       </div>
       <div class="gp-item">
         <h4>AI 负责人</h4>
-        <p>跨行业陪跑、少走弯路——场景评估、试点验证与持续运营有人接得住。</p>
+        <p>推动 AI 转型，少走弯路——场景评估、试点验证、规模化推广，每个阶段有人接得住。</p>
+      </div>
+      <div class="gp-item">
+        <h4>业务负责人</h4>
+        <p>让 AI 真正帮到业务——从你的业务场景出发设计落地路径，而不是从工具功能出发。</p>
+      </div>
+      <div class="gp-item">
+        <h4>IT 负责人</h4>
+        <p>安全与合规有人把关——版本选型、权限管控、数据边界，按企业级标准部署与风控。</p>
       </div>
       <div class="gp-item">
         <h4>人力资源负责人</h4>
-        <p>找到 AI 人才培养路径，帮老板盘点核心人才资产——懂 AI 又懂业务的，成为价值共同体。</p>
+        <p>AI 人才与资产盘点有路径——帮老板看清人才家底，培养懂 AI 又懂业务的超级个体。</p>
       </div>
     </div>
   </div>
