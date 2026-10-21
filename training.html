@@ -593,6 +593,9 @@ body{
   .lb-close{top:14px;right:14px}
 }
 </style>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "01a534f3009b458b9874d3c28ff55ea2"}'></script><!-- End Cloudflare Web Analytics -->
+<script defer src="/assets/wbl-track.js"></script>
 </head>
 <body data-fp="wbl-20260827-9c84bf3d">
 
@@ -620,7 +623,7 @@ body{
       <li><a href="#contact">联系我们</a></li>
     </ul>
     <div class="nav-actions">
-      <a class="wl-btn wl-btn-primary nav-cta" href="#contact">获取课程方案</a>
+      <a class="wl-btn wl-btn-primary nav-cta" data-track="training_enroll" href="#contact">获取课程方案</a>
       <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -1040,7 +1043,7 @@ body{
           <button class="contact-tab" data-tab="gov" role="tab">政务培训</button>
         </div>
         <div class="gov-kb-hint" id="govKbHint">
-          除了集中培训，我们面向全国公务员维护一个 <a href="gov.html">免费开源政务知识库</a>——三分钟上手、10+ 部门场景矩阵、可复制提示词模板，长期免费开放。让每一位公务员把时间留给服务群众。
+          除了集中培训，我们面向全国公务员维护一个 <a href="gov.html" data-track="gov_kb">免费开源政务知识库</a>——三分钟上手、10+ 部门场景矩阵、可复制提示词模板，长期免费开放。让每一位公务员把时间留给服务群众。
         </div>
         <form id="contactForm" data-form="ent" novalidate>
           <div class="form-grid">
@@ -1091,7 +1094,7 @@ body{
             </div>
           </div>
           <div class="form-actions">
-            <button type="submit" class="wl-btn wl-btn-primary">获取课程方案</button>
+            <button type="submit" class="wl-btn wl-btn-primary" data-track="training_enroll">获取课程方案</button>
             <span class="form-note">我们会在 1 个工作日内回复，先给建议与参考报价，不会强行推进成交。</span>
           </div>
         </form>

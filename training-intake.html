@@ -227,6 +227,9 @@ body{font-family:'Inter',system-ui,-apple-system,'PingFang SC','Microsoft YaHei'
 @media(max-width:860px){.form-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.wl-container{padding:0 16px}.wl-section{padding:72px 0}.hero{padding:118px 0 64px}.hero-ctas .wl-btn{width:100%}.wiz-actions .wl-btn{flex:1}}
 </style>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "01a534f3009b458b9874d3c28ff55ea2"}'></script><!-- End Cloudflare Web Analytics -->
+<script defer src="/assets/wbl-track.js"></script>
 </head>
 <body data-fp="wbl-20261016-train-intake-v1">
 
@@ -450,7 +453,7 @@ body{font-family:'Inter',system-ui,-apple-system,'PingFang SC','Microsoft YaHei'
             <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
               <span class="wiz-skip" id="wizSkip">第 1 / 5 步</span>
               <button type="button" class="wl-btn wl-btn-primary" id="wizNext">下一步 →</button>
-              <button type="submit" class="wl-btn wl-btn-primary" id="wizSubmit" style="display:none">生成培训方向建议</button>
+              <button type="submit" class="wl-btn wl-btn-primary" id="wizSubmit" data-track="cta_intake_generate" style="display:none">生成培训方向建议</button>
             </div>
           </div>
         </form>

@@ -453,6 +453,9 @@ body.gov-theme .final-cta::before{background:radial-gradient(700px 380px at 50% 
 .kb-sign{font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:-.01em}
 @media(max-width:860px){.filter-bar{grid-template-columns:1fr}}
 </style>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "01a534f3009b458b9874d3c28ff55ea2"}'></script><!-- End Cloudflare Web Analytics -->
+<script defer src="/assets/wbl-track.js"></script>
 </head>
 <body class="gov-theme" data-fp="wbl-20260828-4b8d2e55">
 
@@ -478,7 +481,7 @@ body.gov-theme .final-cta::before{background:radial-gradient(700px 380px at 50% 
       <li><a href="#faq">常见问题</a></li>
     </ul>
     <div class="nav-actions">
-      <a class="wl-btn wl-btn-primary nav-cta" href="training.html?tab=gov#contact">政务培训邀约</a>
+      <a class="wl-btn wl-btn-primary nav-cta" data-track="cta_gov_training" href="training.html?tab=gov#contact">政务培训邀约</a>
       <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -825,7 +828,7 @@ body.gov-theme .final-cta::before{background:radial-gradient(700px 380px at 50% 
     <h2>你的部门还没覆盖？来提交一张场景卡</h2>
     <p>Fork 仓库 → 新建分支 → 按模板填写部门/痛点/做法/成效 → 提 Pull Request。维护者按「不涉密、可复现、不夸大、格式规范」四项审核，通过后收录进矩阵。</p>
     <div class="hero-ctas">
-      <a href="https://github.com/ActionThinker/gov-workbuddy" class="wl-btn wl-btn-gov" target="_blank" rel="noopener">Fork 仓库提交 PR</a>
+      <a href="https://github.com/ActionThinker/gov-workbuddy" class="wl-btn wl-btn-gov" data-track="cta_gov_fork" target="_blank" rel="noopener">Fork 仓库提交 PR</a>
       <a href="training.html?tab=gov#contact" class="wl-btn wl-btn-primary">政务 AI 培训邀约</a>
     </div>
   </div>

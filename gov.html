@@ -517,6 +517,9 @@ body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
 .share-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
 .share-actions .wl-btn{font-size:13.5px;padding:10px 18px}
 </style>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "01a534f3009b458b9874d3c28ff55ea2"}'></script><!-- End Cloudflare Web Analytics -->
+<script defer src="/assets/wbl-track.js"></script>
 </head>
 <body class="gov-theme" data-fp="wbl-20260828-7f3a91c2">
 
@@ -544,7 +547,7 @@ body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
       <li><a href="#faq">常见问题</a></li>
     </ul>
     <div class="nav-actions">
-      <a class="wl-btn wl-btn-primary nav-cta" href="training.html?tab=gov#contact">政务培训邀约</a>
+      <a class="wl-btn wl-btn-primary nav-cta" data-track="cta_gov_training" href="training.html?tab=gov#contact">政务培训邀约</a>
       <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -562,7 +565,7 @@ body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
       <p class="hero-note">本页为公共开源内容；需要体系化培训时，可了解 WorkBuddyLink 政务数字办公培训。</p>
       <div class="hero-ctas">
         <a href="#guide" class="wl-btn wl-btn-gov">开始 0→1 上手</a>
-        <a href="gov-scenarios.html" class="wl-btn wl-btn-ghost">查看部门场景矩阵</a>
+        <a href="gov-scenarios.html" class="wl-btn wl-btn-ghost" data-track="cta_gov_scenarios">查看部门场景矩阵</a>
         <button class="wl-btn wl-btn-ghost" id="shareBtn" type="button">推荐给同事</button>
       </div>
       <div class="hero-meta">
@@ -664,7 +667,7 @@ body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
         </ul>
         <div class="track-ctas">
           <a href="#guide" class="wl-btn wl-btn-gov">开始 0→1 上手</a>
-          <a href="gov-scenarios.html" class="wl-btn wl-btn-outline">查看部门场景矩阵</a>
+          <a href="gov-scenarios.html" class="wl-btn wl-btn-outline" data-track="cta_gov_scenarios">查看部门场景矩阵</a>
           <a href="https://github.com/ActionThinker/gov-workbuddy" class="gb-link" target="_blank" rel="noopener">访问 GitHub 仓库 →</a>
         </div>
       </div>
@@ -832,7 +835,7 @@ body.gov-theme .flow-6 .fstep:nth-child(4) .fnum{background:var(--teal)}
       </div>
     </div>
     <div class="course-cta wl-animate">
-      <a href="gov-scenarios.html" class="wl-btn wl-btn-gov">查看完整场景矩阵与种子场景卡 →</a>
+      <a href="gov-scenarios.html" class="wl-btn wl-btn-gov" data-track="cta_gov_scenarios">查看完整场景矩阵与种子场景卡 →</a>
     </div>
   </div>
 </section>
