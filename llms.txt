@@ -72,6 +72,13 @@ WorkBuddyLink 是 WorkBuddy 社区生态服务伙伴的一员，依托官方产�
 ## 品牌
 - WorkBuddyLink.com — 本站，WorkBuddy 生态业务的前端入口
 - NexFDE.com — 相关品牌
+- handbook.workbuddylink.com — 生意手册，WorkBuddy 生态个体线入口（社区共创版）
+
+## 生意手册（个体线入口，handbook.workbuddylink.com）
+- 定位：面向想借 WorkBuddy 生态做生意的个人（超级个体/OPC）的免费开源实战手册与入口站；社区共创版，非 WorkBuddy 官方文档
+- 内容：7 级赚钱阶梯 L0–L6（对齐官方「超级个体→超级团队→超级组织」）、5 条路径指南（资产上架/内容推荐/考证培训/渠道接单/专家陪跑）+ 7 天启动包、三卷 How-to 章节、社区免费加入、社区共建（赚钱线索与案例提交/资源站推荐/百人共创）
+- 官方机制以各官方页面最新说明为准
+- 入口：https://handbook.workbuddylink.com/
 
 ## 联系
 - 邮箱: Lu@NexFDE.com

@@ -114,6 +114,14 @@
         },
         {
           "@type": "Question",
+          "name": "我不是企业，个人想用 WorkBuddy 赚钱，可以找你们吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。我们为个人准备了免费开源的《WorkBuddy 生意手册》——7 级赚钱阶梯、5 条路径指南与 7 天启动包，零公司零资质就能起步，还可以免费加入社区、参与共建。企业落地与渠道合作服务仍面向企业与合作伙伴。"
+          }
+        },
+        {
+          "@type": "Question",
           "name": "交付由谁负责？",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -519,6 +527,14 @@ body{
 .final-cta h2{font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.3;margin-bottom:18px;max-width:760px;margin-left:auto;margin-right:auto}
 .final-cta p{color:rgba(255,255,255,.72);max-width:620px;margin:0 auto 36px;font-size:16px}
 .final-cta .hero-ctas{justify-content:center}
+.final-cta .start-individual{margin:28px auto 0;color:rgba(255,255,255,.72);font-size:15px}
+.final-cta .start-individual a{color:var(--teal);font-weight:600}
+.final-cta .start-individual a:hover{text-decoration:underline}
+/* ── 个体通道桥接（#partner）── */
+.handbook-bridge{margin-top:36px;text-align:center}
+.handbook-bridge p{display:inline-block;max-width:680px;padding:16px 24px;border:1px dashed rgba(40,184,148,.45);border-radius:12px;background:var(--card);font-size:15px;line-height:1.7}
+.handbook-bridge a{color:var(--teal-deep);font-weight:600}
+.handbook-bridge a:hover{text-decoration:underline}
 
 /* ── Footer ── */
 .footer{background:var(--ink-2);color:rgba(255,255,255,.72);font-size:14px}
@@ -1308,6 +1324,9 @@ body{
     <div style="text-align:center;margin-top:44px">
       <a href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnPkEBpcNFmYzLFybVCKB4dd" class="wl-btn wl-btn-primary" data-track="partner_apply" target="_blank" rel="noopener">申请成为合作伙伴</a>
     </div>
+    <div class="handbook-bridge wl-animate">
+      <p>还没有公司，想先以个人身份跑起来？打开 <a href="https://handbook.workbuddylink.com/" target="_blank" rel="noopener" data-track="handbook_partner">《WorkBuddy 生意手册》</a>——7 级赚钱阶梯，零公司零资质起步，免费看。</p>
+    </div>
   </div>
 </section>
 
@@ -1342,6 +1361,10 @@ body{
       <div class="faq-item">
         <div class="faq-q">渠道伙伴加入需要什么条件？<span class="faq-ico"></span></div>
         <div class="faq-a"><p>有客户资源或行业场景即可申请，不需要自建技术团队。加入后你会获得业务机会、FDE 后端交付支撑、标准化销售方法与交付 SOP。建议先跑通一个试点，再复制放大增长。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">我不是企业，个人想用 WorkBuddy 赚钱，可以找你们吗？<span class="faq-ico"></span></div>
+        <div class="faq-a"><p>可以。我们为个人准备了免费开源的《<a href="https://handbook.workbuddylink.com/" target="_blank" rel="noopener" data-track="handbook_faq">WorkBuddy 生意手册</a>》——7 级赚钱阶梯、5 条路径指南与 7 天启动包，零公司零资质就能起步，还可以免费加入社区、参与共建。企业落地与渠道合作服务仍面向企业与合作伙伴。</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">交付由谁负责？<span class="faq-ico"></span></div>
@@ -1455,6 +1478,7 @@ body{
       <a href="#contact" class="wl-btn wl-btn-primary" data-track="startup_advice">企业客户：获取启动建议</a>
       <a href="#contact" class="wl-btn wl-btn-ghost" data-track="partner_apply">合作伙伴：申请合作沟通</a>
     </div>
+    <p class="start-individual">你是个人，想自己用 WorkBuddy 赚钱？<a href="https://handbook.workbuddylink.com/" target="_blank" rel="noopener" data-track="handbook_start">打开《WorkBuddy 生意手册》（免费）→</a></p>
   </div>
 </section>
 
@@ -1484,6 +1508,7 @@ body{
       <ul class="footer-links">
         <li><a href="#services">企业服务</a></li>
         <li><a href="training.html">培训课程</a></li>
+        <li><a href="https://handbook.workbuddylink.com/" target="_blank" rel="noopener" data-track="handbook_footer">生意手册（个人指南）</a></li>
         <li><a href="#method">落地方式</a></li>
         <li><a href="#partner">合作伙伴</a></li>
         <li><a href="#contact">联系我们</a></li>
