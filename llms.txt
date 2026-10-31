@@ -4,6 +4,8 @@
 
 ## 一句话定位
 把 WorkBuddy 的产品能力，变成企业真正可落地的业务方案。面向正在评估导入、推进试点或需要持续运营支持的企业团队。
+- 品牌口号：Build with WorkBuddy. Grow through Link.（以 WorkBuddy 创造，通过 Link 成长）
+- 核心理念：开放协作 · 实践落地 · 彼此成就 · 长期生长
 
 ## 关于 WorkBuddy
 WorkBuddy 是腾讯出品的全场景 AI 办公工作台（AI Agent 办公新范式）：说出要求、开始执行任务、交付完整成果，自主规划并交付多模态复杂任务结果，支持多 Agents 并行工作，完美连接腾讯办公生态。官方介绍见 workbuddy.cn。
