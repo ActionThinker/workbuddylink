@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WorkBuddy 企业导入、落地与持续运营 | WorkBuddyLink</title>
-<meta name="description" content="基于 WorkBuddy 官方产品能力，结合 FDE 交付支持，帮助企业完成 AI 认知对齐、办公提效培训、业务场景评估、企业版采购与部署实施、定制化方案设计与持续应用陪跑；对合作伙伴提供销售赋能、联合获客、方案支撑与交付承接。">
+<meta name="description" content="基于 WorkBuddy 官方产品能力，结合 FDE 交付支持，帮助企业完成 AI 认知对齐、办公提效培训、业务场景评估、企业版采购与部署实施、定制化方案设计与持续应用陪跑；对合作伙伴提供渠道合作与行业解决方案共创，支持销售赋能、联合获客、方案支撑与交付承接。">
 <link rel="canonical" href="https://workbuddylink.com/">
 <meta property="og:title" content="WorkBuddy 企业导入、落地与持续运营 | WorkBuddyLink">
 <meta property="og:description" content="把 WorkBuddy 的产品能力，变成企业真正可落地的业务方案。基于官方产品与 FDE 交付支持，覆盖 AI 认知对齐、业务场景评估、部署实施与持续陪跑。">
@@ -52,11 +52,12 @@
       "@id": "https://workbuddylink.com/#service",
       "name": "WorkBuddy 企业导入、落地与持续运营服务",
       "provider": { "@id": "https://workbuddylink.com/#org" },
-      "serviceType": ["AI认知对齐", "办公提效培训", "业务场景评估", "企业版采购与部署实施", "定制化方案设计与开发", "持续应用陪跑", "渠道合作"],
-      "description": "依托 WorkBuddy 官方产品能力与 FDE 交付支持，帮助企业完成 AI 认知对齐、办公提效培训、业务场景评估、企业版采购与部署实施、定制化方案设计与持续应用陪跑，并为渠道伙伴提供销售赋能、联合获客、方案支撑与交付承接。",
+      "serviceType": ["AI认知对齐", "办公提效培训", "业务场景评估", "企业版采购与部署实施", "定制化方案设计与开发", "持续应用陪跑", "渠道合作", "行业解决方案共创"],
+      "description": "依托 WorkBuddy 官方产品能力与 FDE 交付支持，帮助企业完成 AI 认知对齐、办公提效培训、业务场景评估、企业版采购与部署实施、定制化方案设计与持续应用陪跑，并为渠道伙伴提供销售赋能、联合获客、方案支撑与交付承接；同时与行业专家共创可复制、可销售的行业解决方案。",
       "offers": [
         { "@type": "Offer", "name": "企业落地建议", "category": "企业服务" },
         { "@type": "Offer", "name": "渠道合作沟通", "category": "渠道合作" },
+        { "@type": "Offer", "name": "行业解决方案共创", "category": "合作伙伴" },
         { "@type": "Offer", "name": "获取启动建议", "category": "商务线索" }
       ],
       "areaServed": "CN"
@@ -110,7 +111,7 @@
           "name": "渠道伙伴加入需要什么条件？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "有客户资源或行业场景即可申请，不需要自建技术团队。加入后你会获得业务机会、FDE 后端交付支撑、标准化销售方法与交付 SOP。建议先跑通一个试点，再复制放大增长。"
+            "text": "有客户资源，或者有行业经验，都可以聊。如果你有客户资源、想把 WorkBuddy 带给企业客户，可以走渠道合作；如果你有行业方法、想把它封装成同行愿意买的解决方案，可以走解决方案共创。两条路都不需要你自建技术团队，加入后都会有产品、方法与交付支撑。"
           }
         },
         {
@@ -436,6 +437,23 @@ body{
 .partner-pains{max-width:860px;margin:0 auto 48px}
 .partner-path{max-width:640px;margin:0 auto}
 .partner-path .path-col{padding:30px 32px}
+/* ── Partner fork ── */
+.partner-fork{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px}
+.fork-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-decoration:none;color:var(--text);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;position:relative;overflow:hidden}
+.fork-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--teal)}
+.fork-card.fork-solution{background:linear-gradient(180deg,var(--coral-soft),#fff);border-color:rgba(232,89,12,.35)}
+.fork-card.fork-solution:hover{border-color:var(--coral)}
+.fork-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:10px}
+.fork-solution .fork-tag{color:var(--coral)}
+.fork-card h3{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:8px;line-height:1.45}
+.fork-card p{font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:18px;flex:1}
+.fork-cta{font-size:13.5px;font-weight:700;color:var(--teal-deep)}
+.fork-solution .fork-cta{color:var(--coral)}
+.fork-note{text-align:center;font-size:13.5px;color:var(--text-muted);margin-bottom:44px}
+.partner-channel-head{max-width:860px;margin:0 auto 24px;text-align:center}
+.partner-channel-head h3{font-size:22px;font-weight:800;color:var(--ink);margin:8px 0 6px}
+.partner-channel-head p{font-size:14px;color:var(--text-muted)}
+@media(max-width:860px){.partner-fork{grid-template-columns:1fr}}
 
 /* ── Path ── */
 .path-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -696,7 +714,7 @@ body{
       <p class="hero-note">也为企业选型提供决策参考：<a href="#guides" style="color:var(--teal);text-decoration:none;font-weight:600">服务商怎么选、版本怎么定、一年预算怎么算</a>——不偏不编，帮你做出明智选择。</p>
       <div class="hero-ctas">
         <a href="#services" class="wl-btn wl-btn-primary" data-track="startup_advice">企业客户：获取落地建议</a>
-        <a href="#partner" class="wl-btn wl-btn-ghost" data-track="partner_apply">合作伙伴：申请合作沟通</a>
+        <a href="#partner" class="wl-btn wl-btn-ghost" data-track="partner_apply">合作伙伴：两种合作方式</a>
       </div>
       <div class="hero-meta">
         <div class="m-item"><span class="m-num">认知对齐</span><span class="m-label">先想清楚怎么用</span></div>
@@ -1278,9 +1296,30 @@ body{
 <section class="wl-section" id="partner">
   <div class="wl-container">
     <div class="wl-intro center wl-animate">
-      <span class="wl-section-label">渠道合作伙伴</span>
-      <h2 class="wl-title">对于渠道伙伴：不是传统代理，而是一套可复制的增长路径</h2>
-      <p class="wl-lead">你有客户资源或行业场景，我们有产品、方法与交付支撑，一起把生意做起来。</p>
+      <span class="wl-section-label">合作伙伴</span>
+      <h2 class="wl-title">两种合作方式，选你更像的那一种。</h2>
+      <p class="wl-lead">你有客户资源，或你有行业经验，都可以一起做；先选一个最容易启动的。</p>
+    </div>
+    <div class="partner-fork wl-animate">
+      <a class="fork-card fork-channel" href="#channel" data-track="partner_channel">
+        <span class="fork-tag">我有客户资源</span>
+        <h3>把 WorkBuddy 带给你的企业客户</h3>
+        <p>我们提供产品、销售方法与交付支撑，你专注客户经营。</p>
+        <span class="fork-cta">了解渠道合作 →</span>
+      </a>
+      <a class="fork-card fork-solution" href="solution-partner.html" data-track="solution_partner_fork">
+        <span class="fork-tag">我有行业经验</span>
+        <h3>把你的最佳实践变成解决方案</h3>
+        <p>你带行业 know-how 和同行网络，我们提供产品化、品牌与渠道；一起卖给同行。</p>
+        <span class="fork-cta">了解解决方案共创 →</span>
+      </a>
+    </div>
+    <p class="fork-note">两种方式也可以同时走；先选一个最容易启动的。</p>
+    <div id="channel" class="partner-channel">
+    <div class="partner-channel-head wl-animate">
+      <span class="wl-section-label">渠道合作</span>
+      <h3>把 WorkBuddy 带给你的企业客户</h3>
+      <p>你有客户资源，我们有产品、方法与交付支撑。</p>
     </div>
     <div class="partner-pains wl-animate">
       <div class="pain-item"><div class="x">1</div><div><h4>有客户资源，却缺把产品讲成方案的体系</h4><p>有货可卖，却没有一套能打动客户的销售方法。</p></div></div>
@@ -1327,8 +1366,9 @@ body{
         </ol>
       </div>
     </div>
-    <div style="text-align:center;margin-top:44px">
-      <a href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnPkEBpcNFmYzLFybVCKB4dd" class="wl-btn wl-btn-primary" data-track="partner_apply" target="_blank" rel="noopener">申请成为合作伙伴</a>
+      <div style="text-align:center;margin-top:44px">
+        <a href="https://ccn55aj1tkxl.feishu.cn/share/base/shrcnPkEBpcNFmYzLFybVCKB4dd" class="wl-btn wl-btn-primary" data-track="partner_apply" target="_blank" rel="noopener">申请渠道合作</a>
+      </div>
     </div>
     <div class="handbook-bridge wl-animate">
       <p>还没有公司，想先以个人身份跑起来？打开 <a href="https://handbook.workbuddylink.com/" target="_blank" rel="noopener" data-track="handbook_partner">《WorkBuddy 生意手册》</a>——7 级赚钱阶梯，零公司零资质起步，免费看。</p>
@@ -1366,7 +1406,7 @@ body{
       </div>
       <div class="faq-item">
         <div class="faq-q">渠道伙伴加入需要什么条件？<span class="faq-ico"></span></div>
-        <div class="faq-a"><p>有客户资源或行业场景即可申请，不需要自建技术团队。加入后你会获得业务机会、FDE 后端交付支撑、标准化销售方法与交付 SOP。建议先跑通一个试点，再复制放大增长。</p></div>
+        <div class="faq-a"><p>有客户资源，或者有行业经验，都可以聊。如果你有客户资源、想把 WorkBuddy 带给企业客户，可以走渠道合作；如果你有行业方法、想把它封装成同行愿意买的解决方案，可以走解决方案共创。两条路都不需要你自建技术团队，加入后都会有产品、方法与交付支撑。</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">我不是企业，个人想用 WorkBuddy 赚钱，可以找你们吗？<span class="faq-ico"></span></div>
@@ -1482,9 +1522,10 @@ body{
     <p>告诉我们你的阶段与需求，我们会给你一个更适合的启动方式，并在 1 个工作日内回复。</p>
     <div class="hero-ctas">
       <a href="#contact" class="wl-btn wl-btn-primary" data-track="startup_advice">企业客户：获取启动建议</a>
-      <a href="#contact" class="wl-btn wl-btn-ghost" data-track="partner_apply">合作伙伴：申请合作沟通</a>
+      <a href="#partner" class="wl-btn wl-btn-ghost" data-track="partner_apply">合作伙伴：两种合作方式</a>
     </div>
     <p class="start-individual">你是个人，想自己用 WorkBuddy 赚钱？<a href="https://handbook.workbuddylink.com/" target="_blank" rel="noopener" data-track="handbook_start">打开《WorkBuddy 生意手册》（免费）→</a></p>
+    <p class="start-individual">有行业经验，想把它变成解决方案？<a href="solution-partner.html" data-track="solution_partner_start">了解解决方案共创 →</a></p>
   </div>
 </section>
 
@@ -1518,6 +1559,7 @@ body{
         <li><a href="https://handbook.workbuddylink.com/" target="_blank" rel="noopener" data-track="handbook_footer">生意手册（个人指南）</a></li>
         <li><a href="#method">落地方式</a></li>
         <li><a href="#partner">合作伙伴</a></li>
+        <li><a href="solution-partner.html" data-track="solution_partner_footer">解决方案共创</a></li>
         <li><a href="#contact">联系我们</a></li>
       </ul>
     </div>
@@ -1526,7 +1568,6 @@ body{
       <p class="fg-desc">面向公务员的开源知识库：三分钟上手、10+ 部门场景矩阵、可复制提示词模板，长期免费开放。</p>
       <a href="gov.html" class="footer-gov-btn" data-track="gov_kb">进入政务知识库 →</a>
       <p class="fg-note">帮助政务伙伴用好 WorkBuddy，更好地服务企业，也把更多时间留给服务群众。</p>
-    </div>
     </div>
   </div>
   <div class="wl-container footer-bottom">
